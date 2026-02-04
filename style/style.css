@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --black: #070709;
+    --white: #fff;
+    --title: #5044e5;
+    --desc: #696969;
+    --bg: var(--white);
+    --fg: var(--black);
+    --font-s: 12px;
+    --font-m: 16px;
+    --font-h: 20px;
+}
+body{
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+}
