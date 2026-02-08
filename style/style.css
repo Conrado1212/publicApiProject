@@ -15,6 +15,28 @@
     --font-h: 20px;
 }
 body{
+    background: linear-gradient(
+        135deg,
+        #000 0%,        
+        #0a0a0a 15%,       
+        #111111 30%,      
+        #1a1a1a 45%,       
+        #1f1f1f 60%,      
+        #262626 80%,     
+        #2e2e2e 100%
+      );
+      background-size: 200% 200%;
+      animation: gradientMove 10s ease infinite;
     font-family: "Outfit", sans-serif;
     font-size: 16px;
 }
+@keyframes gradientMove {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+  header{
+      .logo{
+          color: var(--white);
+      }
+  }
