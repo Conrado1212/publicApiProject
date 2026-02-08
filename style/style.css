@@ -36,7 +36,67 @@ body{
     100% { background-position: 0% 0%; }
   }
   header{
+      display: flex;
       .logo{
-          color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+         // color: var(--white);
+          i{
+            background: linear-gradient(90deg,#ffffff, #e8e0f5, #fafafa); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        background-clip: text;
+            transform: rotate(180deg);
+            font-size: 2rem;
+            position: relative;
+          }
       }
   }
+  .logo i::after{
+    content: '';
+    position: absolute;
+    width: .2rem;
+    height: calc(100% + 1rem);
+    left: -10px;
+    top: -.5rem;
+    z-index: 1;
+    background: linear-gradient(90deg,var(--black), #e8e0f5, var(--black)); 
+  
+}
+.title-logo{
+    position: relative;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1.5px #787e96;
+    letter-spacing: .25rem;
+   overflow: hidden;
+   animation: load .75s steps(9) forwards;
+   cursor: pointer;
+}
+.title-logo::before{
+content: 'PlayFinder';
+position: absolute;
+left: 0;
+top: 0;
+width: 0%;
+background: linear-gradient(90deg,#8326F0, #AE76F0, #fff); 
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;   
+white-space: nowrap;
+/* border-right: 2px solid #311144; */
+overflow: hidden;
+animation: load 1s steps(9) forwards;
+}
+
+@keyframes load {
+    from{
+        width: 0ch;
+    }
+   to{
+        width: 12ch;
+    }     
+}
