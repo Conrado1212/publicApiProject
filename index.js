@@ -5,8 +5,10 @@ import multer from "multer";
 
 const app = express();
 const port  = 3000;
-
-const API_URL ='';
+const data = {
+  logo: "PlayFinder"
+}
+const API_URL ='https://api.rawg.io/api/';
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
@@ -25,10 +27,13 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 
 app.get('/', (req,res)=>{
-    res.render("index.ejs");
+    res.render("index.ejs",{
+      data: data
+    });
 });
 
 
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`);
 })
+
