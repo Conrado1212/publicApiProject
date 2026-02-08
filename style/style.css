@@ -42,6 +42,8 @@ body{
         align-items: center;
         justify-content: flex-start;
         gap: 1rem;
+        background: linear-gradient(to right, transparent 80%, #fff 100%);
+        transition: all .3s;
          // color: var(--white);
           i{
             background: linear-gradient(90deg,#ffffff, #e8e0f5, #fafafa); 
