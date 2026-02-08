@@ -43,6 +43,7 @@ body{
         justify-content: flex-start;
         gap: 1rem;
         background: linear-gradient(to right, transparent 80%, #fff 100%);
+       
         transition: all .3s;
          // color: var(--white);
           i{
@@ -51,7 +52,7 @@ body{
             -webkit-text-fill-color: transparent;
         background-clip: text;
             transform: rotate(180deg);
-            font-size: 2rem;
+            font-size: 1.5rem;
             position: relative;
           }
       }
@@ -71,7 +72,8 @@ body{
     position: relative;
     font-size: 1.5rem;
     text-transform: uppercase;
-    -webkit-text-stroke: 1.5px #787e96;
+    -webkit-text-stroke: 1.5px #000;
+    //-webkit-text-stroke: 1.5px #fff;
     letter-spacing: .25rem;
    overflow: hidden;
    animation: load .75s steps(9) forwards;
@@ -83,7 +85,7 @@ position: absolute;
 left: 0;
 top: 0;
 width: 0%;
-background: linear-gradient(90deg,#8326F0, #AE76F0, #fff); 
+background: linear-gradient(90deg,#fff, #8e79a7, #fff); 
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
