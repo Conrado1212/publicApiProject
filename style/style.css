@@ -37,15 +37,19 @@ body{
   }
   header{
       display: flex;
+      align-items: center;
+      margin:  0  2rem  0 2rem;
+      justify-content: space-between;
+      padding:  1rem 0 1rem 0;
       .logo{
         display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 1rem;
         background: linear-gradient(to right, transparent 80%, #fff 100%);
-       
         transition: all .3s;
-         // color: var(--white);
+        cursor: pointer;
+        
           i{
             background: linear-gradient(90deg,#ffffff, #e8e0f5, #fafafa); 
             -webkit-background-clip: text;
@@ -55,6 +59,18 @@ body{
             font-size: 1.5rem;
             position: relative;
           }
+      }
+      .logo:hover{
+        i{
+            background: linear-gradient(90deg,#000, #e8e0f5, #fafafa); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: inset 5px 5px 10px #bebebe;
+        }
+        .title-logo{
+            -webkit-text-stroke: 1.5px #e8e0f5;
+        }
       }
   }
   .logo i::after{
@@ -73,7 +89,6 @@ body{
     font-size: 1.5rem;
     text-transform: uppercase;
     -webkit-text-stroke: 1.5px #000;
-    //-webkit-text-stroke: 1.5px #fff;
     letter-spacing: .25rem;
    overflow: hidden;
    animation: load .75s steps(9) forwards;
@@ -91,7 +106,6 @@ background: linear-gradient(90deg,#fff, #8e79a7, #fff);
 background-clip: text;
 color: transparent;   
 white-space: nowrap;
-/* border-right: 2px solid #311144; */
 overflow: hidden;
 animation: load 1s steps(9) forwards;
 }
@@ -104,3 +118,9 @@ animation: load 1s steps(9) forwards;
         width: 12ch;
     }     
 }
+
+@property --deg{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+    }
