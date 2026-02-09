@@ -51,6 +51,8 @@ body{
         cursor: pointer;
         
           i{
+              border-radius: .5rem;
+              padding: .25rem;
             background: linear-gradient(90deg,#ffffff, #e8e0f5, #fafafa); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -58,11 +60,12 @@ body{
             transform: rotate(180deg);
             font-size: 1.5rem;
             position: relative;
+            box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 12px rgba(207, 210, 218, 0.8);
           }
       }
       .logo:hover{
         i{
-            background: linear-gradient(90deg,#000, #e8e0f5, #fafafa); 
+            background: linear-gradient(90deg,#000, #8e79a7, #fafafa); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -71,8 +74,8 @@ body{
         .title-logo{
             -webkit-text-stroke: 1.5px #e8e0f5;
         }
-      }
   }
+}
   .logo i::after{
     content: '';
     position: absolute;
