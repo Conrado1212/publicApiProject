@@ -2,13 +2,18 @@ import express from "express"
 import axios from "axios"
 import bodyParser from "body-parser"
 import multer from "multer";
+import dotenv from 'dotenv'
 
+dotenv.config()
 const app = express();
 const port  = 3000;
 const data = {
   logo: "PlayFinder"
 }
 const API_URL ='https://api.rawg.io/api/';
+
+const API_KEY = process.env.API_KEY
+console.log(API_KEY);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
