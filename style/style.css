@@ -8,6 +8,7 @@
     --white: #fff;
     --title: #5044e5;
     --desc: #696969;
+    --desc2: #a39f9f;
     --bg: var(--white);
     --fg: var(--black);
     --font-s: 12px;
@@ -38,9 +39,11 @@ body{
   header{
       display: flex;
       align-items: center;
-      margin:  1rem  4rem  1rem 4rem;
+   margin:  1rem  4rem  1rem 4rem;
       justify-content: space-between;
       padding:  1rem 0 1rem 0;
+   //   width: 100%;
+    //  flex-grow: 0;
       .logo{
         display: flex;
         align-items: center;
@@ -134,11 +137,12 @@ animation: load 1s steps(9) forwards;
    align-items:center ;
     max-width: 56rem;
     text-align: center;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     overflow: hidden;
     width: 100%;
     line-height: 1.4px;
     padding: .5rem 1rem;
+    flex-grow: 2;
     i{
         color: var(--white);
     }
@@ -155,5 +159,15 @@ animation: load 1s steps(9) forwards;
     padding: .5rem .5rem;
 }
 .search input::placeholder{
-    color: var(--white);
+    color: var(--desc2);
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: center;
+    a{
+        text-decoration: none;
+        color: var(--white);
+    }
 }
