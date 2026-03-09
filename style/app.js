@@ -1,10 +1,11 @@
-const main = document.querySelector('.logo')
-console.log(main);
+const main = document.querySelector('.logo');
+const searchInput = document.querySelector('#search-input');
+//console.log(main);
 main.addEventListener('click',()=>{
     window.location.href = "http://localhost:3000"
 })
 
-const searchInput = document.querySelector('#search-input');
+
 
 searchInput.addEventListener('focus', () => {
     searchInput.dataset.placeholder = searchInput.placeholder; 

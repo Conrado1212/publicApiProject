@@ -7,13 +7,11 @@ import dotenv from 'dotenv'
 dotenv.config()
 const app = express();
 const port  = 3000;
-const data = {
-  logo: "PlayFinder"
-}
+
 const API_URL ='https://api.rawg.io/api/';
 
 const API_KEY = process.env.API_KEY
-console.log(API_KEY);
+//console.log(API_KEY);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
@@ -31,11 +29,24 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 
-app.get('/', (req,res)=>{
-    res.render("index.ejs",{
-      data: data
-    });
+const data = {
+  logo: "PlayFinder"
+}
+app.get('/', async(req,res)=>{
+  try {
+    const result = await axios.get(API_URL + "games?key=" + API_KEY);
+    console.log(result.data.count);
+    console.log("DATA:", data);
+    res.render("index.ejs",{ data: data, games: result.data.count});
+    }catch(error){
+        res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+    }
+
+    // res.render("index.ejs",{
+    //   data: data
+    // });
 });
+
 
 
 app.listen(port,()=>{
