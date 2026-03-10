@@ -17,7 +17,7 @@
 }
 body{
     background: linear-gradient(
-        135deg,
+        65deg,
         #000 0%,        
         #0a0a0a 15%,       
         #111111 30%,      
@@ -37,13 +37,19 @@ body{
     100% { background-position: 0% 0%; }
   }
   header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
       display: flex;
       align-items: center;
-   margin:  1rem  4rem  1rem 4rem;
+      //margin: 0;
+   margin:  1rem  5rem  1rem 5rem;
       justify-content: space-between;
-      padding:  1rem 0 1rem 0;
-   //   width: 100%;
-    //  flex-grow: 0;
+      border-radius: 1rem;
+      corner-shape: squircle:
+     // padding:  1rem 0 1rem 0;
+  padding: 2rem 5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
       .logo{
         display: flex;
         align-items: center;
