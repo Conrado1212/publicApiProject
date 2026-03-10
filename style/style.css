@@ -97,19 +97,24 @@ header::after,header::before{
     left: 50%;
     translate: -50%-50%;
   z-index: -1;
-    background-image: conic-gradient(from var(--deg), transparent 60%, var(--white));
+    background-image: conic-gradient(from var(--deg), transparent 40%, var(--white));
     animation: 3s spin linear infinite;
     border-radius: 1rem;
   
 }
-@keyframes spin {
+ @keyframes spin {
     from {
-        --deg: 0deg;
+        --deg: 100deg;
     }
     to{
-        --deg: 260deg;
+        --deg: 360deg;
     }
-}
+} 
+/* @keyframes spin {
+    0%   { --deg: 0deg }
+    50%  { --deg: 75deg  }
+    100% { --deg:0deg }
+} */
 header::before{
     filter: blur(1.5rem);
     opacity: .5;
@@ -162,7 +167,7 @@ animation: load 1s steps(9) forwards;
 
 @property --deg{
     syntax: "<angle>";
-    initial-value: 0deg;
+    initial-value: 100deg;
     inherits: false;
     }
 .search {
