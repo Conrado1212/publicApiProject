@@ -203,5 +203,19 @@ animation: load 1s steps(9) forwards;
     a{
         text-decoration: none;
         color: var(--white);
+        position: relative;
     }
+    a:hover a::after:{
+            content: '';
+            position: absolute;
+            width: 100%;
+            background: var(--white);
+            padding: 2rem;
+            translate: -50%-50%;
+            left: 50%;
+            bottom: -10px;
+            border-radius: 1rem;
+        }
+    
+    
 }
