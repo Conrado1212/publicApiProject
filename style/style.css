@@ -37,14 +37,17 @@ body{
     100% { background-position: 0% 0%; }
   }
   header{
+    width: calc(100% - 300px);
     position: relative;
     top: 0;
   //  z-index: 1000;
       display: flex;
       align-items: center;
+     
       //margin: 0;
-   margin:  1rem  5rem  1rem 5rem;
-      justify-content: space-between;
+   margin:  1rem  auto;
+  // gap:1rem;
+     justify-content: space-between;
       border-radius: 1rem;
       corner-shape: squircle;
      background: inherit;
@@ -178,10 +181,12 @@ animation: load 1s steps(9) forwards;
     text-align: center;
     border-radius: 1.5rem;
     overflow: hidden;
-    width: 100%;
+   // flex: 0 1 70rem;
+    width: 90rem;
+   max-width:none;
     line-height: 1.4px;
     padding: .5rem 1rem;
-    flex-grow: 2;
+    
     i{
         color: var(--white);
     }
@@ -204,11 +209,12 @@ animation: load 1s steps(9) forwards;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    text-align: center;
+    flex-wrap:nowrap;
     a{
         text-decoration: none;
         color: var(--white);
         position: relative;
+        white-space: nowrap;
     }
     a:hover a::after:{
             content: '';
