@@ -97,8 +97,8 @@ header::after,header::before{
     left: 50%;
     translate: -50%-50%;
   z-index: -1;
-    background-image: conic-gradient(from var(--deg), transparent 40%, var(--white));
-    animation: 3s spin linear infinite;
+    background-image: conic-gradient(from 100deg, transparent 40%, var(--white));
+  //  animation: 3s spin linear infinite;
     border-radius: 1rem;
   
 }
