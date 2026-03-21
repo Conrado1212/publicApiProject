@@ -60,3 +60,11 @@ app.listen(port,()=>{
     console.log(`App listening on port ${port}`);
 })
 
+
+
+//search game https://api.rawg.io/api/games?search=GTA&key=API_KEY
+
+//popul;ar games https://api.rawg.io/api/games?ordering=-rating&key=API_KEY
+
+
+//Nowe wydania https://api.rawg.io/api/games?dates=2025-01-01,2025-12-31&ordering=-added&key=API_KEY
