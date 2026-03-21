@@ -10,6 +10,10 @@ const port  = 3000;
 
 const API_URL ='https://api.rawg.io/api/';
 
+
+
+
+
 const API_KEY = process.env.API_KEY
 //console.log(API_KEY);
 
@@ -30,7 +34,8 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 
 const data = {
-  logo: "PlayFinder"
+  logo: "PlayFinder",
+  title: ['New and trending','Reviews','Last 30 days','Best of the year','Popular in 2025','All time top 250','All Games']
 }
 app.get('/', async(req,res)=>{
   try {
