@@ -217,16 +217,24 @@ animation: load 1s steps(9) forwards;
         white-space: nowrap;
         position: relative;
     }
-    a:hover::after:{
+    a:hover::after{
             content: '';
             position: absolute;
             width: 100%;
-            background: var(--white);
-            padding: 2rem;
+            background: linear-gradient(90deg,#fff, #8e79a7); 
+            padding: .1rem;
             translate: -50% -50%;
             left: 50%;
             bottom: -10px;
             border-radius: 1rem;
+            opacity: 0.5;
+        }
+        a:hover{
+            background: linear-gradient(90deg,#fff, #8e79a7, #fff); 
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;   
         }
     
     
