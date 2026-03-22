@@ -11,9 +11,9 @@
     --desc2: #a39f9f;
     --bg: var(--white);
     --fg: var(--black);
-    --font-s: 12px;
-    --font-m: 16px;
-    --font-h: 20px;
+    --font-s: 1.2rem;
+    --font-m: 1.5rem;
+    --font-h: 1.75rem;
 }
 body{
     background: linear-gradient(
@@ -28,7 +28,7 @@ body{
       );
       background-size: 200% 200%;
       animation: gradientMove 10s ease infinite;
-    font-family: "Outfit", sans-serif;
+    font-family: "Outfit", monospace;
     font-size: 16px;
 }
 @keyframes gradientMove {
@@ -244,5 +244,16 @@ color: transparent;
     margin:   auto;
     .sidebar{
         position: sticky;
+        .menu a {
+            text-decoration: none;
+            color: var(--white);
+            font-size: var(--font-h);
+            background: linear-gradient(90deg,#fff, #8e79a7, #fafafa); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: inset 5px 5px 10px #bebebe;
+        font-weight: 500;
+        }
     }
 }
