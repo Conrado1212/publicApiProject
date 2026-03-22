@@ -244,6 +244,9 @@ color: transparent;
     margin:   auto;
     .sidebar{
         position: sticky;
+        .menu{
+            margin-top: 1rem;
+        }
         .menu a {
             text-decoration: none;
             color: var(--white);
@@ -253,7 +256,7 @@ color: transparent;
             -webkit-text-fill-color: transparent;
         background-clip: text;
         text-shadow: inset 5px 5px 10px #bebebe;
-        font-weight: 500;
+        font-weight: 800;
         }
     }
 }
