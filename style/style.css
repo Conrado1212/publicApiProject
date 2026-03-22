@@ -236,6 +236,13 @@ animation: load 1s steps(9) forwards;
 background-clip: text;
 color: transparent;   
         }
-    
-    
+}
+.container{
+    width: calc(100% - 300px);
+    display: flex;
+    align-items: center;
+    margin:   auto;
+    .sidebar{
+        position: sticky;
+    }
 }
