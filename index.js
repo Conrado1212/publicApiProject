@@ -37,7 +37,9 @@ const data = {
   logo: "PlayFinder",
   title: ['New and trending','Reviews','Last 30 days','Best of the year','Popular in 2025','All time top 250','All Games'],
   sidebar:['Home','Reviews','New Releases'],
-  subtitle:['Based on player counts and release date']
+  subtitle:['Based on player counts and release date'],
+  filter:['Revelance', 'Date Added', 'Name', 'Release date', 'Popularity', 'Average rating'],
+  platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
 }
 app.get('/', async(req,res)=>{
   try {
@@ -64,7 +66,7 @@ app.listen(port,()=>{
 
 //search game https://api.rawg.io/api/games?search=GTA&key=API_KEY
 
-//popul;ar games https://api.rawg.io/api/games?ordering=-rating&key=API_KEY
+//popul;ar games https://api.rawg.io/api/games?ordering=-rating&key=API_KEY     Revelance Date Added Name Release date Popularity Average rating
 
 
 //Nowe wydania https://api.rawg.io/api/games?dates=2025-01-01,2025-12-31&ordering=-added&key=API_KEY
