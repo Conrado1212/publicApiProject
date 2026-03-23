@@ -14,6 +14,7 @@
     --font-s: 1.2rem;
     --font-m: 1.5rem;
     --font-h: 1.75rem;
+    --font-xl: 4.5rem;
 }
 body{
     background: linear-gradient(
@@ -240,10 +241,11 @@ color: transparent;
 .container{
     width: calc(100% - 300px);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin:   auto;
     .sidebar{
         position: sticky;
+        margin-right: 1.25rem;
         .menu{
             margin-top: 1rem;
         }
@@ -261,5 +263,20 @@ color: transparent;
         .menu a:hover{
             -webkit-text-stroke: 1.5px #7b7680;
         }
+    }
+    .content{
+        width: 100%;
+        .content_header{
+            .head1{
+                font-size: var(--font-xl);
+                color: var(--white);
+                
+            }
+            .subtitle{
+                font-size: var(--font-s);
+                color: var(--white);
+                
+            }
+        } 
     }
 }
