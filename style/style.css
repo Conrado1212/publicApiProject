@@ -280,3 +280,20 @@ color: transparent;
         } 
     }
 }
+.elements{
+    margin-top: 1rem;
+    .title_menu{
+        color: var(--white);
+        background: linear-gradient(90deg,#fff,  #ffffff29, #8e79a7); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: inset 5px 5px 10px #bebebe;
+        font-size: var(--font-h);
+      //  margin: 1rem 0 1rem  0 ;
+        white-space:pre;
+}
+    .sidebar_list  li{
+        list-style: none;
+    }
+}
