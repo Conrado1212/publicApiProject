@@ -39,11 +39,13 @@ const data = {
   sidebar:['Home','Reviews',],
   sidebarMenu: [  {
     "title": "tester",
-    "signature": {
-        "signatureType": "test",
-        "signatureTypes": ["signatureTypes"],
-        "reason": "string"
-    }}],
+    "Name":['Last 30 days','This week','Next week','Release calendar']
+  },
+  {
+    "title": "Platforms",
+    "Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
+  }
+  ],
   subtitle:['Based on player counts and release date'],
   filter:['Revelance', 'Date Added', 'Name', 'Release date', 'Popularity', 'Average rating'],
   platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
