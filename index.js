@@ -36,7 +36,14 @@ const upload = multer({storage})
 const data = {
   logo: "PlayFinder",
   title: ['New and trending','Reviews','Last 30 days','Best of the year','Popular in 2025','All time top 250','All Games'],
-  sidebar:['Home','Reviews','New Releases'],
+  sidebar:['Home','Reviews',],
+  sidebarMenu: [  {
+    "title": "tester",
+    "signature": {
+        "signatureType": "test",
+        "signatureTypes": ["signatureTypes"],
+        "reason": "string"
+    }}],
   subtitle:['Based on player counts and release date'],
   filter:['Revelance', 'Date Added', 'Name', 'Release date', 'Popularity', 'Average rating'],
   platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
