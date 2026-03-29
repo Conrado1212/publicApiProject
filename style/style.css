@@ -309,8 +309,20 @@ text-shadow: 0 1px 0 #e8e0f5,
         font-size: var(--font-h);
       //  margin: 1rem 0 1rem  0 ;
         white-space:pre;
+        font-weight:800;
+        text-decoration:none;
+        display:block;
+        margin-bottom:1rem;
 }
-    .sidebar_list  li{
+    .sidebar_list{
+display: block;
+margin-bottom: 1rem;
+      li{
         list-style: none;
+        margin-bottom: .5rem;
+        a{
+            text-decoration: none;
+        }
     }
+}
 }
