@@ -271,12 +271,23 @@ color: transparent;
                 font-size: var(--font-xl);
                 color: var(--white);
                 letter-spacing:2px;
-                -webkit-text-stroke: 1.5px #e8e0f5;
+                -webkit-text-stroke: 1.5px #8e79a7;
                 background: linear-gradient(90deg,#fff, #8e79a7, #fff); 
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
-
+text-shadow: 0 1px 0 #e8e0f5,
+0 2px 0 #8e79a7,
+0 3px 0 #8e79a7,
+0 4px 0 #8e79a7,
+0 5px 0 #8e79a7,
+0 6px 0 #8e79a7,
+0 7px 0 #8e79a7,
+0 8px 0 #8e79a7,
+1px 15px 10px rgba(0,16,16, 0.1),
+1px 20px 20px rgba(0,16,16, 0.2),
+1px 25px 40px rgba(0,16,16, 0.1),
+1px 30px 80px rgba(16,16,16, 0.3);
             }
             .subtitle{
                 font-size: var(--font-s);
