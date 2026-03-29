@@ -38,7 +38,7 @@ body{
     100% { background-position: 0% 0%; }
   }
   header{
-    width: calc(100% - 300px);
+    width: calc(100% - 400px);
     position: relative;
     top: 0;
   //  z-index: 1000;
@@ -239,7 +239,7 @@ color: transparent;
         }
 }
 .container{
-    width: calc(100% - 300px);
+    width: calc(100% - 400px);
     display: flex;
     align-items: flex-start;
     margin:   auto;
