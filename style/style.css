@@ -322,6 +322,18 @@ margin-bottom: 1rem;
         margin-bottom: .5rem;
         a{
             text-decoration: none;
+            background: linear-gradient(90deg,#fff,  #ffffff29, #8e79a7); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: inset 5px 5px 10px #bebebe;
+         i{
+          
+            color: var(--white)!important;
+            padding: .2rem;
+            display:inline-block;
+           
+        }
         }
     }
 }
