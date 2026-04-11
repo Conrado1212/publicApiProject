@@ -327,12 +327,19 @@ margin-bottom: 1rem;
             -webkit-text-fill-color: transparent;
         background-clip: text;
         text-shadow: inset 5px 5px 10px #bebebe;
-         i{
-          
+        display:flex;
+       align-items:center;
+       font-weight: 900;
+       span  i{
+          background: #2e2e2e;
             color: var(--white)!important;
             padding: .2rem;
-            display:inline-block;
            
+           border-radius:.5rem;
+           width: 2rem;
+           height: 2rem;
+         margin-right: .5rem;
+           line-height:2rem;
         }
         }
     }
