@@ -299,28 +299,30 @@ text-shadow: 0 1px 0 #e8e0f5,
 }
 .elements{
     margin-top: 1rem;
-    .title_menu{
-        color: var(--white);
-        background: linear-gradient(90deg,#fff,  #ffffff29, #8e79a7); 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: inset 5px 5px 10px #bebebe;
-        font-size: var(--font-h);
-      //  margin: 1rem 0 1rem  0 ;
-        white-space:pre;
-        font-weight:800;
-        text-decoration:none;
-        display:block;
-        margin-bottom:1rem;
 }
-    .sidebar_list{
-display: block;
-margin-bottom: 1rem;
-      li{
-        list-style: none;
-        margin-bottom: .5rem;
-        a{
+.elements  .title_menu{
+    color: var(--white);
+    background: linear-gradient(90deg,#fff,  #ffffff29, #8e79a7); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: inset 5px 5px 10px #bebebe;
+    font-size: var(--font-h);
+    white-space:pre;
+    font-weight:800;
+    text-decoration:none;
+    display:block;
+    margin-bottom:1rem;
+}
+.elements .sidebar_list{
+    display: block;
+    margin-bottom: 1rem;
+    }
+    .elements .sidebar_list  li{
+            list-style: none;
+            margin-bottom: .5rem  
+            }
+        .elements .sidebar_list  li   a{
             text-decoration: none;
             background: linear-gradient(90deg,#fff,  #ffffff29, #8e79a7); 
             -webkit-background-clip: text;
@@ -329,19 +331,16 @@ margin-bottom: 1rem;
         text-shadow: inset 5px 5px 10px #bebebe;
         display:flex;
        align-items:center;
-       font-weight: 900;
-       span  i{
-          background: #2e2e2e;
-            color: var(--white)!important;
-            padding: .2rem;
-           
-           border-radius:.5rem;
-           width: 2rem;
-           height: 2rem;
-         margin-right: .5rem;
-           line-height:2rem;
+             font-weight: 900;
         }
-        }
-    }
-}
-}
+        .elements .sidebar_list  li  a  i{
+            background-color: rgba(255, 255, 255, 0.1);
+              text-align: center;
+      color: var(--white)!important;
+   //   padding: .2rem;
+     border-radius:.5rem;
+     width: 2rem;
+     height: 2rem;
+    line-height:2rem;
+     margin-right: .5rem;
+  }
