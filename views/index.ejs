@@ -75,7 +75,7 @@
                                     <li class="item">
                                          <a href="">
                                             <i class="fa-solid <%-  data.sidebarMenu[i].Icon[j] %>"></i>
-                                            <%-  data.sidebarMenu[i].Name[j] %>
+                                            <%- data.sidebarMenu[i].Name[j] ==="Popular in YEAR" ? data.sidebarMenu[i].Name[j].replace("YEAR", new Date().getFullYear()) : data.sidebarMenu[i].Name[j] %>
                                         </a>
                                     </li>
                                     <%  }%>

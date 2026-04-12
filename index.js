@@ -30,8 +30,8 @@ const storage = multer.diskStorage({
       cb(null, file.originalname);
     }
   });
+//<%= data.sidebarMenu[i].Name[j].replace("YEAR", new Date().getFullYear()) %>
 
-const upload = multer({storage})
 
 const data = {
   logo: "PlayFinder",
@@ -40,11 +40,11 @@ const data = {
   sidebarMenu: [  {
     "title": "New Releases",
     "Name":['Last 30 days','This week','Next week','Release calendar'],
-    "Icon":['fa-star','fa-fire','fa-forward-fast','']
+    "Icon":['fa-star','fa-fire','fa-forward-fast','31']
   },
   {
-    "title": "Platforms",
-    "Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
+    "title": "Top",
+    "Name":['Best of the year', 'Popular in YEAR', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
     "Icon":['fa-star','fa-fire','fa-forward-fast','']
   }
   ],
@@ -52,6 +52,7 @@ const data = {
   filter:['Revelance', 'Date Added', 'Name', 'Release date', 'Popularity', 'Average rating'],
   platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
 }
+//"Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
 app.get('/', async(req,res)=>{
   try {
     const result = await axios.get(API_URL + "games?key=" + API_KEY);
