@@ -42,7 +42,7 @@
                     <%  }%>
                     <div class="elements">
                         <!-- for each dodac  -->
-                        <div class="sidebar_menu">
+                        <!-- <div class="sidebar_menu">
                             <span class="title_menu">New Releases</span>
                                 <ul class="sidebar_list">
                                     <li class="item">
@@ -63,11 +63,25 @@
                                     <li class="item">
                                      <a href="">
                                         <i class="31">31</i> 
-                                        
                                           Release calendar</a>
                                     </li>
                                  </ul>
+                      </div> -->
+                        <% for(let i=0;i<data.sidebarMenu.length;i++){%>
+                        <div class="sidebar_menu">
+                            <span class="title_menu"><%-  data.sidebarMenu[i].title %></span>
+                                <ul class="sidebar_list">
+                                    <% for(let j=0;j<data.sidebarMenu[i].Name.length;j++){%>
+                                    <li class="item">
+                                         <a href="">
+                                            <i class="fa-solid fa-star"></i>
+                                            <%-  data.sidebarMenu[i].Name[j] %>
+                                        </a>
+                                    </li>
+                                    <%  }%>
+                                 </ul>
                       </div>
+                      <%  }%>
                       <div class="sidebar_menu">
                         <span class="title_menu">Top</span>
                             <ul class="sidebar_list">

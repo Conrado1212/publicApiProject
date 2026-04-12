@@ -38,7 +38,7 @@ const data = {
   title: ['New and trending','Reviews','Last 30 days','Best of the year','Popular in 2025','All time top 250','All Games'],
   sidebar:['Home','Reviews',],
   sidebarMenu: [  {
-    "title": "tester",
+    "title": "New Releases",
     "Name":['Last 30 days','This week','Next week','Release calendar']
   },
   {
