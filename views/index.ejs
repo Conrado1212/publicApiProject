@@ -74,7 +74,7 @@
                                     <% for(let j=0;j<data.sidebarMenu[i].Name.length;j++){%>
                                     <li class="item">
                                          <a href="">
-                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid <%-  data.sidebarMenu[i].Icon[j] %>"></i>
                                             <%-  data.sidebarMenu[i].Name[j] %>
                                         </a>
                                     </li>

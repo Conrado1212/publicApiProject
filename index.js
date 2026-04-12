@@ -39,11 +39,13 @@ const data = {
   sidebar:['Home','Reviews',],
   sidebarMenu: [  {
     "title": "New Releases",
-    "Name":['Last 30 days','This week','Next week','Release calendar']
+    "Name":['Last 30 days','This week','Next week','Release calendar'],
+    "Icon":['fa-star','fa-fire','fa-forward-fast','']
   },
   {
     "title": "Platforms",
-    "Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
+    "Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
+    "Icon":['fa-star','fa-fire','fa-forward-fast','']
   }
   ],
   subtitle:['Based on player counts and release date'],
