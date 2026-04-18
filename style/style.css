@@ -390,3 +390,15 @@ text-shadow: 0 1px 0 #e8e0f5,
   .elements .sidebar_list  li  a:hover{
     -webkit-text-fill-color: #fafafa;
   }
+
+  .mode-content{
+position: relative;
+width: 100%;
+  i{
+      color: var(--white);
+     
+  }
+   .sun{
+       opacity: 0;
+   }
+}
