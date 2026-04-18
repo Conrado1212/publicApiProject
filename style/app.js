@@ -1,12 +1,16 @@
 const main = document.querySelector('.logo');
 const showMenu = document.querySelector('.discover');
 const searchInput = document.querySelector('#search-input');
+const modeSw = body.querySelector(".toggle-sw");
 //console.log(main);
 main.addEventListener('click',()=>{
     window.location.href = "http://localhost:3000"
 })
 
 
+modeSw.addEventListener("click", () =>{
+    body.classList.toggle("white");
+   });
 
 searchInput.addEventListener('focus', () => {
     searchInput.dataset.placeholder = searchInput.placeholder; 
