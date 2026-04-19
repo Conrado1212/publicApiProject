@@ -209,8 +209,11 @@ animation: load 1s steps(9) forwards;
 .options{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
     flex-wrap:nowrap;
+    padding:  .2rem 0 .2rem 0 ;
+    min-height: 50px;
     a{
         text-decoration: none;
         color: var(--white);

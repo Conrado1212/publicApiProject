@@ -68,8 +68,21 @@ app.get('/', async(req,res)=>{
     // });
 });
 
+async function getPlatforms(){
+  try{
+    const result = await axios.get(API_URL + "platforms?key=" + API_KEY);
 
-
+    if (result.status !== 200) {
+      throw new Error(`HTTP error: ${result.status}`);
+    }
+    const names = result.data.results.map(p=>p.name)
+    return names;
+  }catch(e){
+    console.error(`Invalid data ${e}`);
+    return null;
+  }
+}
+getPlatforms().then(console.log);
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`);
 })
@@ -77,8 +90,12 @@ app.listen(port,()=>{
 
 
 //search game https://api.rawg.io/api/games?search=GTA&key=API_KEY
+//search game https://api.rawg.io/api/platforms&key=API_KEY
 
 //popul;ar games https://api.rawg.io/api/games?ordering=-rating&key=API_KEY     Revelance Date Added Name Release date Popularity Average rating
 
 
 //Nowe wydania https://api.rawg.io/api/games?dates=2025-01-01,2025-12-31&ordering=-added&key=API_KEY
+
+
+
