@@ -27,11 +27,12 @@ showMenuu.forEach(menu =>{
     menu.addEventListener('click',()=>{
         const text = menu.querySelector('.discover_text');
         const spans = menu.querySelectorAll('.arrow span');
+        const first = menu.querySelector('span')
         const second = menu.querySelector('span:nth-child(2)');
 
         const isShow = text.textContent ==="Show All";
 
-        text.style.transform = isShow ? "rotate(45deg)": "rotate(-45deg)";
+        first.style.transform = isShow ? "rotate(45deg)": "rotate(-45deg)";
         second.style.transform = isShow ? "rotate(135deg)": "rotate(-135deg)";
         spans.forEach(span => {
             span.style.bottom = isShow ? "60%" : "30%";
