@@ -25,8 +25,8 @@ searchInput.addEventListener('blur', () => {
 
 showMenuu.forEach(menu =>{
     menu.addEventListener('click',()=>{
-        const text = menu.querySelector('span');
-        const spans = menu.querySelectorAll('span');
+        const text = menu.querySelector('.discover_text');
+        const spans = menu.querySelectorAll('.arrow span');
         const second = menu.querySelector('span:nth-child(2)');
 
         const isShow = text.textContent ==="Show All";
