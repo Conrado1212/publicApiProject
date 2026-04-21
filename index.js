@@ -50,8 +50,8 @@ const data = {
   {
     "mainTitle":"All Games",
     "title": "Browse",
-    "Name":['Platforms', 'Stores', 'Collections'],
-    "Icon":['fa-unity','fa-download','fa-folder-open'],
+    "Name":['Platforms', 'Stores', 'Collections','Reviews','Genres','Creators','Tags','Developers','Publishers'],
+    "Icon":['fa-unity','fa-download','fa-folder-open','fa-comment','fa-ghost','fa-user','fa-hashtag','fa-code','fa-newspaper'],
     showAll: true
   }, 
   {
