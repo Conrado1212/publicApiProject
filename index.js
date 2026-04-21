@@ -44,8 +44,15 @@ const data = {
   },
   {
     "title": "Top",
-    "Name":['Best of the year', 'Popular in YEAR', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
-    "Icon":['fa-star','fa-fire','fa-forward-fast','']
+    "Name":['Best of the year', 'Popular in YEAR', 'All time top 250'],
+    "Icon":['fa-trophy','fa-chart-simple','fa-crown']
+  },
+  {
+    "mainTitle":"All Games",
+    "title": "Browse",
+    "Name":['Platforms', 'Stores', 'Collections'],
+    "Icon":['fa-unity','fa-download','fa-folder-open'],
+    showAll: true
   }
   ],
   subtitle:['Based on player counts and release date'],
