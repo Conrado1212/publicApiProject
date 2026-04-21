@@ -59,6 +59,12 @@ const data = {
     "Name":['PC', 'PlayStation', 'Xbox'],
     "Icon":['fa-microsoft','fa-playstation','fa-xbox'],
     showAll: true
+  },
+  {
+    "title": "Genres",
+    "Name":['Free', 'Action', 'Strategy'],
+    "Icon":['fa-free-code-camp','fa-uncharted','fa-chess-board'],
+    showAll: true
   }
   ],
   subtitle:['Based on player counts and release date'],
