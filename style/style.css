@@ -419,3 +419,6 @@ background: var(--text-color);
     content: '31'!important;
     color: var(--white);
    }
+   .hidden{
+       display: none;
+   }
