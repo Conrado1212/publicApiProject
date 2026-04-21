@@ -22,7 +22,7 @@ searchInput.addEventListener('focus', () => {
 searchInput.addEventListener('blur', () => {
     searchInput.placeholder = searchInput.dataset.placeholder;
 });
-
+//add hide on list
 
 showMenuu.forEach(menu =>{
     menu.addEventListener('click',()=>{
