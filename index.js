@@ -40,7 +40,7 @@ const data = {
   sidebarMenu: [  {
     "title": "New Releases",
     "Name":['Last 30 days','This week','Next week','Release calendar'],
-    "Icon":['fa-star','fa-fire','fa-forward-fast','31']
+    "Icon":['fa-star','fa-fire','fa-forward-fast','_31']
   },
   {
     "title": "Top",
@@ -74,7 +74,7 @@ async function getPlatforms(){
 
     if (result.status !== 200) {
       throw new Error(`HTTP error: ${result.status}`);
-    }
+    }   
     const names = result.data.results.map(p=>p.name)
     return names;
   }catch(e){

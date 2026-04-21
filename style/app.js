@@ -3,6 +3,7 @@ const showMenu = document.querySelector('.discover');
 const showMenuu = document.querySelectorAll('.discover');
 const searchInput = document.querySelector('#search-input');
 const modeSw = document.querySelector(".toggle-sw");
+const body = document.querySelector('body');
 //console.log(main);
 main.addEventListener('click',()=>{
     window.location.href = "http://localhost:3000"
