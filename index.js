@@ -53,6 +53,12 @@ const data = {
     "Name":['Platforms', 'Stores', 'Collections'],
     "Icon":['fa-unity','fa-download','fa-folder-open'],
     showAll: true
+  }, 
+  {
+    "title": "Platforms",
+    "Name":['PC', 'PlayStation', 'Xbox'],
+    "Icon":['fa-microsoft','fa-playstation','fa-xbox'],
+    showAll: true
   }
   ],
   subtitle:['Based on player counts and release date'],
