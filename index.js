@@ -51,19 +51,19 @@ const data = {
     "mainTitle":"All Games",
     "title": "Browse",
     "Name":['Platforms', 'Stores', 'Collections','Reviews','Genres','Creators','Tags','Developers','Publishers'],
-    "Icon":['fa-unity','fa-download','fa-folder-open','fa-comment','fa-ghost','fa-user','fa-hashtag','fa-code','fa-newspaper'],
+    "Icon":['fa-brands fa-unity','fa-download','fa-folder-open','fa-comment','fa-ghost','fa-user','fa-hashtag','fa-code','fa-newspaper'],
     showAll: true
   }, 
   {
     "title": "Platforms",
-    "Name":['PC', 'PlayStation', 'Xbox'],
-    "Icon":['fa-microsoft','fa-playstation','fa-xbox'],
+    "Name":['PC', 'PlayStation', 'Xbox','Nintendo switch','iOS','Android'],
+    "Icon":['fa-brands fa-microsoft','fa-brands fa-playstation','fa-brands fa-xbox','fa-hat-wizard','fa-brands fa-apple','fa-brands fa-android'],
     showAll: true
   },
   {
     "title": "Genres",
-    "Name":['Free', 'Action', 'Strategy'],
-    "Icon":['fa-free-code-camp','fa-uncharted','fa-chess-board'],
+    "Name":['Free', 'Action', 'Strategy','RPG','Shooter','Adventure','Puzzle','Racing','Sports'],
+    "Icon":['fa-brands fa-free-code-camp','fa-brands fa-uncharted','fa-chess-board'],
     showAll: true
   }
   ],
