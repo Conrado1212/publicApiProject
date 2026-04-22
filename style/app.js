@@ -26,6 +26,9 @@ searchInput.addEventListener('blur', () => {
 
 showMenuu.forEach(menu =>{
     menu.addEventListener('click',()=>{
+        const ulMenu = menu.parentNode.parentNode;
+       // console.log(ulMenu);
+      
         const text = menu.querySelector('.discover_text');
         const spans = menu.querySelectorAll('.arrow span');
         const first = menu.querySelector('span')
@@ -38,6 +41,9 @@ showMenuu.forEach(menu =>{
         spans.forEach(span => {
             span.style.bottom = isShow ? "60%" : "30%";
         });
+      
+            ulMenu.querySelectorAll('li.initial-hidden').forEach(li =>li.classList.toggle('hidden', !isShow));
+        
         text.textContent = isShow ? "Hide All" : "Show All";
     });
 });
