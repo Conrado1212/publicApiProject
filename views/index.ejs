@@ -55,7 +55,7 @@
                                     <% for(let j=0;j<data.sidebarMenu[i].Name.length;j++){%>
                                     <li class="item <%= j > 2 ? 'hidden initial-hidden' : '' %>">
                                          <a href="">
-                                            <i class="fa-solid <%-  data.sidebarMenu[i].Icon[j] %>"></i>
+                                            <%- data.sidebarMenu[i].title === 'Genres' ? `<img class="discover_img" src="${data.sidebarMenu[i].Img[j]}">` : `<i class="fa-solid ${data.sidebarMenu[i].Icon[j]}"></i>`%>                                       
                                             <%- data.sidebarMenu[i].Name[j] ==="Popular in YEAR" ? data.sidebarMenu[i].Name[j].replace("YEAR", new Date().getFullYear()) : data.sidebarMenu[i].Name[j] %>
                                         </a>
                                     </li>

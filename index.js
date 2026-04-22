@@ -63,7 +63,7 @@ const data = {
   {
     "title": "Genres",
     "Name":['Free', 'Action', 'Strategy','RPG','Shooter','Adventure','Puzzle','Racing','Sports'],
-    "Icon":['fa-brands fa-free-code-camp','fa-brands fa-uncharted','fa-chess-board'],
+    "Img":['','',''],
     showAll: true
   }
   ],
