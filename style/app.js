@@ -48,6 +48,13 @@ showMenuu.forEach(menu =>{
     });
 });
 
+
+
+modeSw.addEventListener('click',(e)=>{
+    body.classList.toggle("white");
+    console.log(body.classList);
+});
+
 // showMenu.addEventListener('click',()=>{
 //     if(document.querySelector('.discover > span').textContent === "Show All"){
 //         showMenu.querySelector('span').style.transform = "rotate(45deg)";
