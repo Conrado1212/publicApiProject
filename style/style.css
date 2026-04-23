@@ -409,11 +409,12 @@ background: var(--text-color);
   }
    .sun{
        opacity: 0;
+       transition: .3s;
    }
-   .white .mode-content .sun{
-    opacity:1;
+   body.white header .options .mode-content .toggle-sw .sun{
+    opacity:1!important;
 }
-.white .mode-content .moon{
+body.white header .options .mode-content .toggle-sw .moon{
     opacity: 0;
 }
    .toggle-sw{
