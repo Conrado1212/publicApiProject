@@ -15,6 +15,7 @@
     --font-m: 1.5rem;
     --font-h: 1.75rem;
     --font-xl: 4.5rem;
+    --slider: #8e79a7;
 }
 body{
     background: linear-gradient(
@@ -65,7 +66,7 @@ body{
         
           i{
               border-radius: .5rem;
-              box-shadow: inset 5px 5px 10px #8e79a7;
+              box-shadow: inset 5px 5px 10px var(--slider);
               padding: .25rem;
             background: linear-gradient(90deg,#ffffff, #e8e0f5, #fafafa); 
             -webkit-background-clip: text;
@@ -79,7 +80,7 @@ body{
       }
       .logo:hover{
         i{
-            background: linear-gradient(90deg,#000, #8e79a7, #fafafa); 
+            background: linear-gradient(90deg,#000, var(--slider), #fafafa); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -145,7 +146,7 @@ position: absolute;
 left: 0;
 top: 0;
 width: 0%;
-background: linear-gradient(90deg,#fff, #8e79a7, #fff); 
+background: linear-gradient(90deg,#fff, var(--slider), #fff); 
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
@@ -220,7 +221,7 @@ animation: load 1s steps(9) forwards;
             content: '';
             position: absolute;
             width: 100%;
-            background: linear-gradient(90deg,#fff, #8e79a7); 
+            background: linear-gradient(90deg,var(--white), var(--slider)); 
             padding: .1rem;
             translate: -50% -50%;
             left: 50%;
@@ -229,7 +230,7 @@ animation: load 1s steps(9) forwards;
             opacity: 0.5;
         }
         a:hover{
-            background: linear-gradient(90deg,#fff, #8e79a7, #fff); 
+            background: linear-gradient(90deg,var(--white), var(--slider), var(--white)); 
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
@@ -251,7 +252,7 @@ color: transparent;
             text-decoration: none;
             color: var(--white);
             font-size: var(--font-h);
-            background: linear-gradient(90deg,#fff, #8e79a7, #fafafa); 
+            background: linear-gradient(90deg,var(--white), var(--slider), #fafafa); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -270,19 +271,19 @@ color: transparent;
                 font-size: var(--font-xl);
                 color: var(--white);
                 letter-spacing:2px;
-                -webkit-text-stroke: 1.5px #8e79a7;
-                background: linear-gradient(90deg,#fff, #8e79a7, #fff); 
+                -webkit-text-stroke: 1.5px var(--slider);
+                background: linear-gradient(90deg,#fff, var(--slider), #fff); 
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
 text-shadow: 0 1px 0 #e8e0f5,
-0 2px 0 #8e79a7,
-0 3px 0 #8e79a7,
-0 4px 0 #8e79a7,
-0 5px 0 #8e79a7,
-0 6px 0 #8e79a7,
-0 7px 0 #8e79a7,
-0 8px 0 #8e79a7,
+0 2px 0 var(--slider),
+0 3px 0 var(--slider),
+0 4px 0 var(--slider),
+0 5px 0 var(--slider),
+0 6px 0 var(--slider),
+0 7px 0 var(--slider),
+0 8px 0 var(--slider),
 1px 15px 10px rgba(0,16,16, 0.1),
 1px 20px 20px rgba(0,16,16, 0.2),
 1px 25px 40px rgba(0,16,16, 0.1),
@@ -301,7 +302,7 @@ text-shadow: 0 1px 0 #e8e0f5,
 }
 .elements  .title_menu{
     color: var(--white);
-    background: linear-gradient(90deg,#fff,  #ffffff29, #8e79a7); 
+    background: linear-gradient(90deg,var(--white),  #ffffff29, var(--slider)); 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -362,7 +363,7 @@ text-shadow: 0 1px 0 #e8e0f5,
             }
         .elements .sidebar_list  li   a{
             text-decoration: none;
-            background: linear-gradient(90deg,#fff,  #ffffff29, #8e79a7); 
+            background: linear-gradient(90deg,var(--white),  #ffffff29, var(--slider)); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -401,7 +402,7 @@ background: var(--text-color);
         height: 22px;
         width: 40px;
         cursor: pointer;
-        box-shadow: inset 5px 5px 10px #8e79a7;
+        box-shadow: inset 5px 5px 10px var(--slider);
         padding: 0 .2rem 0 .2rem;
   i{
       color: var(--white);
