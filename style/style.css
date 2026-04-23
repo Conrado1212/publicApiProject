@@ -410,6 +410,12 @@ background: var(--text-color);
    .sun{
        opacity: 0;
    }
+   .white .mode-content .sun{
+    opacity:1;
+}
+.white .mode-content .moon{
+    opacity: 0;
+}
    .toggle-sw{
        display: flex;
        align-items: center;
