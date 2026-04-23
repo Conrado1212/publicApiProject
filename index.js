@@ -106,8 +106,22 @@ app.listen(port,()=>{
     console.log(`App listening on port ${port}`);
 })
 
+async function gameSearch(search){
+  try{
+    const result = await axios.get(API_URL + `games?search=${search}&key=` + API_KEY);
+    if (result.status !== 200) {
+      throw new Error(`HTTP error: ${result.status}`);
+    } 
+    return result.data;
+  }catch(e){
+    console.error(`Invalid data ${e}`);
+    return null;
+  }
+}
 
-
+gameSearch("GTA").then(data => {
+  console.log('search ',data.results);
+});
 //search game https://api.rawg.io/api/games?search=GTA&key=API_KEY
 //search game https://api.rawg.io/api/platforms&key=API_KEY
 
