@@ -63,7 +63,6 @@ body{
         background: linear-gradient(to right, transparent 80%, #fff 100%);
         transition: all .3s;
         cursor: pointer;
-        
           i{
               border-radius: .5rem;
               box-shadow: inset 5px 5px 10px var(--slider);
@@ -75,7 +74,6 @@ body{
             transform: rotate(180deg);
             font-size: 1.5rem;
             position: relative;
-         //   box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 12px rgba(207, 210, 218, 0.8);
           }
       }
       .logo:hover{
@@ -178,12 +176,10 @@ animation: load 1s steps(9) forwards;
     text-align: center;
     border-radius: 1.5rem;
     overflow: hidden;
-   // flex: 0 1 70rem;
     width: 90rem;
    max-width:none;
     line-height: 1.4px;
     padding: .5rem 1rem;
-    
     i{
         color: var(--white);
     }
