@@ -63,7 +63,7 @@ const data = {
   {
     "title": "Genres",
     "Name":['Free', 'Action', 'Strategy','RPG','Shooter','Adventure','Puzzle','Racing','Sports'],
-    "Img":['','',''],
+    "Img":['./images/free.png','./images/action.png','./images/strategy.png','./images/rpg.png','./images/shooter.png','./images/adventure.png','./images/puzzle.png','./images/racing.png','./images/sport.png'],
     showAll: true
   }
   ],
