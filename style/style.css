@@ -429,3 +429,9 @@ body.white header .options .mode-content .toggle-sw .moon{
    .hidden{
        display: none;
    }
+.select{
+    margin-top: 1rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
