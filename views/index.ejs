@@ -88,9 +88,11 @@
                                     <div class="dropdown_filter_select">
                                         <label for="">
                                             Order by: 
-                                        </label>
+                                        </label>  
                                         <select name="order" id="order">
-
+                                            <% data.platforms.forEach(p => { %>
+                                                <option value="<%= p %>"><%= p %></option>
+                                                <%  })%>
                                         </select>
                                     </div>
                                     <div class="dropdown_filter_select">
