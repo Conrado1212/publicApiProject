@@ -70,7 +70,8 @@ const data = {
   ],
   subtitle:['Based on player counts and release date'],
   filter:['Revelance', 'Date Added', 'Name', 'Release date', 'Popularity', 'Average rating'],
-  platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
+ // platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
+  platforms: []
 }
 //"Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
 app.get('/', async(req,res)=>{
@@ -90,19 +91,28 @@ app.get('/', async(req,res)=>{
 
 async function getPlatforms(){
   try{
-    const result = await axios.get(API_URL + "platforms?key=" + API_KEY);
+    const result = await axios.get(API_URL + "platforms/lists/parents?key=" + API_KEY);
 
     if (result.status !== 200) {
       throw new Error(`HTTP error: ${result.status}`);
     }   
-    const names = result.data.results.map(p=>p.name)
-    return names;
+    const excluded = [
+      'Atari',
+      'Commodore / Amiga',
+      'SEGA',
+      '3DO',
+      'Neo Geo',
+      'Web'
+    ];
+   data.platforms = result.data.results.map(p=>p.name).filter(name =>!excluded.includes(name));
+   return data.platforms;
   }catch(e){
     console.error(`Invalid data ${e}`);
     return null;
   }
 }
 getPlatforms().then(console.log);
+
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`);
 })
