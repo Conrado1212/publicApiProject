@@ -90,13 +90,17 @@
                                             Order by: 
                                         </label>  
                                         <select name="order" id="order">
-                                            <% data.platforms.forEach(p => { %>
-                                                <option value="<%= p %>"><%= p %></option>
+                                            <% data.order.forEach(o => { %>
+                                                <option value="<%= o %>"><%= o %></option>
                                                 <%  })%>
                                         </select>
                                     </div>
                                     <div class="dropdown_filter_select">
-
+                                        <select name="platform" id="platform">
+                                            <% data.platforms.forEach(p => { %>
+                                                <option value="<%= p %>"><%= p %></option>
+                                                <%  })%>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
