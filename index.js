@@ -37,6 +37,7 @@ const data = {
   logo: "PlayFinder",
   title: ['New and trending','Reviews','Last 30 days','Best of the year','Popular in 2025','All time top 250','All Games'],
   sidebar:['Home','Reviews',],
+  order:['Relevance','Date added','Name','Release date','popularity','Average rating'],
   sidebarMenu: [  {
     "title": "New Releases",
     "Name":['Last 30 days','This week','Next week','Release calendar'],
@@ -119,9 +120,9 @@ async function gameSearch(search){
   }
 }
 
-gameSearch("GTA").then(data => {
-  console.log('search ',data.results);
-});
+//gameSearch("GTA").then(data => {
+ // console.log('search ',data.results);
+//});
 //search game https://api.rawg.io/api/games?search=GTA&key=API_KEY
 //search game https://api.rawg.io/api/platforms&key=API_KEY
 
@@ -132,3 +133,4 @@ gameSearch("GTA").then(data => {
 
 
 
+//GET  main page -> https://api.rawg.io/api/games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20
