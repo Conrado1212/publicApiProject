@@ -89,14 +89,14 @@
                                         <label for="order" class="text">
                                             Order by: 
                                         </label>  
-                                        <select name="order" id="order">
+                                        <select name="order" id="order" class="text">
                                             <% data.order.forEach(o => { %>
                                                 <option value="<%= o %>"><%= o %></option>
                                                 <%  })%>
                                         </select>
                                     </div>
                                     <div class="dropdown_filter_select">
-                                        <select name="platform" id="platform">
+                                        <select name="platform" id="platform" class="text">
                                             <% data.platforms.forEach(p => { %>
                                                 <option value="<%= p %>"><%= p %></option>
                                                 <%  })%>
