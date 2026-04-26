@@ -440,6 +440,15 @@ body.white header .options .mode-content .toggle-sw .moon{
             display: flex;
             gap: .5rem;
             align-items: center;
+            .dropdown_filter_select{
+                border-radius: .25rem;
+                box-shadow: inset -5px -5px 10px var(--slider);
+                padding: .25rem;
+                /* background: linear-gradient(90deg, #ffffff, #e8e0f5, #fafafa);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text; */
+            }
         }
        }
     .display{
@@ -447,3 +456,12 @@ body.white header .options .mode-content .toggle-sw .moon{
         justify-content: flex-end;
     }
    }
+.text{
+    background: linear-gradient(90deg,#000, var(--slider), #fafafa); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+background-clip: text;
+text-shadow: inset 5px 5px 10px #bebebe;
+-webkit-text-stroke: 1.5px #e8e0f5;
+letter-spacing: 1.5px;
+}
