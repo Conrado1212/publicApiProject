@@ -48,3 +48,28 @@ showMenuu.forEach(menu =>{
         text.textContent = isShow ? "Hide All" : "Show All";
     });
 });
+document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
+    const trigger = drop.querySelector('.select-trigger');
+    const options = drop.querySelector('.select-options');
+    const defaultValue = drop.dataset.default;
+
+    trigger.textContent = defaultValue;
+
+    //open options
+    trigger.addEventListener('click',()=>{
+        options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    });
+
+    options.querySelectorAll('li').forEach(li=>{
+        li.addEventListener('click',()=>{
+            trigger.querySelector('span').textContent = li.textContent;
+            options.style.display = 'none';
+        });
+    });
+
+    document.addEventListener('click',(e)=>{
+        if(!drop.contains(e.target)){
+            options.style.display = 'none';
+        }
+    });
+});

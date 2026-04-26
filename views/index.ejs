@@ -85,9 +85,9 @@
                         <div class="controls">
                             <div class="filter">
                                 <div class="select">
-                                    <div class="dropdown_filter_select">
-                                        <label for="order" class="text">
-                                            Order by: <%= data.order[0] %>
+                                    <div class="dropdown_filter_select" data-default="<%= data.order[0] %>">
+                                        <label for="order" class="select-trigger text">
+                                            Order by: <span><%= data.order[0] %></span>
                                         </label>  
                                         <ul class="select-options text">
                                             <% data.order.forEach(o => { %>
@@ -95,12 +95,15 @@
                                                 <%  })%>
                                             </ul>
                                     </div>
-                                    <div class="dropdown_filter_select">
-                                        <select name="platform" id="platform" class="text">
+                                    <div class="dropdown_filter_select" data-default="<%= data.platforms[0] %>">
+                                        <label for="platform" class="select-trigger text">
+                                            Platforms <span><%= data.platforms[0] %></span>
+                                        </label>
+                                        <ul class="select-options text">
                                             <% data.platforms.forEach(p => { %>
-                                                <option value="<%= p %>" class="text"><%= p %></option>
+                                                <li data-value="<%= p %>" class="text"><%= p %></li>
                                                 <%  })%>
-                                        </select>
+                                            </ul>
                                     </div>
                                 </div>
                             </div>
