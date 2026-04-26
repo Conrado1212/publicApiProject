@@ -81,7 +81,7 @@ body{
             background: linear-gradient(90deg,#000, var(--slider), #fafafa); 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        background-clip: text;
+       background-clip: text;
         text-shadow: inset 5px 5px 10px #bebebe;
         }
         .title-logo{
@@ -429,9 +429,21 @@ body.white header .options .mode-content .toggle-sw .moon{
    .hidden{
        display: none;
    }
-.select{
+   .controls{
     margin-top: 1rem;
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-}
+    margin-bottom: 1rem;
+       display: flex;
+       align-items: stretch;
+       .filter{
+        flex: 1 1 auto;
+        .select{
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+        }
+       }
+    .display{
+        flex 0 1 auto;
+        justify-content: flex-end;
+    }
+   }
