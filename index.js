@@ -37,7 +37,7 @@ const data = {
   logo: "PlayFinder",
   title: ['New and trending','Reviews','Last 30 days','Best of the year','Popular in 2025','All time top 250','All Games'],
   sidebar:['Home','Reviews',],
-  order:['Relevance','Date added','Name','Release date','popularity','Average rating'],
+  order:['Relevance','Date added','Name','Release date','Popularity','Average rating'],
   sidebarMenu: [  {
     "title": "New Releases",
     "Name":['Last 30 days','This week','Next week','Release calendar'],
@@ -111,7 +111,7 @@ async function getPlatforms(){
     return null;
   }
 }
-//getPlatforms().then(console.log);
+getPlatforms().then(console.log);
 
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`);

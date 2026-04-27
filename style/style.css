@@ -488,15 +488,17 @@ body.white header .options .mode-content .toggle-sw .moon{
                   margin: 0;
                   width: auto;
                  min-width: 100%;
-                // display: none;
+                 display: none;
                 li{
                     display: block;
                     padding: .5rem 1rem;
                     cursor: pointer;
                     transition: background .2s;
+                 text-transform: uppercase;
+                        letter-spacing: .25rem;
                 }
                 li:hover{
-
+                    -webkit-text-stroke: 1.5px #fafafa;
                 }
                 }
             }
