@@ -111,7 +111,7 @@ async function getPlatforms(){
     return null;
   }
 }
-getPlatforms().then(console.log);
+//getPlatforms().then(console.log);
 
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`);

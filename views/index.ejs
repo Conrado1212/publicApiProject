@@ -89,6 +89,10 @@
                                         <label for="order" class="select-trigger text">
                                             Order by: <span><%= data.order[0] %></span>
                                         </label>  
+                                        <div class="arrow_li">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
                                         <ul class="select-options text">
                                             <% data.order.forEach(o => { %>
                                                 <li data-value="<%= o %>" class="text"><%= o %></li>
@@ -99,6 +103,10 @@
                                         <label for="platform" class="select-trigger text">
                                             Platforms <span><%= data.platforms[0] %></span>
                                         </label>
+                                        <div class="arrow_li">
+                                            <span></span>
+                                            <span></span>
+                                        </div>
                                         <ul class="select-options text">
                                             <% data.platforms.forEach(p => { %>
                                                 <li data-value="<%= p %>" class="text"><%= p %></li>
