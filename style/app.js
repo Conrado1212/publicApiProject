@@ -49,20 +49,21 @@ showMenuu.forEach(menu =>{
     });
 });
 document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
-    const trigger = drop.querySelector('.select-trigger');
+    const open = drop.querySelector('.select-trigger');
+    const trigger = drop.querySelector('.select-trigger span');
     const options = drop.querySelector('.select-options');
     const defaultValue = drop.dataset.default;
 
     trigger.textContent = defaultValue;
 
     //open options
-    trigger.addEventListener('click',()=>{
+    open.addEventListener('click',()=>{
         options.style.display = options.style.display === 'block' ? 'none' : 'block';
     });
 
     options.querySelectorAll('li').forEach(li=>{
         li.addEventListener('click',()=>{
-            trigger.querySelector('span').textContent = li.textContent;
+            trigger.textContent = li.textContent;
             options.style.display = 'none';
         });
     });
