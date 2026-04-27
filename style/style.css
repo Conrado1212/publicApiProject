@@ -447,7 +447,11 @@ body.white header .options .mode-content .toggle-sw .moon{
                 position: relative;
                 display:flex;
                 align-items:center;
+                cursor:pointer;
                 gap:.5rem;
+                label{
+                    cursor: pointer;
+                }
                 .arrow_li {
                     background-color: rgba(255, 255, 255, 0.1);
                     border-radius:.5rem;
@@ -512,7 +516,4 @@ text-shadow: inset 5px 5px 10px #bebebe;
 -webkit-text-stroke: .5px #e8e0f5;
 letter-spacing: 2px;
 font-weight: 500;
-}
-.select-trigger{
-    cursor:pointer;
 }

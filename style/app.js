@@ -49,7 +49,6 @@ showMenuu.forEach(menu =>{
     });
 });
 document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
-    const open = drop.querySelector('.select-trigger');
     const trigger = drop.querySelector('.select-trigger span');
     const options = drop.querySelector('.select-options');
     const defaultValue = drop.dataset.default;
@@ -57,7 +56,7 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
     trigger.textContent = defaultValue;
 
     //open options
-    open.addEventListener('click',()=>{
+    drop.addEventListener('click',()=>{
         options.style.display = options.style.display === 'block' ? 'none' : 'block';
     });
 
