@@ -551,3 +551,6 @@ text-shadow: inset 5px 5px 10px #bebebe;
 letter-spacing: 2px;
 font-weight: 500;
 }
+.discover_columns{
+    grid-template-columns: repeat(4,1fr);
+}
