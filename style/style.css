@@ -507,6 +507,7 @@ body.white header .options .mode-content .toggle-sw .moon{
     .display{
         flex 0 1 auto;
         justify-content: flex-end;
+        align-items: center;
         display: flex;
         .display_mode_title{
             align-items: center;
@@ -520,7 +521,10 @@ body.white header .options .mode-content .toggle-sw .moon{
             .mode-select{
                height: 2.25rem;
                width: 2.25rem;
-               background-image: url("images/puzzle.png");
+               background-image: url("images/grid.png");
+               background-repeat: no-repeat;
+            background-size: 100%;
+            filter:  sepia(1) hue-rotate(200deg) saturate(5);
             }
         }
     }
