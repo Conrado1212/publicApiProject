@@ -165,4 +165,24 @@ async function gameSearch(search){
 
 
 
-//GET  main page -> https://api.rawg.io/api/games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20
+//GET  main page -> 
+
+
+async function main(){
+
+try{
+const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20&key=` + API_KEY);
+
+if (result.status !== 200) {
+  throw new Error(`HTTP error: ${result.status}`);
+} 
+return result.data;
+}catch(e){
+console.error(`Invalid data ${e}`);
+return null;
+}
+}
+//main().then(console.log)
+
+
+//https://api.rawg.io/api/games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20
