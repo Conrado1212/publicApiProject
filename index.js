@@ -167,11 +167,11 @@ async function gameSearch(search){
 
 //GET  main page -> 
 
-
 async function main(){
-
+  let date = new Date();
+const daTeNow = date.toISOString().split("T")[0];
 try{
-const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20&key=` + API_KEY);
+const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=2024-01-01,${daTeNow}&page_size=20&key=` + API_KEY);
 
 if (result.status !== 200) {
   throw new Error(`HTTP error: ${result.status}`);
