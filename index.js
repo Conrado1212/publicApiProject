@@ -71,7 +71,7 @@ const data = {
   subtitle:['Based on player counts and release date'],
   filter:['Revelance', 'Date Added', 'Name', 'Release date', 'Popularity', 'Average rating'],
  // platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
-  platforms: []
+  platforms: {}
 }
 //"Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
 app.get('/', async(req,res)=>{
@@ -104,7 +104,27 @@ async function getPlatforms(){
       'Neo Geo',
       'Web'
     ];
-   data.platforms = result.data.results.map(p=>p.name).filter(name =>!excluded.includes(name));
+
+    const parents  = result.data.results.
+   map(p=>p.name).
+   filter(name =>!excluded.includes(name));
+
+    const all = await axios.get(API_URL + "platforms?key=" + API_KEY);
+
+    const playstation = all.data.results.filter(p =>p.name.includes("PlayStation") && p.name !="PlayStation")
+    .map(p=>p.name);
+   const xbox = all.data.results.filter(p =>p.name.includes("Xbox")  && p.name !="Xbox")
+   .map(p=>p.name);
+
+ // platforms = [...platforms, ...playstation, ...xbox]
+
+  //data.platforms = [...new Set(platforms)];
+
+  data.platforms ={
+    parents,
+    playstation,
+    xbox
+  }
    return data.platforms;
   }catch(e){
     console.error(`Invalid data ${e}`);
@@ -112,6 +132,8 @@ async function getPlatforms(){
   }
 }
 getPlatforms().then(console.log);
+
+
 
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`);

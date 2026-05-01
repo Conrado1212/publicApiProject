@@ -494,7 +494,6 @@ body.white header .options .mode-content .toggle-sw .moon{
                     padding: .5rem 1rem;
                     cursor: pointer;
                     transition: background .2s;
-                 text-transform: uppercase;
                         letter-spacing: .25rem;
                 }
                 li:hover{
