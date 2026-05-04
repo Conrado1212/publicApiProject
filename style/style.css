@@ -495,9 +495,19 @@ body.white header .options .mode-content .toggle-sw .moon{
                     cursor: pointer;
                     transition: background .2s;
                         letter-spacing: .25rem;
+                        position: relative;
                 }
                 li:hover{
                     -webkit-text-stroke: 1.5px #fafafa;
+                }
+                .children{
+                    position: absolute;
+                    z-index: 2;
+                    left: calc(100%-20px);
+                    top: -10px;
+                    opacity: 0;
+                    transition: opacity .3s;
+                    pointer-events: none;
                 }
                 }
             }
