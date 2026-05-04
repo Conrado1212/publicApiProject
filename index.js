@@ -77,6 +77,7 @@ const data = {
 app.get('/', async(req,res)=>{
   try {
     const result = await axios.get(API_URL + "games?key=" + API_KEY);
+    main();
    // console.log(result.data.count);  
   //  console.log("DATA:", data);
     res.render("index.ejs",{ data: data, games: result.data.count});
@@ -131,9 +132,17 @@ async function getPlatforms(){
     return null;
   }
 }
-getPlatforms().then(console.log);
-
-
+getPlatforms().then(data => {
+  data.parents.forEach(p => {
+    console.log(p);
+  });
+});
+getPlatforms().then(data => {
+  
+    console.log(data);
+  
+});
+console.log('parents',data.platforms.parents);
 
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`);
@@ -186,3 +195,6 @@ return null;
 
 
 //https://api.rawg.io/api/games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20
+
+
+//https://api.rawg.io/api/games?key=API_KEY&dates=YYYY-MM-DD,YYYY-MM-DD&ordering=-added
