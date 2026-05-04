@@ -115,7 +115,8 @@
                                                 const children = data.platforms[key];
                                               %>
                                                     <% if (Array.isArray(children) && children.length > 0) { %>
-                                                        <span class="arrow">▶</span>
+                                                        <span class="arrow_child">▶</span>
+                                                        <div class="children"></div>
                                                       <% } %>
                                                 </li>
                                                 <%  })%>
