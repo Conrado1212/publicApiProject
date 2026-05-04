@@ -490,7 +490,9 @@ body.white header .options .mode-content .toggle-sw .moon{
                  min-width: 100%;
                  display: none;
                 li{
-                    display: block;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items:center;
                     padding: .5rem 1rem;
                     cursor: pointer;
                     transition: background .2s;
@@ -505,9 +507,12 @@ body.white header .options .mode-content .toggle-sw .moon{
                     z-index: 2;
                     left: calc(100% - 20px);
                     top: -10px;
-                    opacity: 0;
+                    opacity: 1;
                     transition: opacity .3s;
                     pointer-events: none;
+                    a span{
+                        white-space: pre;
+                    }
                 }
                 }
             }
