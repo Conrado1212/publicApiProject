@@ -109,7 +109,15 @@
                                         </div>
                                         <ul class="select-options text">
                                             <% (data.platforms?.parents || []).forEach(p => { %>
-                                                <li data-value="<%= p %>" class="text"><%= p %></li>
+                                               <li data-value="<%= p %>" class="text"><%= p %>
+                                                <% 
+                                                const key = p.toLowerCase();
+                                                const children = data.platforms[key];
+                                              %>
+                                                    <% if (Array.isArray(children) && children.length > 0) { %>
+                                                        <span class="arrow">▶</span>
+                                                      <% } %>
+                                                </li>
                                                 <%  })%>
                                             </ul>
                                     </div>

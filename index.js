@@ -133,15 +133,21 @@ async function getPlatforms(){
   }
 }
 getPlatforms().then(data => {
-  data.parents.forEach(p => {
-    console.log(p);
+  (data?.parents || []).forEach(p => {
+   const key = p.toLowerCase();
+   console.log('key',key);
+   console.log("Parent", p);
+
+   if(Array.isArray(data[key])){
+     console.log("Dzieci", data[key]);
+   }
   });
 });
-getPlatforms().then(data => {
-  
-    console.log(data);
-  
-});
+// getPlatforms().then(data => {
+//   if(Array.isArray(data['playstation'])){
+//     console.log("Dzieci", data['playstation']);  
+//   }
+// });
 console.log('parents',data.platforms.parents);
 
 app.listen(port,()=>{
