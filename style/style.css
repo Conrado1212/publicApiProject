@@ -503,7 +503,7 @@ body.white header .options .mode-content .toggle-sw .moon{
                 .children{
                     position: absolute;
                     z-index: 2;
-                    left: calc(100%-20px);
+                    left: calc(100% - 20px);
                     top: -10px;
                     opacity: 0;
                     transition: opacity .3s;

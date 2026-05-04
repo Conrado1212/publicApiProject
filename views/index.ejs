@@ -116,7 +116,13 @@
                                               %>
                                                     <% if (Array.isArray(children) && children.length > 0) { %>
                                                         <span class="arrow_child">▶</span>
-                                                        <div class="children"></div>
+                                                        <div class="children">
+                                                           <% children.forEach(c=>{%>
+                                                                <a href="">
+                                                                    <span class="text"><%= c %></span>
+                                                                </a>
+                                                           <%  })    %>
+                                                        </div>
                                                       <% } %>
                                                 </li>
                                                 <%  })%>
