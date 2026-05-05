@@ -148,7 +148,7 @@ getPlatforms().then(data => {
 //     console.log("Dzieci", data['playstation']);  
 //   }
 // });
-console.log('parents',data.platforms.parents);
+//console.log('parents',data.platforms.parents);
 
 app.listen(port,()=>{
     console.log(`App listening on port ${port}`);

@@ -507,7 +507,7 @@ body.white header .options .mode-content .toggle-sw .moon{
                     z-index: 2;
                     left: calc(100% - 20px);
                     top: -10px;
-                    opacity: 1;
+                    opacity: 0;
                     transition: opacity .3s;
                     pointer-events: none;
                     a span{
@@ -544,6 +544,13 @@ background-image:
 linear-gradient(var(--slider) 3px, transparent 3px),
 linear-gradient(90deg, var(--slider) 3px, transparent 3px);
 background-repeat: repeat;
+            }
+            .mode-select.active{
+                box-shadow: inset 5px 5px 10px #fafafa;
+                pointer-events: none;
+                background-image:
+linear-gradient(var(--slider) 3px, transparent 3px),
+linear-gradient(90deg, #fafafa 3px, transparent 3px);
             }
             .mode-select:first-child{
                 background-size: 11.5px 17px;

@@ -2,6 +2,8 @@ const main = document.querySelector('.logo');
 const showMenu = document.querySelector('.discover');
 const showMenuu = document.querySelectorAll('.discover');
 const searchInput = document.querySelector('#search-input');
+const grid = document.querySelector('#grid');
+const column = document.querySelector('#column');
 const modeSw = document.querySelector(".toggle-sw");
 const select = document.querySelector("#select");
 var body = document.querySelector('body');
@@ -73,3 +75,12 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
         }
     });
 });
+
+
+[column,grid].forEach(e=>{
+    e.addEventListener('click',()=>{
+        column.classList.toggle('active');
+        grid.classList.toggle('active');
+    })
+})
+    
