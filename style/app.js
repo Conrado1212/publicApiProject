@@ -59,6 +59,7 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
 
     //open options
     drop.addEventListener('click',()=>{
+        console.log('drop');
         options.style.display = options.style.display === 'block' ? 'none' : 'block';
     });
 
@@ -83,4 +84,16 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
         grid.classList.toggle('active');
     })
 })
-    
+    document.querySelectorAll('.select-options li').forEach(li=>{ 
+        const child = li.querySelector('.children');
+        li.addEventListener('mouseenter',(e)=>{
+           
+            if(child){
+                child.style.opacity ='1';
+            }
+        });
+        li.addEventListener('mouseleave',(e)=>{
+            if(li.contains(e.relatedTarget))return;
+            child.style.opacity ='0';
+        });
+    })
