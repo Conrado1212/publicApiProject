@@ -85,15 +85,19 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
     })
 })
     document.querySelectorAll('.select-options li').forEach(li=>{ 
-        const child = li.querySelector('.children');
+        
         li.addEventListener('mouseenter',(e)=>{
-           
+            const child = li.querySelector('.children');
             if(child){
                 child.style.opacity ='1';
+                child.style.pointerEvents ='auto';
             }
         });
         li.addEventListener('mouseleave',(e)=>{
-            if(li.contains(e.relatedTarget))return;
+            const child = li.querySelector('.children');
+            if(!child) return;
+            if(child && child.contains(e.relatedTarget)) return;
             child.style.opacity ='0';
+            child.style.pointerEvents ='none';
         });
-    })
+    });
