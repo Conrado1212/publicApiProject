@@ -511,7 +511,7 @@ body.white header .options .mode-content .toggle-sw .moon{
                     transition: opacity .3s;
                     pointer-events: none;
                     background: #fafafa;
-                    padding: 1.5rem;
+                    padding: 1rem;
                     border-radius: .5rem;
                     box-shadow: inset 0px 0px 10px Var(--slider);
                     a{
