@@ -135,11 +135,11 @@ async function getPlatforms(){
 getPlatforms().then(data => {
   (data?.parents || []).forEach(p => {
    const key = p.toLowerCase();
-   console.log('key',key);
-   console.log("Parent", p);
+  // console.log('key',key);
+ //  console.log("Parent", p);
 
    if(Array.isArray(data[key])){
-     console.log("Dzieci", data[key]);
+    // console.log("Dzieci", data[key]);
    }
   });
 });
@@ -185,8 +185,9 @@ async function gameSearch(search){
 async function main(){
   let date = new Date();
 const daTeNow = date.toISOString().split("T")[0];
+const startOfYear = `${date.getFullYear()}-01-01`
 try{
-const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=2024-01-01,${daTeNow}&page_size=20&key=` + API_KEY);
+const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=${startOfYear},${daTeNow}&page_size=20&key=` + API_KEY);
 
 if (result.status !== 200) {
   throw new Error(`HTTP error: ${result.status}`);
@@ -197,7 +198,7 @@ console.error(`Invalid data ${e}`);
 return null;
 }
 }
-//main().then(console.log)
+main().then(console.log)
 
 
 //https://api.rawg.io/api/games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20
