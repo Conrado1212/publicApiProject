@@ -519,7 +519,11 @@ body.white header .options .mode-content .toggle-sw .moon{
                         display:block;
                         span{
                             white-space: pre;
+                            font-weight: 800;
                         }
+                    }
+                    a:hover span{
+                        -webkit-text-stroke: 1.5px var(--slider);
                     }
                     a:not(:last-child){
                         margin-bottom:1rem;
