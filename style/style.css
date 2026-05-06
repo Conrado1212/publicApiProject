@@ -612,7 +612,15 @@ font-weight: 500;
             top: 0;
         }
         .card_info{
-            
+            padding: 1rem 1rem 2rem;
+            .info_platforms"{
+                display: flex;
+                flex: 1 1 auto;
+                justyfy-content:flex-start;
+            }
         }
     }
 }
+/* .discover-columns__column>*+* {
+    margin-top: 24px;
+} */
