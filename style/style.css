@@ -510,8 +510,19 @@ body.white header .options .mode-content .toggle-sw .moon{
                     opacity: 0;
                     transition: opacity .3s;
                     pointer-events: none;
-                    a span{
-                        white-space: pre;
+                    background: #fafafa;
+                    padding: 1.5rem;
+                    border-radius: .5rem;
+                    box-shadow: inset 0px 0px 10px Var(--slider);
+                    a{
+                        text-decoration: none;
+                        display:block;
+                        span{
+                            white-space: pre;
+                        }
+                    }
+                    a:not(:last-child){
+                        margin-bottom:1rem;
                     }
                 }
                 }
