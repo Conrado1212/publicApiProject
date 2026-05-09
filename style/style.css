@@ -408,10 +408,10 @@ background: var(--text-color);
        opacity: 0;
        transition: .3s;
    }
-   body.white header .options .mode-content .toggle-sw .sun{
+   body .white header .options .mode-content .toggle-sw .sun{
     opacity:1!important;
 }
-body.white header .options .mode-content .toggle-sw .moon{
+body .white header .options .mode-content .toggle-sw .moon{
     opacity: 0;
 }
    .toggle-sw{

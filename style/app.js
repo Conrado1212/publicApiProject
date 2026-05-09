@@ -16,6 +16,7 @@ main.addEventListener('click',()=>{
 modeSw.addEventListener("click", (e) =>{
     console.log(e.target);
     body.classList.toggle("white");  
+    body.classList.contains('white') ? (document.querySelector('.sun').style.opacity ='1' , document.querySelector('.moon').style.opacity = '0') : (document.querySelector('.sun').style.opacity ='0' , document.querySelector('.moon').style.opacity ='1');
    });
 
 searchInput.addEventListener('focus', () => {
