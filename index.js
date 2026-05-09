@@ -71,7 +71,9 @@ const data = {
   subtitle:['Based on player counts and release date'],
   filter:['Revelance', 'Date Added', 'Name', 'Release date', 'Popularity', 'Average rating'],
  // platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
-  platforms: {}
+  platforms: {},
+  allGames: [],
+  page: 1
 }
 //"Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
 app.get('/', async(req,res)=>{
@@ -183,15 +185,26 @@ async function gameSearch(search){
 //GET  main page -> 
 
 async function main(){
+ 
   let date = new Date();
 const daTeNow = date.toISOString().split("T")[0];
 const startOfYear = `${date.getFullYear()}-01-01`
 try{
-const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=${startOfYear},${daTeNow}&page_size=20&key=` + API_KEY);
+const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=${startOfYear},${daTeNow}&page_size=20&${data.page}&key=` + API_KEY);
 
 if (result.status !== 200) {
   throw new Error(`HTTP error: ${result.status}`);
 } 
+ 
+
+data.allGames = [...data.allGames, ...result.data.results];
+
+
+if(data.next){
+  data.page++;
+}else{
+  console.log("This is the end of data");
+}
 return result.data;
 }catch(e){
 console.error(`Invalid data ${e}`);
@@ -205,3 +218,6 @@ main().then(console.log)
 
 
 //https://api.rawg.io/api/games?key=API_KEY&dates=YYYY-MM-DD,YYYY-MM-DD&ordering=-added
+
+
+

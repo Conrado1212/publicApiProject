@@ -101,3 +101,12 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
             child.style.pointerEvents ='none';
         });
     });
+
+
+    window.addEventListener("scroll",()=>{
+
+        //check
+        if(window.innerHeight + window.scrollY >= document.body.offsetHeight){
+            main();
+        }
+    });
