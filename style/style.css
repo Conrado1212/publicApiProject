@@ -16,17 +16,24 @@
     --font-h: 1.75rem;
     --font-xl: 4.5rem;
     --slider: #8e79a7;
+    --fullblack: #000;
+    --b1 :#0a0a0a;
+    --b2 :#111111;
+    --b3 :#1a1a1a;
+    --b4 :#1f1f1f;
+    --b5 :#262626;
+    --b6 :#2e2e2e;
 }
 body{
     background: linear-gradient(
         65deg,
-        #000 0%,        
-        #0a0a0a 15%,       
-        #111111 30%,      
-        #1a1a1a 45%,       
-        #1f1f1f 60%,      
-        #262626 80%,     
-        #2e2e2e 100%
+        var(--fullblack) 0%,        
+        var(--b1) 15%,       
+        var(--b2) 30%,      
+        var(--b3) 45%,       
+        var(--b4) 60%,      
+        var(--b5) 80%,     
+        var(--b6) 100%
       );
       background-size: 200% 200%;
       animation: gradientMove 10s ease infinite;
@@ -35,6 +42,13 @@ body{
 }
 .white{
     --white: #000;
+    --fullblack: #fff;
+    --b1: #F5F5F5;
+    --b2: #EEEEEE;
+    --b3: #E5E5E5;
+    --b4: #E0E0E0;
+    --b5: #D9D9D9;
+    --b6: #D1D1D1;
 }
 @keyframes gradientMove {
     0%   { background-position: 0% 0%; }
