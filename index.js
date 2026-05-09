@@ -214,6 +214,13 @@ return null;
 main().then(console.log)
 
 
+app.get("/api/games", async (req, res) => {
+  const result = await main();
+  res.json(result);
+});
+
+
+
 //https://api.rawg.io/api/games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20
 
 

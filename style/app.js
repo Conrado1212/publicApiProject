@@ -13,8 +13,9 @@ main.addEventListener('click',()=>{
 })
 
 
-modeSw.addEventListener("click", () =>{
-    body.classList.toggle("white");
+modeSw.addEventListener("click", (e) =>{
+    console.log(e.target);
+    body.classList.toggle("white");  
    });
 
 searchInput.addEventListener('focus', () => {
@@ -103,10 +104,13 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
     });
 
 
+async function loadMore(){
+    const res = await fetch("/api/games");
+    //const data = await res.json(); 
+}
     window.addEventListener("scroll",()=>{
-
         //check
-        if(window.innerHeight + window.scrollY >= document.body.offsetHeight){
-            main();
+        if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 ){
+            loadMore();
         }
     });
