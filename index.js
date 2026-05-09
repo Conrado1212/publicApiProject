@@ -73,7 +73,8 @@ const data = {
  // platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
   platforms: {},
   allGames: [],
-  page: 1
+  page: 1,
+  pageSize: 20
 }
 //"Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
 app.get('/', async(req,res)=>{
@@ -190,22 +191,22 @@ async function main(){
 const daTeNow = date.toISOString().split("T")[0];
 const startOfYear = `${date.getFullYear()}-01-01`
 try{
-const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=${startOfYear},${daTeNow}&page_size=20&${data.page}&key=` + API_KEY);
+const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=${startOfYear},${daTeNow}&page_size=${data.pageSize}&page=${data.page}&key=` + API_KEY);
 
 if (result.status !== 200) {
   throw new Error(`HTTP error: ${result.status}`);
 } 
  
+data.allGames = result.data.results;
 
-data.allGames = [...data.allGames, ...result.data.results];
+data.pageSize += 20;
 
+return {
+ results: result.data.results, 
+ fetched: result.data.results.length,
+ count: result.data.count
+};
 
-if(data.next){
-  data.page++;
-}else{
-  console.log("This is the end of data");
-}
-return result.data;
 }catch(e){
 console.error(`Invalid data ${e}`);
 return null;
