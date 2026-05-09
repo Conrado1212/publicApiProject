@@ -420,6 +420,7 @@ body.white header .options .mode-content .toggle-sw .moon{
        justify-content: center;
        transition: .3s;
        position: relative;
+       gap: .25rem;
        }
    }
    ._31::before{
