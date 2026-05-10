@@ -103,9 +103,13 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
             child.style.pointerEvents ='none';
         });
     });
+
+
+
+
 let size = 20;
-
-
+let fetched = size;
+let page = 1;
 async function loadMore(){
     const res = await fetch(`/api/games?pageSize=${size}`);
     const data = await res.json(); 

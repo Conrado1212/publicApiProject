@@ -214,7 +214,8 @@ data.allGames = result.data.results;
 return {
  results: result.data.results, 
  fetched: result.data.results.length,
- count: result.data.count
+ count: result.data.count,
+ next: result.data.next
 };
 
 }catch(e){
@@ -222,12 +223,12 @@ console.error(`Invalid data ${e}`);
 return null;
 }
 }
-main(20,1).then(console.log)
+main(100,2).then(console.log)
 
 
 app.get("/api/games", async (req, res) => {
   const {pageSize} = req.query;
-  console.log('req.query ',req.query);
+ // console.log('req.query ',req.query);
   const result = await main(Number(pageSize));
   res.json(result);
 });
@@ -241,3 +242,4 @@ app.get("/api/games", async (req, res) => {
 
 
 
+/// idziemy po stronie 
