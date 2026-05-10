@@ -103,15 +103,17 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
             child.style.pointerEvents ='none';
         });
     });
+let size = 30;
 
 
-async function loadMore(){
-    const res = await fetch("/api/games");
-    //const data = await res.json(); 
+async function loadMore(size){
+    const res = await fetch(`/api/games?pageSize=${size}`);
+    const data = await res.json(); 
+    console.log(data);
 }
     window.addEventListener("scroll",()=>{
         //check
         if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 ){
-            loadMore();
+            loadMore(size);
         }
     });
