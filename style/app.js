@@ -108,18 +108,18 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
 
 
 let size = 20;
-let fetched = size;
+
 let page = 1;
 async function loadMore(){
-    const res = await fetch(`/api/games?pageSize=${size}`);
+    const res = await fetch(`/api/games?page=${page}`);
     const data = await res.json(); 
     
-    if(size >= data.count){
+    if(!data.next){
         console.log("No more data");
         return;
     }
-    size +=20;
-    console.log(size);
+    page++;
+    console.log(page);
     console.log(data);
 }
     window.addEventListener("scroll",()=>{

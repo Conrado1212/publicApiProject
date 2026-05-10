@@ -195,7 +195,7 @@ async function gameSearch(search){
 
 //GET  main page -> 
 
-async function main(pageSize = 20,page = 1   ){
+async function main(page = 1,pageSize = 20 ){
  
   let date = new Date();
 const daTeNow = date.toISOString().split("T")[0];
@@ -223,13 +223,13 @@ console.error(`Invalid data ${e}`);
 return null;
 }
 }
-main(100,2).then(console.log)
+main(1,20).then(console.log)
 
 
 app.get("/api/games", async (req, res) => {
   const {pageSize} = req.query;
  // console.log('req.query ',req.query);
-  const result = await main(Number(pageSize));
+  const result = await main(Number(page));
   res.json(result);
 });
 
