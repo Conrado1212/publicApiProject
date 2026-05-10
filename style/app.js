@@ -110,17 +110,23 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
 let size = 20;
 
 let page = 1;
+let loading = false;
 async function loadMore(){
+    if(loading)return;
+    loading = true;
     const res = await fetch(`/api/games?page=${page}`);
     const data = await res.json(); 
-    
-    if(!data.next){
+    console.log(page);
+    console.log("RAW data:", data, "type:", typeof data);
+   // console.log(data.next);
+    if(!data?.next === null){
         console.log("No more data");
+        loading = false;
         return;
     }
+    //console.log("Next page", data.next);
     page++;
-    console.log(page);
-    console.log(data);
+    loading = false;
 }
     window.addEventListener("scroll",()=>{
         //check

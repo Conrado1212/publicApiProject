@@ -227,7 +227,7 @@ main(1,20).then(console.log)
 
 
 app.get("/api/games", async (req, res) => {
-  const {pageSize} = req.query;
+  const {page} = req.query;
  // console.log('req.query ',req.query);
   const result = await main(Number(page));
   res.json(result);
