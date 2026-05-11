@@ -243,3 +243,7 @@ app.get("/api/games", async (req, res) => {
 
 
 /// idziemy po stronie 
+
+let xd  = ['','',1212,43243];
+const dd = xd.join(';');
+console.log(dd);
