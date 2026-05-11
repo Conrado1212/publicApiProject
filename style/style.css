@@ -673,6 +673,21 @@ font-weight: 500;
                
                 box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),inset 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 10px rgba(207, 210, 218, 0.8);
             }
+            .card_about{
+                list-style: none;
+                margin-top: .5rem;
+                display: none;
+                .card_about_info{
+                    display: flex;
+                    justify-content:space-between;
+                    border-bottom: 
+                }
+                .card_about_info:not(:last-child){
+                   padding-bottom: 1rem;
+                   border-bottom: 1px solid hsla(0, 0%, 100%, .07);
+                    }
+                }
+            }
         }
         }
-    }
+    
