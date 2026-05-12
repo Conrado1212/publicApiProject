@@ -690,4 +690,15 @@ font-weight: 500;
             }
         }
         }
+        .game-card_opened{
+            position: relative;
+            .card_wrapper{
+                position: absolute;
+                left:0;
+                top:0;
+                z-index:6;
+                width: 100%;
+                transform:scale(1.05);
+            }
+        } 
     
