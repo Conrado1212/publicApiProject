@@ -134,3 +134,23 @@ async function loadMore(){
             loadMore();
         }
     });
+
+
+
+    //animate card
+
+    const cards = document.querySelectorAll('.game_card');
+    cards.forEach(card=>{
+        card.addEventListener('mouseenter',()=>{
+            //scale
+            card.style.transform = 'scale(1.1)';
+            //class
+            card.querySelector('.card_about').style.display="block";
+        });
+
+
+        card.addEventListener('mouseleave',()=>{
+            card.style.transform = 'scale(1)';
+            card.querySelector('.card_about').style.display="none";
+        });
+    });
