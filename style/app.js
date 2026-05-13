@@ -143,13 +143,17 @@ async function loadMore(){
     cards.forEach(card=>{
         card.addEventListener('mouseenter',()=>{
             //class
+            console.log(card.offsetHeight);
+            card.style.height = `${card.offsetHeight}px`;
             card.classList.add('game-card_opened');
+         
             card.querySelector('.card_about').style.display="block";
         });
 
 
         card.addEventListener('mouseleave',()=>{
             card.querySelector('.card_about').style.display="none";
+            card.style.height = '';
             card.classList.remove('game-card_opened');
         });
     });
