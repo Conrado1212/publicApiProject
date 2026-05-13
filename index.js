@@ -225,6 +225,14 @@ return null;
 }
 main(1,20).then(console.log)
 
+setTimeout(()=>{
+  for(let i =0;i< data.allGames.length;i++){
+    console.log(`game${i}`, data.allGames[i].background_image);
+  }
+  
+},2000)
+
+
 
 app.get("/api/games", async (req, res) => {
   const {page} = req.query;
@@ -242,8 +250,6 @@ app.get("/api/games", async (req, res) => {
 
 
 
-/// idziemy po stronie 
 
-let xd  = ['','',1212,43243];
-const dd = xd.join(';');
-console.log(dd);
+
+

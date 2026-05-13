@@ -680,7 +680,14 @@ font-weight: 500;
                 .card_about_info{
                     display: flex;
                     justify-content:space-between;
-                    border-bottom: 
+                    .term, .description{
+                        background: linear-gradient(90deg, var(--white), var(--slider), #fafafa);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-shadow: inset 5px 5px 10px #bebebe;
+                        font-weight: 700;
+                    }
                 }
                 .card_about_info:not(:last-child){
                    padding-bottom: 1rem;
@@ -702,6 +709,9 @@ font-weight: 500;
                 transform:scale(1.05);
                 width: 100%;
                 z-index:6;
+            }
+            ul li{
+
             }
         } 
     
