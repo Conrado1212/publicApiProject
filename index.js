@@ -225,12 +225,22 @@ return null;
 }
 main(1,20).then(console.log)
 
-setTimeout(()=>{
-  for(let i =0;i< data.allGames.length;i++){
+setTimeout(() => {
+  for (let i = 0; i < data.allGames.length; i++) {
+
     console.log(`game${i}`, data.allGames[i].background_image);
+
+    const platforms = data.allGames[i].platforms;
+
+    if (Array.isArray(platforms)) {
+      console.log(`platforms${i}:`);
+      platforms.forEach(plat => console.log(plat));
+    } else {
+      console.warn(`platforms${i} is undefined or not an array`);
+    }
+
   }
-  
-},2000)
+}, 2000);
 
 
 
