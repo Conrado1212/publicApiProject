@@ -154,9 +154,19 @@
                                             </div>
                                             <div class="card_info">
                                                 <div class="info_platforms">
+                                                    <%
+const platformMap = {
+  pc: "PC",
+  ps5: "PlayStation 5",
+  ps4: "PlayStation 4",
+  xbox: "Xbox Series X/S",
+  xboxOne: "Xbox One",
+  switch: "Nintendo Switch"
+};
+%>
                                                     <%       if (Array.isArray(game.platforms)) {   %>
                                                         <%    game.platforms.forEach(plat =>{ %>
-                                                            <p>test</p>
+                                                            <p><%= platformMap[plat.platform.name] || plat.platform.name %></p> 
                                                             <%   })%>
                                                         <%   } %>
                                                 </div>

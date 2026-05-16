@@ -234,7 +234,7 @@ setTimeout(() => {
 
     if (Array.isArray(platforms)) {
       console.log(`platforms${i}:`);
-      platforms.forEach(plat => console.log(plat));
+      platforms.forEach(plat => console.log('testkk', plat.platform.name));
     } else {
       console.warn(`platforms${i} is undefined or not an array`);
     }
