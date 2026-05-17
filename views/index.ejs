@@ -184,11 +184,16 @@ const platformMap = {
                                                 <ul class="card_about">
                                                     <li class="card_about_info">
                                                         <div class="term">Release date:</div>
-                                                        <div class="description">Apr 14,2026</div>
+                                                        <div class="description"><%= game.released %></div>
                                                     </li>
                                                     <li class="card_about_info">
-                                                        <div class="term">Release date:</div>
-                                                        <div class="description">Apr 14,2026</div>
+                                                        <div class="term">Genres:</div>
+                                                        <div class="description">
+                                                            <%- game.genres
+                                                                     .map(gen => `<span><a href="">${gen.name}</a></span>`)
+                                                                              .join(', ') 
+                                                                                %>
+                                                        </div>
                                                     </li>
                                                     <li class="card_about_info">
                                                         <div class="term">Release date:</div>

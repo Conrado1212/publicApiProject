@@ -231,12 +231,18 @@ setTimeout(() => {
     console.log(`game${i}`, data.allGames[i].background_image);
 
     const platforms = data.allGames[i].platforms;
-
+    const genres = data.allGames[i].genres;
     if (Array.isArray(platforms)) {
       console.log(`platforms${i}:`);
       platforms.forEach(plat => console.log('testkk', plat.platform.name));
     } else {
       console.warn(`platforms${i} is undefined or not an array`);
+    }
+    if (Array.isArray(genres)) {
+      console.log(`gen${i}:`);
+      genres.forEach(gen => console.log('gen: ', gen.name));
+    } else {
+      console.warn(`gen${i} is undefined or not an array`);
     }
 
   }

@@ -644,6 +644,11 @@ font-weight: 500;
                 justify-content:flex-start;
                 gap: .5rem;
                 color:#fafafa;
+                img{
+                    height: auto;
+                    object-fit: cover;
+                    width: 1.5rem;
+                }
             }
             .card_title a {
                 text-decoration: none;
