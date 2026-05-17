@@ -162,7 +162,8 @@ async function loadMore(){
 
     async function loadSimilar(id) {
         const html = await fetch(`/game/${id}/similar`).then(r => r.text());
-        document.querySelector("#main").innerHTML = html;
+        console.log(html);
+      //  document.querySelector("#main").innerHTML = html;
       }
 
 

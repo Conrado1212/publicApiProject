@@ -758,6 +758,11 @@ font-weight: 500;
         background-clip: text;
         text-shadow: inset 5px 5px 10px #bebebe;
         font-weight: 700;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block; 
+    max-width: 80%;
     }
     .arrow{
         position: relative;
