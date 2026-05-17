@@ -223,30 +223,30 @@ console.error(`Invalid data ${e}`);
 return null;
 }
 }
-//main(1,20).then(console.log)
+main(1,20).then(console.log)
 
-// setTimeout(() => {
-//   for (let i = 0; i < data.allGames.length; i++) {
+setTimeout(() => {
+  for (let i = 0; i < data.allGames.length; i++) {
 
-//     console.log(`game${i}`, data.allGames[i].background_image);
+    console.log(`game${i}`, data.allGames[i].background_image);
 
-//     const platforms = data.allGames[i].platforms;
-//     const genres = data.allGames[i].genres;
-//     if (Array.isArray(platforms)) {
-//       console.log(`platforms${i}:`);
-//       platforms.forEach(plat => console.log('testkk', plat.platform.name));
-//     } else {
-//       console.warn(`platforms${i} is undefined or not an array`);
-//     }
-//     if (Array.isArray(genres)) {
-//       console.log(`gen${i}:`);
-//       genres.forEach(gen => console.log('gen: ', gen.name));
-//     } else {
-//       console.warn(`gen${i} is undefined or not an array`);
-//     }
+    const platforms = data.allGames[i].platforms;
+    const genres = data.allGames[i].genres;
+    if (Array.isArray(platforms)) {
+      console.log(`platforms${i}:`);
+      platforms.forEach(plat => console.log('testkk', plat.platform.name));
+    } else {
+      console.warn(`platforms${i} is undefined or not an array`);
+    }
+    if (Array.isArray(genres)) {
+      console.log(`gen${i}:`);
+      genres.forEach(gen => console.log('gen: ', gen.name));
+    } else {
+      console.warn(`gen${i} is undefined or not an array`);
+    }
 
-//   }
-// }, 2000);
+  }
+}, 2000);
 
 
 
