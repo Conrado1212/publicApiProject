@@ -223,30 +223,30 @@ console.error(`Invalid data ${e}`);
 return null;
 }
 }
-main(1,20).then(console.log)
+//main(1,20).then(console.log)
 
-setTimeout(() => {
-  for (let i = 0; i < data.allGames.length; i++) {
+// setTimeout(() => {
+//   for (let i = 0; i < data.allGames.length; i++) {
 
-    console.log(`game${i}`, data.allGames[i].background_image);
+//     console.log(`game${i}`, data.allGames[i].background_image);
 
-    const platforms = data.allGames[i].platforms;
-    const genres = data.allGames[i].genres;
-    if (Array.isArray(platforms)) {
-      console.log(`platforms${i}:`);
-      platforms.forEach(plat => console.log('testkk', plat.platform.name));
-    } else {
-      console.warn(`platforms${i} is undefined or not an array`);
-    }
-    if (Array.isArray(genres)) {
-      console.log(`gen${i}:`);
-      genres.forEach(gen => console.log('gen: ', gen.name));
-    } else {
-      console.warn(`gen${i} is undefined or not an array`);
-    }
+//     const platforms = data.allGames[i].platforms;
+//     const genres = data.allGames[i].genres;
+//     if (Array.isArray(platforms)) {
+//       console.log(`platforms${i}:`);
+//       platforms.forEach(plat => console.log('testkk', plat.platform.name));
+//     } else {
+//       console.warn(`platforms${i} is undefined or not an array`);
+//     }
+//     if (Array.isArray(genres)) {
+//       console.log(`gen${i}:`);
+//       genres.forEach(gen => console.log('gen: ', gen.name));
+//     } else {
+//       console.warn(`gen${i} is undefined or not an array`);
+//     }
 
-  }
-}, 2000);
+//   }
+// }, 2000);
 
 
 
@@ -272,9 +272,32 @@ app.get("/api/games", async (req, res) => {
 app.get("/games/:id/similar", async (req, res) => {
   const id = req.params.id;
 
-  const response = await fetch(`${API_URL}/games/${id}/suggested?key=` + API_KEY);
+  const games = await suggested(id);
 
-  const data = await response.json();
+  if(!games){
+    return res.status(500).send("Error fetching data")
+  }
 
-  res.render("similarGames", { games: data.results });
+ // res.render("similarGames", { games: data.results });
 });
+
+async function suggested(id) {
+  try {
+   
+    const game = await axios.get(`${API_URL}games/${id}?key=${API_KEY}`);
+  //  console.log(game);
+    const tags = game.data.tags.map(t => t.slug).slice(0, 3); // bierzemy 3 najważniejsze tagi
+  //  console.log('tags: ',tags);
+    
+    const result = await axios.get(`${API_URL}games?key=${API_KEY}&tags=${tags.join(",")}&ordering=-rating&page_size=20`);
+
+    const filtered = result.data.results.filter(g => g.id !== id);
+
+    return filtered;
+  } catch (e) {
+    console.error("Error:", e.message);
+    return null;
+  }
+}
+
+//suggested(1).then(console.log);
