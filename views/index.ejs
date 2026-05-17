@@ -156,17 +156,20 @@
                                                 <div class="info_platforms">
                                                     <%
 const platformMap = {
-  pc: "PC",
-  ps5: "PlayStation 5",
-  ps4: "PlayStation 4",
-  xbox: "Xbox Series X/S",
-  xboxOne: "Xbox One",
-  switch: "Nintendo Switch"
+  "PC": "<i class=\"fa-brands fa-windows\"></i>",
+  "PlayStation 5": "<i class=\"fa-brands fa-playstation\"></i>",
+  "PlayStation 4": "<i class=\"fa-brands fa-uncharted\"></i>",
+  "Xbox Series S/X": "<i class=\"fa-brands fa-xbox\"></i>",
+  "Xbox One": '<img class="" src="./images/xboxOne.jpg">',
+  "Nintendo Switch": "<i class=\"fa-solid fa-gamepad\"></i>",
+  "macOS": "<i class=\"fa-brands fa-apple\"></i>",
+  "Linux": "<i class=\"fa-brands fa-linux\"></i>"
+
 };
 %>
                                                     <%       if (Array.isArray(game.platforms)) {   %>
                                                         <%    game.platforms.forEach(plat =>{ %>
-                                                            <p><%= platformMap[plat.platform.name] || plat.platform.name %></p> 
+                                                            <%- platformMap[plat.platform.name] || plat.platform.name %>
                                                             <%   })%>
                                                         <%   } %>
                                                 </div>

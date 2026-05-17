@@ -90,7 +90,7 @@ const data = {
 app.get('/', async(req,res)=>{
   try {
     const result = await axios.get(API_URL + "games?key=" + API_KEY);
-    main();
+    main(1,20);
    // console.log(result.data.count);  
   //  console.log("DATA:", data);
     res.render("index.ejs",{ data: data, games: result.data.count});
