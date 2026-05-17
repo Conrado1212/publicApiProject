@@ -269,3 +269,12 @@ app.get("/api/games", async (req, res) => {
 
 
 
+app.get("/games/:id/similar", async (req, res) => {
+  const id = req.params.id;
+
+  const response = await fetch(`${API_URL}/games/${id}/suggested?key=` + API_KEY);
+
+  const data = await response.json();
+
+  res.render("similarGames", { games: data.results });
+});
