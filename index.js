@@ -269,16 +269,22 @@ app.get("/api/games", async (req, res) => {
 
 
 
-app.get("/games/:id/similar", async (req, res) => {
-  const id = req.params.id;
+app.get("/games-like:slug", async (req, res) => {
+  const slug = req.params.slug;
 
-  const games = await suggested(id);
+  const game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
 
-  if(!games){
+  if(!game){
     return res.status(500).send("Error fetching data")
   }
+  const similar = await suggested(game.data.id);
 
- // res.render("similarGames", { games: data.results });
+
+
+  res.render("gamesLike", {
+     game: game.data,
+     similar
+    });
 });
 
 async function suggested(id) {
