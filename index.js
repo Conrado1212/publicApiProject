@@ -273,9 +273,9 @@ app.get("/api/games", async (req, res) => {
 
 app.get("/games-like-:slug", async (req, res) => {
   const slug = req.params.slug;
-console.log(slug);
+//console.log(slug);
   const game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
-console.log(game);
+//console.log(game);
   if(!game){
     return res.status(500).send("Error fetching data")
   }

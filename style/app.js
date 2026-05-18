@@ -109,7 +109,7 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
 
 let size = 20;
 
-let page = 1;
+let page = 2;
 let loading = false;
 async function loadMore(){
     if(loading)return;
@@ -134,9 +134,6 @@ async function loadMore(){
             loadMore();
         }
     });
-
-
-
     //animate card
 
     const cards = document.querySelectorAll('.game_card');
