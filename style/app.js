@@ -125,6 +125,36 @@ async function loadMore(){
         return;
     }
     //console.log("Next page", data.next);
+    const load = document.getElementById("load");
+
+    for (let i = 0; i < data.results.length; i += 4) {
+        const group = data.results.slice(i, i + 4);
+
+        
+        const col = document.createElement("div");
+        col.classList.add("discover_columns_column");
+
+       
+        group.forEach(game => {
+            col.insertAdjacentHTML(
+                "beforeend",
+                `
+                <div class="game_card">
+                    <div class="card_wrapper" tabindex="0">
+                        <div class="card_media">
+                            <img src="${game.background_image}" alt="">
+                        </div>
+                        <div class="card_info">
+                            <div class="info_platforms"></div>
+                        </div>
+                    </div>
+                </div>
+                `
+            );
+        });
+
+        load.appendChild(col);
+    }
     page++;
     loading = false;
 }
