@@ -1,44 +1,7 @@
 <%- include("header.ejs") %>
     <main>
         <div class="container">
-            <nav>
-                <div class="sidebar">
-                    <% for(let i=0;i<data.sidebar.length;i++){%>
-                    <div class="menu">
-                        <a href=""><%-  data.sidebar[i] %></a>
-                    </div>
-                    <%  }%>
-                    <div class="elements">
-                        <% for(let i=0;i<data.sidebarMenu.length;i++){%>
-                        <div class="sidebar_menu">
-                            <%- data.sidebarMenu[i].mainTitle  ? `<a href="" class="title_menu">${data.sidebarMenu[i].mainTitle}</a>` : '' %>
-                            <span class="title_menu"><%-  data.sidebarMenu[i].title %></span>
-                                <ul class="sidebar_list">
-                                    <% for(let j=0;j<data.sidebarMenu[i].Name.length;j++){%>
-                                    <li class="item <%= j > 2 & i > 1? 'hidden initial-hidden' : '' %>">
-                                         <a href="">
-                                            <%- data.sidebarMenu[i].title === 'Genres' ? `<img class="discover_img" src="${data.sidebarMenu[i].Img[j]}">` : `<i class="fa-solid ${data.sidebarMenu[i].Icon[j]}"></i>`%>                                       
-                                            <%- data.sidebarMenu[i].Name[j] ==="Popular in YEAR" ? data.sidebarMenu[i].Name[j].replace("YEAR", new Date().getFullYear()) : data.sidebarMenu[i].Name[j] %>
-                                        </a>
-                                    </li>
-                                    <%  }%>
-                                    <% if (data.sidebarMenu[i].showAll) { %>
-                                        <li class="show-all">
-                                            <div class="discover">
-                                                <div class="arrow">
-                                                    <span></span>
-                                                    <span></span>
-                                                </div>
-                                                <span class="discover_text">Show All</span>
-                                            </div>
-                                        </li>
-                                    <% } %>
-                                 </ul>
-                      </div>
-                      <%  }%>
-                    </div>
-                </div>
-            </nav>
+            <%- include("nav.ejs") %>
             <div class="content">
                 <div class="content_header">
                     <h1 class="head1"><%-  data.title[0] %></h1>
