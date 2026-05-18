@@ -85,6 +85,7 @@ const data = {
  // platforms: ['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo']
   platforms: {},
   allGames: [],
+  gamesCount:0
 }
 //"Name":['PC', 'PlayStation', 'Xbox', 'iOS', 'Android', 'Apple Macintosh', 'Linux', 'Nintendo'],
 app.get('/', async(req,res)=>{
@@ -93,6 +94,7 @@ app.get('/', async(req,res)=>{
     main(1,20);
    // console.log(result.data.count);  
   //  console.log("DATA:", data);
+    data.gamesCount = result.data.count
     res.render("index.ejs",{ data: data, games: result.data.count});
     }catch(error){
         res.render("index.ejs", { content: JSON.stringify(error.response.data) });
@@ -223,30 +225,30 @@ console.error(`Invalid data ${e}`);
 return null;
 }
 }
-main(1,20).then(console.log)
+//main(1,20).then(console.log)
 
-setTimeout(() => {
-  for (let i = 0; i < data.allGames.length; i++) {
+// setTimeout(() => {
+//   for (let i = 0; i < data.allGames.length; i++) {
 
-    console.log(`game${i}`, data.allGames[i].background_image);
+//     console.log(`game${i}`, data.allGames[i].background_image);
 
-    const platforms = data.allGames[i].platforms;
-    const genres = data.allGames[i].genres;
-    if (Array.isArray(platforms)) {
-      console.log(`platforms${i}:`);
-      platforms.forEach(plat => console.log('testkk', plat.platform.name));
-    } else {
-      console.warn(`platforms${i} is undefined or not an array`);
-    }
-    if (Array.isArray(genres)) {
-      console.log(`gen${i}:`);
-      genres.forEach(gen => console.log('gen: ', gen.name));
-    } else {
-      console.warn(`gen${i} is undefined or not an array`);
-    }
+//     const platforms = data.allGames[i].platforms;
+//     const genres = data.allGames[i].genres;
+//     if (Array.isArray(platforms)) {
+//       console.log(`platforms${i}:`);
+//       platforms.forEach(plat => console.log('testkk', plat.platform.name));
+//     } else {
+//       console.warn(`platforms${i} is undefined or not an array`);
+//     }
+//     if (Array.isArray(genres)) {
+//       console.log(`gen${i}:`);
+//       genres.forEach(gen => console.log('gen: ', gen.name));
+//     } else {
+//       console.warn(`gen${i} is undefined or not an array`);
+//     }
 
-  }
-}, 2000);
+//   }
+// }, 2000);
 
 
 
@@ -269,11 +271,11 @@ app.get("/api/games", async (req, res) => {
 
 
 
-app.get("/games-like:slug", async (req, res) => {
+app.get("/games-like-:slug", async (req, res) => {
   const slug = req.params.slug;
-
+console.log(slug);
   const game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
-
+console.log(game);
   if(!game){
     return res.status(500).send("Error fetching data")
   }
@@ -281,7 +283,8 @@ app.get("/games-like:slug", async (req, res) => {
 
 
 
-  res.render("gamesLike", {
+  res.render("gamesLike.ejs", {
+    data: data,
      game: game.data,
      similar
     });

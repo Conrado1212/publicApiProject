@@ -160,24 +160,9 @@ async function loadMore(){
 
 
 
-    async function loadSimilar(id) {
-        const html = await fetch(`/game/${id}/similar`).then(r => r.text());
-        console.log(html);
-      //  document.querySelector("#main").innerHTML = html;
-      }
+    // async function loadSimilar(id) {
+    //     const html = await fetch(`/game/${id}/similar`).then(r => r.text());
+    //     console.log(html);
+    //   //  document.querySelector("#main").innerHTML = html;
+    //   }
 
-
-      ///<button onclick="loadSimilar(326243)">Games like Prince</button>
-
-
-//       <h2>Similar games</h2>
-
-// <div class="similar-list">
-//   <% games.forEach(g => { %>
-//     <div class="game-card">
-//       <img src="<%= g.background_image %>" alt="">
-//       <h3><%= g.name %></h3>
-//       <p>Rating: <%= g.rating %></p>
-//     </div>
-//   <% }) %>
-// </div>
