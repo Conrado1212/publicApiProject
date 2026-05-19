@@ -136,16 +136,27 @@ async function loadMore(){
 
        
         group.forEach(game => {
+            const imgSrc = game.background_image || "images/No_Image_Available.jpg";
             col.insertAdjacentHTML(
                 "beforeend",
                 `
                 <div class="game_card">
                     <div class="card_wrapper" tabindex="0">
                         <div class="card_media">
-                            <img src="${game.background_image}" alt="">
+                            <img src="${imgSrc}" alt="">
                         </div>
                         <div class="card_info">
-                            <div class="info_platforms"></div>
+                            <div class="info_platforms">
+                            
+                            </div>
+                            <div class="card_title">
+                                <a href="" class="">${game.name}</a>
+                             </div>
+                             <div class="card_button">
+                             <button>
+                                 <i class="fa-solid fa-plus"></i>
+                             </button>
+                         </div>
                         </div>
                     </div>
                 </div>
