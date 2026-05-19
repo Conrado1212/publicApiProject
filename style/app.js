@@ -177,25 +177,45 @@ async function loadMore(){
     });
     //animate card
 
-    const cards = document.querySelectorAll('.game_card');
-    cards.forEach(card=>{
-        card.addEventListener('mouseenter',()=>{
-            //class
-            console.log(card.offsetHeight);
-            card.style.height = `${card.offsetHeight}px`;
-            card.classList.add('game-card_opened');
+    // const cards = document.querySelectorAll('.game_card');
+    // cards.forEach(card=>{
+    //     card.addEventListener('mouseenter',(e)=>{
+    //         //class
+    //         console.log(e.target);
+    //         console.log(card.offsetHeight);
+    //         card.style.height = `${card.offsetHeight}px`;
+    //         card.classList.add('game-card_opened');
          
-            card.querySelector('.card_about').style.display="block";
-        });
+    //         card.querySelector('.card_about').style.display="block";
+    //     });
 
 
-        card.addEventListener('mouseleave',()=>{
-            card.querySelector('.card_about').style.display="none";
-            card.style.height = '';
-            card.classList.remove('game-card_opened');
-        });
+    //     card.addEventListener('mouseleave',()=>{
+    //         card.querySelector('.card_about').style.display="none";
+    //         card.style.height = '';
+    //         card.classList.remove('game-card_opened');
+    //     });
+    // });
+
+   
+    document.addEventListener('mouseover', e => {
+        const card = e.target.closest('.game_card');
+        if (!card) return;
+    
+        card.style.height = `${card.offsetHeight}px`;
+        card.classList.add('game-card_opened');
+        card.querySelector('.card_about').style.display = "block";
     });
-
+    
+    document.addEventListener('mouseout', e => {
+        const card = e.target.closest('.game_card');
+        if (!card) return;
+    
+        card.querySelector('.card_about').style.display = "none";
+        card.style.height = '';
+        card.classList.remove('game-card_opened');
+    });
+    
 
 
     // async function loadSimilar(id) {
