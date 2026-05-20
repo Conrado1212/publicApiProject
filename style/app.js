@@ -167,7 +167,14 @@ async function loadMore(){
                                                             
                                                         </div>
                                                     </li>
-                                                </ul>
+                            </ul>
+                            <div class="more">
+                                                    <a href="/games-like-" class="show_more_like">Show more like this</a>
+                                                    <div class="arrow">
+                                                        <span></span>   
+                                                        <span></span>
+                                                    </div>
+                                                </div>
                              </div>
                         </div>
                     </div>
