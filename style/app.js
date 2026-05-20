@@ -156,7 +156,19 @@ async function loadMore(){
                              <button>
                                  <i class="fa-solid fa-plus"></i>
                              </button>
-                         </div>
+                             <ul class="card_about">
+                                                    <li class="card_about_info">
+                                                        <div class="term">Release date:</div>
+                                                        <div class="description"></div>
+                                                    </li>
+                                                    <li class="card_about_info">
+                                                        <div class="term">Genres:</div>
+                                                        <div class="description">
+                                                            
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -224,3 +236,62 @@ async function loadMore(){
     //   //  document.querySelector("#main").innerHTML = html;
     //   }
 
+
+//min
+function min(a,b){
+   return a > b ? b :a ;
+}
+
+
+
+
+ //   console.log(min(0, 10));
+// → 0
+//console.log(min(0, -10));
+//-10
+
+
+function isEven(a){
+    if(a < 0){
+      a = a*-1
+        return  isEven(a)
+    }
+    if(a == 0){
+        return true;
+    }else if(a === 1){
+        return false
+    }else{
+       return  isEven(a-2)
+      
+    }
+}
+//console.log(isEven(50));
+// → true
+//console.log(isEven(75));
+// → false
+//console.log(isEven(-1));
+// → ??
+function countBs(abc){
+    let count  = 0;
+    const dd = abc.split('');
+    for(let i=0;i<dd.length;i++){
+        if(dd[i]=='B'){
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(countBs("BOB"));
+
+function countChar(abc, char){
+    let count  = 0;
+    const dd = abc.split('');
+    for(let i=0;i<dd.length;i++){
+        if(dd[i]==char){
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countChar("kakkerlak", "k"));
