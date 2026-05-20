@@ -137,6 +137,9 @@ async function loadMore(){
        
         group.forEach(game => {
             const imgSrc = game.background_image || "images/No_Image_Available.jpg";
+            const genre = game.genres
+            .map(gen => `<span><a href="">${gen.name}</a></span>`)
+                     .join(', ') 
             col.insertAdjacentHTML(
                 "beforeend",
                 `
@@ -159,12 +162,12 @@ async function loadMore(){
                              <ul class="card_about">
                                                     <li class="card_about_info">
                                                         <div class="term">Release date:</div>
-                                                        <div class="description"></div>
+                                                        <div class="description">${game.released}</div>
                                                     </li>
                                                     <li class="card_about_info">
                                                         <div class="term">Genres:</div>
                                                         <div class="description">
-                                                            
+                                                        ${genre}
                                                         </div>
                                                     </li>
                             </ul>
