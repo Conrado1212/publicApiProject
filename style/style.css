@@ -25,18 +25,7 @@
     --b6 :#2e2e2e;
 }
 body{
-    background: linear-gradient(
-        65deg,
-        var(--fullblack) 0%,        
-        var(--b1) 15%,       
-        var(--b2) 30%,      
-        var(--b3) 45%,       
-        var(--b4) 60%,      
-        var(--b5) 80%,     
-        var(--b6) 100%
-      );
-      background-size: 200% 200%;
-      animation: gradientMove 10s ease infinite;
+  background:  var(--b3);
     font-family: "Outfit", monospace;
     font-size: 16px;
 }
@@ -50,11 +39,6 @@ body{
     --b5: #D9D9D9;
     --b6: #D1D1D1;
 }
-@keyframes gradientMove {
-    0%   { background-position: 0% 0%; }
-    50%  { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-  }
   header{
     width: calc(100% - 400px);
     position: relative;
@@ -789,3 +773,49 @@ font-weight: 500;
 .more:active {
     transform: scale(0.97);
 }
+.circle_wrapper{
+    margin-top: 1rem;
+    justify-self: center;
+    display: none;
+}
+.circle{ 
+    position: relative;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+   // background: #070709;
+   
+}
+.circle::before{
+    content: '';
+    position: absolute;
+    inset: -2px;
+    filter: blur(1px);
+    opacity: 1;
+background:
+        conic-gradient(
+            transparent 0deg,
+            transparent var(--deg),
+            #fff 360deg
+        );
+        border-radius: 50%; 
+        animation: spin 2s linear infinite;
+    }
+    .circle::after{
+        content: '';
+        position: absolute;
+        inset: 2px;   
+        border-radius: 50%; 
+        background:  var(--b3);
+    }
+    @property --deg{
+        syntax: "<angle>";
+        initial-value: 360deg;
+        inherits: false;
+        }
+        @keyframes spin {
+            to{
+                transform: rotate(360deg);
+                --deg: 0deg;
+            }
+        }

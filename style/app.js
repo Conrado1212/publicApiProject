@@ -188,13 +188,14 @@ async function loadMore(){
 
         load.appendChild(col);
     }
+
     page++;
     loading = false;
 }
     window.addEventListener("scroll",()=>{
         //check
         if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 ){
-            loadMore();
+           loadMore();
         }
     });
     //animate card
