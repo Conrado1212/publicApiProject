@@ -111,9 +111,12 @@ let size = 20;
 
 let page = 2;
 let loading = false;
+const loadCircle = document.querySelector('.circle_wrapper')
 async function loadMore(){
     if(loading)return;
     loading = true;
+    loadCircle.style.display = 'flex';
+    try{
     const res = await fetch(`/api/games?page=${page}`);
     const data = await res.json(); 
     console.log(page);
@@ -190,13 +193,17 @@ async function loadMore(){
     }
 
     page++;
+}finally{
+    loadCircle.style.display ='none';
     loading = false;
+}
+   
 }
     window.addEventListener("scroll",()=>{
         //check
-        if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 ){
-           loadMore();
-        }
+       if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 ){
+          loadMore();
+       }
     });
     //animate card
 
