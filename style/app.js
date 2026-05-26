@@ -201,6 +201,25 @@ async function loadMore(){
 }
    
 }
+//let size = 20;
+
+//let page = 2;
+
+async function filterMain(){
+    if(loading)return;
+    loading = true;
+    try{
+    const res = await fetch(`/api/games?page=${page}`);
+    const data = await res.json(); 
+    console.log("RAW data:", data, "type:", typeof data);
+    }finally{
+        loading = false;
+    }
+}
+
+
+
+
     window.addEventListener("scroll",()=>{
         //check
        if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 ){
