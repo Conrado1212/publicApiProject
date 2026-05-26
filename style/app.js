@@ -66,9 +66,11 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
     });
 
     options.querySelectorAll('li').forEach(li=>{
-        li.addEventListener('click',()=>{
+        li.addEventListener('click',(e)=>{
+            e.stopPropagation();
             trigger.textContent = li.textContent;
             options.style.display = 'none';
+            console.log('options ',options);
         });
     });
 
