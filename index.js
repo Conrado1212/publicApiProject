@@ -91,18 +91,19 @@ const data = {
 app.get('/', async(req,res)=>{
   try {
     const result = await axios.get(API_URL + "games?key=" + API_KEY);
-    main(1,20);
+  const gamesData = await main(1,20,"-relevance");
    // console.log(result.data.count);  
-  //  console.log("DATA:", data);
+  
     data.gamesCount = result.data.count
+
+    data.allGames = gamesData.results
+
+   
+  // console.log("DATA:", data.allGames.length());
     res.render("index.ejs",{ data: data, games: result.data.count});
     }catch(error){
-        res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+        res.render("index.ejs", { content: JSON.stringify(error.response?.data || error) });
     }
-
-    // res.render("index.ejs",{
-    //   data: data
-    // });
 });
 
 async function getPlatforms(){
@@ -197,21 +198,19 @@ async function gameSearch(search){
 
 //GET  main page -> 
 
-async function main(page = 1,pageSize = 20 ){
+async function main(page = 1,pageSize = 20 ,ordering){
  
   let date = new Date();
 const daTeNow = date.toISOString().split("T")[0];
 const startOfYear = `${date.getFullYear()}-01-01`
 try{
-const result  = await axios.get(API_URL + `games?ordering=-relevance&dates=${startOfYear},${daTeNow}&page_size=${pageSize}&page=${page}&key=` + API_KEY);
+const result  = await axios.get(API_URL + `games?ordering=${ordering}&dates=${startOfYear},${daTeNow}&page_size=${pageSize}&page=${page}&key=` + API_KEY);
 
 if (result.status !== 200) {
   throw new Error(`HTTP error: ${result.status}`);
 } 
  
-data.allGames = result.data.results;
-
-//data.pageSize += 20;
+//data.allGames = result.data.results;
 
 return {
  results: result.data.results, 
@@ -310,3 +309,28 @@ async function suggested(id) {
 }
 
 //suggested(1).then(console.log);
+//backend: endpoint /api/games → zwraca JSON
+
+//frontend: fetch('/api/games?filters=...')
+
+//frontend: renderuje HTML dynamicznie
+
+//frontend: aktualizuje URL history.pushState
+
+//Zero reloadów.
+
+
+//Zmiana filtra = zmiana URL = reload = backend pobiera dane = EJS renderuje stronę.
+
+//To też jest poprawne, tylko działa inaczej niż RAWG.
+
+
+// 1. RAWG‑style (SPA)  
+// – dynamiczne filtry
+// – dynamiczne ładowanie
+// – URL tylko odzwierciedla stan
+
+// 2. EJS‑style (SSR)  
+// – reload przy każdej zmianie filtra
+// – backend robi wszystko
+
