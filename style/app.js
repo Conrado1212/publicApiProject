@@ -210,8 +210,10 @@ async function loadMore(){
 async function filterMain(){
     if(loading)return;
     loading = true;
+    const order = document.querySelector('.dropdown_filter_select span').textContent.toLowerCase();
+    const page = 1;
     try{
-    const res = await fetch(`/api/games?page=${page}&ordering=-relevance`);
+    const res = await fetch(`/api/games?page=${page}&ordering=-${order}`);
     const data = await res.json(); 
     console.log("RAW data:", data, "type:", typeof data);
     }finally{
