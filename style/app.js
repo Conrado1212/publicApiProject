@@ -69,6 +69,7 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
         li.addEventListener('click',(e)=>{
             e.stopPropagation();
             trigger.textContent = li.textContent;
+            //dodac wywolanie funkcji 
             options.style.display = 'none';
             console.log('options ',options);
         });
@@ -118,8 +119,9 @@ async function loadMore(){
     if(loading)return;
     loading = true;
     loadCircle.style.display = 'flex';
+    const order = document.querySelector('.dropdown_filter_select span').textContent.toLowerCase();
     try{
-    const res = await fetch(`/api/games?page=${page}`);
+    const res = await fetch(`/api/games?page=${page}&ordering=-${order}`);
     const data = await res.json(); 
     console.log(page);
     console.log("RAW data:", data, "type:", typeof data);
@@ -209,7 +211,7 @@ async function filterMain(){
     if(loading)return;
     loading = true;
     try{
-    const res = await fetch(`/api/games?page=${page}`);
+    const res = await fetch(`/api/games?page=${page}&ordering=-relevance`);
     const data = await res.json(); 
     console.log("RAW data:", data, "type:", typeof data);
     }finally{

@@ -252,9 +252,11 @@ return null;
 
 
 app.get("/api/games", async (req, res) => {
-  const {page} = req.query;
+  const {page, ordering} = req.query;
+  console.log("page", page);
+  console.log("ordering", ordering);
  // console.log('req.query ',req.query);
-  const result = await main(Number(page));
+  const result = await main(Number(page),ordering);
   res.json(result);
 });
 
