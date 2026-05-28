@@ -212,6 +212,7 @@ async function filterMain(){
     loading = true;
     const order = document.querySelector('.dropdown_filter_select span').textContent.toLowerCase();
     const page = 1;
+    const platform = '';
     try{
     const res = await fetch(`/api/games?page=${page}&ordering=-${order}`);
     const data = await res.json(); 
