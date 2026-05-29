@@ -339,3 +339,43 @@ function countChar(abc, char){
     return count;
 }
 console.log(countChar("kakkerlak", "k"));
+
+
+
+
+function getWiderAspectRatio(a, b) {
+  const [w1, h1] = a.split('x').map(Number);
+  const [w2, h2] = b.split('x').map(Number);
+   
+let w,h;
+let ratioW, ratioH;
+if(w1/h1 > w2/h2){
+    w = w1;
+    h = h1;
+     ratioW = w1;
+     ratioH = h1;
+}else{
+    w = w2;
+    h = h2;
+     ratioW = w2;
+     ratioH = h2;
+}
+
+let reszta  = w % h ;
+
+       while(reszta !== 0){
+         w = h
+        
+         h = reszta
+        
+         reszta = w % h
+       }
+    
+    const nwd  = h
+    
+   
+  
+
+    return `${ratioW / nwd}:${ratioH /nwd}`;
+  }
+  getWiderAspectRatio("1080x1350", "2048x1536")
