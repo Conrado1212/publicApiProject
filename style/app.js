@@ -140,13 +140,24 @@ async function loadMore(){
         
         const col = document.createElement("div");
         col.classList.add("discover_columns_column");
+        const platformMap = {
+            "PC": "<i class=\"fa-brands fa-windows\"></i>",
+                "PlayStation 5": "<i class=\"fa-brands fa-playstation\"></i>",
+                     "PlayStation 4": "<i class=\"fa-brands fa-uncharted\"></i>",
+                         "Xbox Series S/X": "<i class=\"fa-brands fa-xbox\"></i>",
+                             "Xbox One": '<img class="" src="./images/xboxOne.jpg">',
+                             "Nintendo Switch": "<i class=\"fa-solid fa-gamepad\"></i>",
+                                 "macOS": "<i class=\"fa-brands fa-apple\"></i>",
+                                    "Linux": "<i class=\"fa-brands fa-linux\"></i>"
 
+                                        };
        
         group.forEach(game => {
             const imgSrc = game.background_image || "images/No_Image_Available.jpg";
             const genre = game.genres
             .map(gen => `<span><a href="">${gen.name}</a></span>`)
                      .join(', ') 
+                     const platform = (game.platforms ?? []).map(plat => platformMap[plat?.platform?.name]).filter(Boolean).join(" ");
             col.insertAdjacentHTML(
                 "beforeend",
                 `
@@ -157,7 +168,7 @@ async function loadMore(){
                         </div>
                         <div class="card_info">
                             <div class="info_platforms">
-                            
+                                    ${platform}
                             </div>
                             <div class="card_title">
                                 <a href="" class="">${game.name}</a>
