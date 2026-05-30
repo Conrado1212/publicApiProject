@@ -411,6 +411,8 @@ cards?.forEach(card =>{
 const pary = Object.values(rangs).filter(v => v === 2);
 const rankOrder = ['2','3','4','5','6','7','8','9','T','J','Q','K','A'];
 const pattern = rankOrder.map(r => rangs[r] > 0 ? 'X' : '_').join('');
+const faceRanks = ['A', 'K', 'Q', 'J', 'T'];
+const isRoyal   = faceRanks.every( d => rangs[d] === 1) && Object.values(color).includes(5);
 const isStraight =
     pattern.includes("XXXXX") || (rangs['A'] && rangs['2'] && rangs['3'] && rangs['4'] && rangs['5']);
 if(Object.values(rangs).includes(3) && !Object.values(rangs).includes(2)){
@@ -419,6 +421,8 @@ if(Object.values(rangs).includes(3) && !Object.values(rangs).includes(2)){
     return 'Four of a Kind';
 }else if(Object.values(rangs).includes(3) && Object.values(rangs).includes(2)){
     return 'Full House';
+}else if(isRoyal){
+    return 'Royal Flush';
 }else if(isStraight && Object.values(color).includes(5)){
     return 'Straight Flush';
 }else if(pary.length === 2){
@@ -435,7 +439,7 @@ if(Object.values(rangs).includes(3) && !Object.values(rangs).includes(2)){
 
 
   }
-  getBestHand(["9c", "8c", "7c", "6c", "5c"])
+  //getBestHand(["9c", "8c", "7c", "6c", "5c"])
   //getBestHand(["7s", "7h", "7d", "2c", "5h"]);
 
   //getBestHand(["Ks", "Kh", "Kd", "4s", "4h"])
