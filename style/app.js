@@ -390,3 +390,56 @@ let reszta  = w % h ;
     return `${ratioW / nwd}:${ratioH /nwd}`;
   }
   getWiderAspectRatio("1080x1350", "2048x1536")
+
+
+
+
+  function getBestHand(cards) {
+let  rangs = {'2':0,'3':0,'4':0,'5':0,'6':0,'7':0,'8':0,'9':0,'T':0,'J':0,'Q':0,'K':0,'A':0};
+let  color = {'h':0,'d':0,'c':0,'s':0};
+
+cards?.forEach(card =>{
+    if(card.slice(0,-1) in  rangs){
+        rangs[card.slice(0,-1)]++;
+    }
+   console.log(card.slice(-1));
+    if(card.slice(-1) in color){
+        color[card.slice(-1)]++;
+    }
+});
+
+const pary = Object.values(rangs).filter(v => v === 2);
+const rankOrder = ['2','3','4','5','6','7','8','9','T','J','Q','K','A'];
+const pattern = rankOrder.map(r => rangs[r] > 0 ? 'X' : '_').join('');
+const isStraight =
+    pattern.includes("XXXXX") || (rangs['A'] && rangs['2'] && rangs['3'] && rangs['4'] && rangs['5']);
+if(Object.values(rangs).includes(3) && !Object.values(rangs).includes(2)){
+    return 'Three of a Kind';
+}else if(Object.values(rangs).includes(4)){
+    return 'Four of a Kind';
+}else if(Object.values(rangs).includes(3) && Object.values(rangs).includes(2)){
+    return 'Full House';
+}else if(isStraight && Object.values(color).includes(5)){
+    return 'Straight Flush';
+}else if(pary.length === 2){
+    return 'Two Pair';
+}else if(pary.length === 1){
+    return 'Pair';
+}else if(Object.values(color).includes(5)){
+    return 'Flush';
+}else if(isStraight){
+    return "Straight";
+}else{
+    return "High Card";
+}
+
+
+  }
+  getBestHand(["9c", "8c", "7c", "6c", "5c"])
+  //getBestHand(["7s", "7h", "7d", "2c", "5h"]);
+
+  //getBestHand(["Ks", "Kh", "Kd", "4s", "4h"])
+
+  //getBestHand(["2h", "5h", "7h", "9h", "Jh"])
+
+  //getBestHand(["Ts", "Th", "9d", "9c", "8h"])
