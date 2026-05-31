@@ -447,3 +447,73 @@ if(Object.values(rangs).includes(3) && !Object.values(rangs).includes(2)){
   //getBestHand(["2h", "5h", "7h", "9h", "Jh"])
 
   //getBestHand(["Ts", "Th", "9d", "9c", "8h"])
+
+  function getCombinations(n) {
+        let result  =[];
+        
+        function helper(open=0,close=0,current=""){
+            if(current.length === n*2){
+                result.push(current);
+                return;
+            }
+            if(open < n){
+                helper(open+1,close,current +"(");
+            }
+            if(close < open){
+                helper(open,close+1,current +")")
+            }
+        }
+   
+        helper()
+    return result.length;
+  }
+
+  //getCombinations(2);
+
+  //getCombinations(3)
+
+
+  function isBalanced(s) {
+      const samo =['a','e','i','o','u']
+        const chasr = s.split("");
+
+
+        if(chasr.length %2 === 1){
+            const mid  = Math.floor(chasr.length/2);
+            chasr.splice(mid, 1);
+        }
+        
+        const left = chasr.slice(0,chasr.length/2)
+
+        const right = chasr.slice(chasr.length/2);
+     console.log(left);
+     console.log(right);
+      const countVolwels  = arr => arr.filter(ch => samo.includes(ch.toLowerCase())).length;
+      
+    return countVolwels(left) === countVolwels(right);
+  }
+
+  isBalanced("Lorem Ipsum")
+  //isBalanced("racecar")
+
+
+  function isValidNumber(n, base) {
+    const chasr = n.toUpperCase().split("");
+    const char  = {'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'A':10,'B':11,
+'C':12,'D':13,'E':14,'F':15,'G':16,'H':17,'I':18,'J':19,'K':20,'L':21,'M':22,'N':23,'O':24,'P':25,'Q':26,'R':27,'S':28,'T':29,'U':30,'V':31,
+'W':32,'X':33,'Y':34,'Z':35}
+
+
+for(const h of chasr){
+   // console.log(char[h])
+    if(!(h in char)){
+        return false;
+    }
+    if(char[h] >= base){
+        return false
+    }
+}
+return true;
+  }
+
+  isValidNumber("10101", 2)
