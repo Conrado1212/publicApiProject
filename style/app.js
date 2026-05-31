@@ -517,3 +517,31 @@ return true;
   }
 
   isValidNumber("10101", 2)
+
+  function fibonacciSequence(startSequence, length) {
+      let result =[...startSequence]
+      if(length === 1){
+        result.splice(1);
+      }else if(length===0){
+          result = [];
+      }
+      while(result.length !== length){
+        result.push(result[result.length-1]+result[result.length-2])
+      }
+   
+    return result;
+  }
+
+  //fibonacciSequence([0, 1], 20)
+
+  //fibonacciSequence([21, 32], 1)
+
+
+
+  function spaceJam(s) {
+    console.log(JSON.stringify(s));
+    return  s.toUpperCase().split('').join(' ');
+   
+  }
+
+  spaceJam("freeCodeCamp")
