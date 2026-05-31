@@ -313,26 +313,6 @@ async function suggested(id) {
 //suggested(1).then(console.log);
 //backend: endpoint /api/games → zwraca JSON
 
-//frontend: fetch('/api/games?filters=...')
-
-//frontend: renderuje HTML dynamicznie
-
-//frontend: aktualizuje URL history.pushState
-
-//Zero reloadów.
 
 
-//Zmiana filtra = zmiana URL = reload = backend pobiera dane = EJS renderuje stronę.
-
-//To też jest poprawne, tylko działa inaczej niż RAWG.
-
-
-// 1. RAWG‑style (SPA)  
-// – dynamiczne filtry
-// – dynamiczne ładowanie
-// – URL tylko odzwierciedla stan
-
-// 2. EJS‑style (SSR)  
-// – reload przy każdej zmianie filtra
-// – backend robi wszystko
 
