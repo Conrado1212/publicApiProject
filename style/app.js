@@ -569,4 +569,52 @@ return true;
   }
   //areAnagrams("listen", "silent")
 
-  areAnagrams("School master", "The classroom")
+  //areAnagrams("School master", "The classroom")
+
+
+  //snippett
+
+
+  // 1. Namespace 
+window.Conrado = window.Conrado || {};
+
+// 2. Moduł odpowiedzialny za zmianę kontrolki
+window.Conrado.controlEnhancer = {
+    initialized: false,
+    observer: null,
+
+    init() {
+        if (this.initialized) return;
+        this.initialized = true;
+
+       
+        const ctrl = document.querySelector('[data-control-id="xdfdddd"]');
+        if (!ctrl) return;
+
+        ctrl.placeholder = "dddddd";
+
+      
+        ctrl.addEventListener("input", () => {
+            console.log("Change value:", ctrl.value);
+        });
+
+       
+        const list = document.querySelector('#grid_12345');
+        if (!list) return;
+
+        this.observer = new MutationObserver(mutations => {
+            console.log("mutation");
+        });
+
+        this.observer.observe(list, { childList: true, subtree: true });
+    },
+    stop(){
+        if(this.observer){
+            this.observer.disconnect();
+        }
+        this.initialized = false;
+    }
+};
+
+
+window.Conrado.controlEnhancer.init();
