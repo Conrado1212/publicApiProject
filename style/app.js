@@ -618,3 +618,22 @@ window.Conrado.controlEnhancer = {
 
 
 window.Conrado.controlEnhancer.init();
+
+
+
+function findTarget(arr, target) {
+    for(let i=0;i<arr.length;i++){
+        for(let j=i+1;j<arr.length;j++){
+            console.log(i ,'', j);
+            if(arr[i] + arr[j] === target){
+                return [i,j]
+            }
+        }
+    }
+    return "Target not found"
+  }
+  //findTarget([3, 2, 4, 5], 6)
+
+  //findTarget([2, 7, 11, 15], 9)
+
+ // findTarget([1, 3, 5, 7], 14)
