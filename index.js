@@ -47,7 +47,7 @@ const storage = multer.diskStorage({
 
 const data = {
   logo: "PlayFinder",
-  title: ['New and trending','Reviews','Last 30 days','Best of the year','Popular in 2025','All time top 250','All Games'],
+  title: ['New and trending','Games like','Last 30 days','Best of the year','All time top 250','All Games'],
   sidebar:['Home','Reviews',],
   order:['Relevance','Date added','Name','Release date','Popularity','Average rating'],
   sidebarMenu: [  {

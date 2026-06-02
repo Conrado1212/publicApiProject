@@ -540,8 +540,33 @@ return true;
 
   function spaceJam(s) {
     console.log(JSON.stringify(s));
-    return  s.toUpperCase().split('').join(' ');
+    return  s.replace(/ /g, '').toUpperCase().split('').join('  ');
    
   }
 
-  spaceJam("freeCodeCamp")
+  //spaceJam("freeCodeCamp")
+
+  function jbelmu(text) {
+    const ttt = text.split(' ');
+    let result =[];
+    ttt.forEach(t =>{
+     if(t.length > 2){
+      let xd =  t[0]+ t.slice(1,-1).split('').sort().join('') + t[t.length-1];
+        result.push(xd);
+     }else{
+         result.push(t);
+     }
+    })
+   return result.join(' ');
+  }
+
+ // jbelmu("hello world")
+
+
+ function areAnagrams(str1, str2) {
+
+    return str1.toLowerCase().split('').sort().join('')  === str2.toLowerCase().split('').sort().join('');
+  }
+  //areAnagrams("listen", "silent")
+
+  areAnagrams("School master", "The classroom")
