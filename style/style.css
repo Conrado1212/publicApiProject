@@ -823,3 +823,28 @@ background:
                 --deg: 0deg;
             }
         }
+        .flex{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+        }
+        .game_name{
+            background: hsla(0, 0%, 100%, .08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            height: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: inset 5px 5px 10px var(--slider);
+            p{
+                background: linear-gradient(90deg, var(--white), #ffffff29);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                text-shadow: inset 5px 5px 10px #bebebe;
+                font-weight: 900;
+                font-size: var(--font-m);
+            }
+        }
