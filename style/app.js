@@ -632,8 +632,84 @@ function findTarget(arr, target) {
     }
     return "Target not found"
   }
-  //findTarget([3, 2, 4, 5], 6)
+  //findTarget([3, 2, 4, 5], 6)  
 
   //findTarget([2, 7, 11, 15], 9)
 
  // findTarget([1, 3, 5, 7], 14)
+
+
+ function factorial(n) {
+     let fac =1
+        for(let i =1;i<=n;i++){
+                   fac = fac *i;        
+        }
+    
+    return fac;
+  }
+
+  //factorial(5)
+
+  function sumOfSquares(n) {
+    let sum = 0;
+    for(let i =1;i<=n;i++){
+        sum +=i**2; 
+        console.log(sum);
+    }
+    return sum;
+  }
+
+  //sumOfSquares(5)
+
+  function squaresWithThree(n) {
+    let result = [];
+    for(let i =1;i<=n;i++){
+        const square  = i*i;
+        if(square.toString().includes(3)){
+            result.push(square);
+        }
+    }
+    return result.length;
+  };
+
+  function milePace(miles, duration) {
+    const [min,sec] = duration.split(':').map(Number)
+    const totalMIn = min * 60 + sec;
+    const seconds = totalMIn /miles;
+
+    const mins = Math.floor(seconds/ 60).toString().padStart(2, "0");
+    const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
+
+    return `${mins}:${secs}`;
+   
+  }
+  //milePace(3, "24:00")
+
+  function decode(message, shift) {
+    const alphabetArray = [
+        "A","B","C","D","E","F","G","H","I","J","K","L","M",
+        "N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
+      ];
+      let result = ""
+      const orginal = message.split('');
+      const texzt  = message.toUpperCase().split('');
+     
+          for(let i=0;i<texzt.length;i++){
+              if(!alphabetArray.includes(texzt[i])){
+                result +=texzt[i];
+                continue;
+              }
+                const index  = (alphabetArray.indexOf(texzt[i])-shift + alphabetArray.length) % alphabetArray.length;
+                let decoded = alphabetArray[index];
+
+                if (orginal[i] === orginal[i].toLowerCase()) {
+                    decoded = decoded.toLowerCase();
+                  }
+              result +=decoded;
+          }
+    
+      
+    return result;
+  }
+  //decode("Byffi Qilfx!", 20)
+  //decode("Xlmw mw e wigvix qiwweki.", 4)
