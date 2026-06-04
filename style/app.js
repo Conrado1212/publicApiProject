@@ -516,7 +516,7 @@ for(const h of chasr){
 return true;
   }
 
-  isValidNumber("10101", 2)
+  //isValidNumber("10101", 2)
 
   function fibonacciSequence(startSequence, length) {
       let result =[...startSequence]

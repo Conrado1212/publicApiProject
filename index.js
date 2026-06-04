@@ -283,8 +283,9 @@ app.get("/games-like-:slug", async (req, res) => {
   const similar = await suggested(game.data.id);
 
 
-
+  //console.log(similar);
   res.render("gamesLike.ejs", {
+    name: slug,
     data: data,
      game: game.data,
      similar
@@ -296,7 +297,7 @@ async function suggested(id) {
    
     const game = await axios.get(`${API_URL}games/${id}?key=${API_KEY}`);
   //  console.log(game);
-    const tags = game.data.tags.map(t => t.slug).slice(0, 3); // bierzemy 3 najważniejsze tagi
+    const tags = game.data.tags.map(t => t.slug).slice(0, 3); 
   //  console.log('tags: ',tags);
     
     const result = await axios.get(`${API_URL}games?key=${API_KEY}&tags=${tags.join(",")}&ordering=-rating&page_size=20`);
@@ -311,7 +312,7 @@ async function suggested(id) {
 }
 
 //suggested(1).then(console.log);
-//backend: endpoint /api/games → zwraca JSON
+
 
 
 

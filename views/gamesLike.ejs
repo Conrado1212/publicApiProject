@@ -6,9 +6,22 @@
             <div class="content_header flex">
                 <h1 class="head1"><%-  data.title[1] %></h1>
                 <div class="game_name">
-                    <p>Replaced</p>
-                    <button><i class="fa-solid fa-x"></i></button>
+                    <p><%-  name %></p>
+                    <button id="return"><i class="fa-solid fa-x"></i></button>
                 </div>
+                <div class="games">
+                    <div class="controls">
+                        <div class="display">
+                            <div class="display_mode_title text">
+                                Display options:
+                            </div>
+                            <div class="display_mode_select">
+                                <div id="grid" class="mode-select active" role="button"></div>
+                                <div id="column" class="mode-select" role="button"></div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>     
             </div>
         </div>
     </div>
