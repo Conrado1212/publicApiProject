@@ -389,7 +389,7 @@ let reszta  = w % h ;
 
     return `${ratioW / nwd}:${ratioH /nwd}`;
   }
-  getWiderAspectRatio("1080x1350", "2048x1536")
+  //getWiderAspectRatio("1080x1350", "2048x1536")
 
 
 
@@ -493,7 +493,7 @@ if(Object.values(rangs).includes(3) && !Object.values(rangs).includes(2)){
     return countVolwels(left) === countVolwels(right);
   }
 
-  isBalanced("Lorem Ipsum")
+  //isBalanced("Lorem Ipsum")
   //isBalanced("racecar")
 
 

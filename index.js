@@ -273,19 +273,26 @@ app.get("/api/games", async (req, res) => {
 
 
 app.get("/games-like-:slug", async (req, res) => {
-  const slug = req.params.slug;
-//console.log(slug);
-  const game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
-//console.log(game);
-  if(!game){
-    return res.status(500).send("Error fetching data")
+  const slug = encodeURIComponent(req.params.slug);
+console.log('slug', slug);
+let game;
+ try{
+    game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
+  console.log('game Name ', game.data.name);
+ }catch(e){
+  if (e.response && e.response.status === 404) {
+    return res.status(404).send("Game not found");
   }
-  const similar = await suggested(game.data.id);
+  console.error(e);
+  return res.status(500).send("Error fetching data")
+ }
+  
+ const similar = await suggested(game.data.id);
 
 
-  //console.log(similar);
+  console.log(similar);
   res.render("gamesLike.ejs", {
-    name: slug,
+    name: game.data.name,
     data: data,
      game: game.data,
      similar
@@ -296,9 +303,9 @@ async function suggested(id) {
   try {
    
     const game = await axios.get(`${API_URL}games/${id}?key=${API_KEY}`);
-  //  console.log(game);
+    //console.log('game', game);
     const tags = game.data.tags.map(t => t.slug).slice(0, 3); 
-  //  console.log('tags: ',tags);
+    //console.log('tags: ',tags);
     
     const result = await axios.get(`${API_URL}games?key=${API_KEY}&tags=${tags.join(",")}&ordering=-rating&page_size=20`);
 
