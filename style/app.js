@@ -731,3 +731,58 @@ function findTarget(arr, target) {
   }
   //decode("Byffi Qilfx!", 20)
   //decode("Xlmw mw e wigvix qiwweki.", 4)
+
+  function isUnnaturalPrime(n) {
+    if(n < 2 && n > -2) return false;
+    if(n <  -2){
+      n=n*-1;
+    }
+    for(let i=2;i<Math.sqrt(n*n);i++){
+        if(n % i === 0){
+            console.log(i);
+            return false
+        }
+    }
+        return true;
+  }
+  //isUnnaturalPrime(1);
+
+  //isUnnaturalPrime(-1)
+
+  //isUnnaturalPrime(19);
+
+
+  function battle(myArmy, opposingArmy) {
+        let value=0;
+        let value1=0;
+        if(myArmy.length > opposingArmy.length){
+            return "Opponent retreated";
+        }else if(myArmy.length < opposingArmy.length){
+            return "We retreated";
+        }
+
+
+        function strength(ch){
+            if(ch>='a' && ch<='z') return ch.charCodeAt(0) - 96;
+            if(ch>='A' && ch<='Z') return ch.charCodeAt(0) - 38;
+            if(ch>='0' && ch<='9') return Number(ch);
+            return 0;
+        }
+
+        for(let i=0;i<myArmy.length;i++){
+            const myVal = strength(myArmy[i]);
+            const oppVal = strength(opposingArmy[i]);
+            if(myVal > oppVal) value++;
+            else if(myVal < oppVal) value1++;
+        }
+    
+        if(value < value1) return "We lost"
+       if(value > value1) return "We won"
+          return "It was a tie"
+        
+  }
+
+  battle("Wizards", "Dragons");
+
+
+
