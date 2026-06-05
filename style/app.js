@@ -292,6 +292,24 @@ async function filterMain(){
     //   }
 
 
+const returnBtn = document.getElementById('return');
+
+returnBtn.addEventListener('click',(e)=>{
+    window.history.back();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 //min
 function min(a,b){
    return a > b ? b :a ;
