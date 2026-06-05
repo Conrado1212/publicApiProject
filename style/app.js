@@ -782,7 +782,82 @@ function findTarget(arr, target) {
         
   }
 
-  battle("Wizards", "Dragons");
+  //battle("Wizards", "Dragons");
 
 
+
+  function toCamelCase(s) {
+     return s.toLowerCase().split(/[\s-_]+/).map((word, index) =>{
+            if(index === 0) return word;
+            return word[0].toUpperCase()+word.slice(1);
+     }).join("");
+
+  }
+
+  //toCamelCase("secret agent-X")
+
+  function decode(s) {
+      let result =[]
+    s.split('').forEach(l=>{
+        if(l === ')'){
+            console.log(result);
+            let temp = []
+            while(result[result.length-1] !== '('){
+                    temp.push(result.pop());
+                }
+            result.pop() ;
+            temp.forEach(t => result.push(t));
+        }else{
+            result.push(l)
+        } 
+    })
+    return result.join('');
+  }
+
+  decode("(f(b(dc)e)a)")
+
+  function evaluate(numbers, operators) {
+      let result =numbers[0];
+    numbers.shift();
+      
+     numbers.forEach((n,i) =>{
+        
+    let  operator = operators [i%operators.length];
+       if(operator === '+'){
+           result +=n;
+       }else if(operator === '-'){
+        result -=n;
+       }else if(operator === '%'){
+        result %=n;
+       }else if(operator === '/'){
+        result /=n;
+       }else if(operator === '*'){
+        result *=n;
+       }
+
+     })
+    return result;
+  }
+  //evaluate([17, 61, 40, 24, 38, 14], ['+', '%'])
+  //evaluate([5, 6, 7, 8, 9], ['+', '-'])
+
+
+  function getLaptopCost(laptops, budget) {
+      let result =  [...new Set(laptops)];
+      let l =result.length
+    console.log('adad',result);
+   let sort =  result.sort((a, b) => b - a);
+    console.log(sort);
+    let t = result.filter(price => price <= budget)
+
+    if(l === t.length && t.length >=2) return t[1];
+
+    if(l !== t.length && t.length >=2) return t[0];
+    if(t.length === 1)return t[0]
+
+     return 0
+  }
+ // getLaptopCost([1500, 2000, 1800, 1400],1900)
+ // getLaptopCost([2099, 1599, 1899, 1499], 2200)
+ // getLaptopCost([1500, 2000, 2000, 1800, 1400], 1900)
 
