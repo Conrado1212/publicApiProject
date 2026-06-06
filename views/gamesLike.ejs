@@ -62,6 +62,28 @@
                                                         <i class="fa-solid fa-plus"></i>
                                                     </button>
                                                 </div>
+                                                <ul class="card_about">
+                                                    <li class="card_about_info">
+                                                        <div class="term">Release date:</div>
+                                                        <div class="description"><%= game.released %></div>
+                                                    </li>
+                                                    <li class="card_about_info">
+                                                        <div class="term">Genres:</div>
+                                                        <div class="description">
+                                                            <%- game.genres
+                                                                     .map(gen => `<span><a href="">${gen.name}</a></span>`)
+                                                                              .join(', ') 
+                                                                                %>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="more">
+                                                    <a href="/games-like-<%= game.slug %>" class="show_more_like">Show more like this</a>
+                                                    <div class="arrow">
+                                                        <span></span>   
+                                                        <span></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
