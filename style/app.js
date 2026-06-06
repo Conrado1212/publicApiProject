@@ -861,3 +861,65 @@ function findTarget(arr, target) {
  // getLaptopCost([2099, 1599, 1899, 1499], 2200)
  // getLaptopCost([1500, 2000, 2000, 1800, 1400], 1900)
 
+ function burnCandles(candles, leftoversNeeded) {
+     let result  = candles  
+     
+        while(candles >= leftoversNeeded){
+           let r = Math.floor(candles/leftoversNeeded);
+            let reszta =  candles%leftoversNeeded
+            candles = r +reszta 
+           
+            result +=r
+        }
+      
+        return result
+   
+    
+  }
+  //burnCandles(7, 2)
+
+
+
+  //burnCandles(10, 5)
+
+
+  function findDuplicates(arr) {
+    let newA =[];
+    let diff = []
+    for(let i=0;i<arr.length;i++){
+        if(!newA.includes(arr[i])){
+            newA.push(arr[i])
+        }else if(!diff.includes(arr[i])){
+            diff.push(arr[i])
+        }
+    }
+  
+    return diff.sort((a, b) => a-b);
+  }
+  const color = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+  function generateHex(color) {
+    if(color !== 'red' && color !== 'green' && color !== 'blue') return "Invalid color";
+    let xd  = Math.floor(Math.random() * 256).toString(16).padStart(2, "0");
+    
+    if(color === 'red') return `${xd}0000`;
+    if(color === 'green') return `00${xd}00`;
+    if(color === 'blue') return `0000${xd}`;
+   
+  }
+  //generateHex("red")
+  //generateHex("yellow")
+
+  function tribonacciSequence(startSequence, length) {
+     
+    if(length === 0) return [];
+    if(length < 3) return startSequence.slice(0,length)
+    let result = [...startSequence];
+     while(result.length < length){
+        let next = result[result.length-1] + result[result.length-2]+ result[result.length-3];
+                result.push(next);
+     }
+    
+    return result;
+  }
+  //tribonacciSequence([0, 0, 1], 20)
+  //tribonacciSequence([10, 20, 30], 2)

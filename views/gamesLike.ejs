@@ -25,7 +25,49 @@
                 </div>     
                 <div class="content_main">
                     <div class="discover_columns" id="load">
+                        <% for(let i=0; i<similar.length; i += 4){ %>
+                            <div class="discover_columns_column">
+                                <%   similar.slice(i, i + 4).forEach(game =>{ %>
+                                    <div class="game_card">
+                                        <div class="card_wrapper" tabindex="0">
+                                            <div class="card_media">
+                                                <img src="<%= game.background_image %>" alt="" loading="lazy">
+                                            </div>
+                                            <div class="card_info">
+                                                <div class="info_platforms">
+                                                    <%
+                                                     const platformMap = {
+                                                                "PC": "<i class=\"fa-brands fa-windows\"></i>",
+                                                                    "PlayStation 5": "<i class=\"fa-brands fa-playstation\"></i>",
+                                                                         "PlayStation 4": "<i class=\"fa-brands fa-uncharted\"></i>",
+                                                                             "Xbox Series S/X": "<i class=\"fa-brands fa-xbox\"></i>",
+                                                                                 "Xbox One": '<img class="" src="./images/xboxOne.jpg">',
+                                                                                 "Nintendo Switch": "<i class=\"fa-solid fa-gamepad\"></i>",
+                                                                                     "macOS": "<i class=\"fa-brands fa-apple\"></i>",
+                                                                                        "Linux": "<i class=\"fa-brands fa-linux\"></i>"
 
+                                                                                            };
+                                                                                            %>
+                                                                                              <%       if (Array.isArray(game.platforms)) {   %>
+                                                                                                <%    game.platforms.forEach(plat =>{ %>
+                                                                                                    <%- platformMap[plat.platform.name] || plat.platform.name %>
+                                                                                                    <%   })%>
+                                                                                                <%   } %>
+                                                </div>
+                                                <div class="card_title">
+                                                    <a href="" class=""><%= game.name %></a>
+                                                </div>
+                                                <div class="card_button">
+                                                    <button>
+                                                        <i class="fa-solid fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <%  })%> 
+                            </div>
+                         <%  }%> 
                     </div>
                     <div class="circle_wrapper">
                         <div class="circle"></div>
