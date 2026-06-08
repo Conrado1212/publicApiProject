@@ -217,7 +217,7 @@ async function loadMore(){
 //let size = 20;
 
 //let page = 2;
-
+//funkcja filtrowania na stronie do dodania 
 async function filterMain(){
     if(loading)return;
     loading = true;
@@ -297,8 +297,6 @@ const returnBtn = document.getElementById('return');
 returnBtn.addEventListener('click',(e)=>{
     window.history.back();
 })
-
-
 
 
 
@@ -923,3 +921,15 @@ function findTarget(arr, target) {
   }
   //tribonacciSequence([0, 0, 1], 20)
   //tribonacciSequence([10, 20, 30], 2)
+
+
+  function rgbToHex(rgb) {
+    const [r, g, b] = rgb.match(/\d+/g).map(Number);
+    const toHex = c => c.toString(16).padStart(2, "0");
+
+   
+    return "#" + toHex(r) + toHex(g) + toHex(b);
+   
+  }
+
+  rgbToHex("rgb(255, 255, 255)")
