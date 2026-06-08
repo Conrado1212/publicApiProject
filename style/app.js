@@ -932,4 +932,49 @@ function findTarget(arr, target) {
    
   }
 
-  rgbToHex("rgb(255, 255, 255)")
+  rgbToHex("rgb(255, 255, 255)");
+
+
+
+  function isPangram(sentence, letters) {
+   
+   const test =  sentence.toLowerCase().replace(/[^a-z]/g, "");
+   console.log(test);
+   const uniq = new Set(test);
+    console.log(uniq);
+   for(const letter of letters.toLowerCase()){
+       console.log(letter);
+       if(!uniq.has(letter)){
+           return false;
+       }
+   }
+   for (const letter of uniq) {
+    if (!letters.includes(letter)) return false;
+  }
+
+   return true;
+  }
+
+  function repeatVowels(str) {
+      let result = '';
+      let repeat = 0;
+ str.split('').forEach(el=>{
+     
+    if(el.toLowerCase() === 'a' || el.toLowerCase() === 'e' || el.toLowerCase() === 'i' || el.toLowerCase() === 'o' || el.toLowerCase() === 'u'){
+            console.log(el);
+        if(repeat > 0 ){
+            result +=el + el.toLowerCase().repeat(repeat)
+            repeat ++;
+        }else{
+            result +=el;
+            repeat ++;
+        }
+       
+    }else{
+        result += el;
+    }
+ })
+    return result;
+  }
+ // repeatVowels("AEIOU")
+ // repeatVowels("hello world")
