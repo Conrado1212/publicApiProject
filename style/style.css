@@ -863,3 +863,6 @@ background:
         .flex-end{
             justify-content: flex-end;
         }
+        .screenshot-gallery{
+            display: none;
+        }
