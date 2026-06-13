@@ -78,16 +78,14 @@
                                                 <img src="<%= game.background_image %>" alt="" loading="lazy">
                                                 <div class="screenshot-gallery">
                                                     <div class="screenshot-gallery_wrapper">
-                                                        <img src="https://picsum.photos/300/200" alt="">
-                                                        <img src="https://picsum.photos/id/20/300/200" alt="">
-                                                        <img src="https://picsum.photos/id/30/300/200" alt="">
-                                                        <img src="https://picsum.photos/id/40/300/200" alt="">
+                                                        <%  game.short_screenshots.forEach(img =>{%>
+                                                            <img src="<%= img.image %>" alt="">
+                                                            <% })%>
                                                     </div>
                                                     <div class="screenshot-gallery_progress_wrapper">
-                                                        <span class="progress"></span>
-                                                        <span class="progress"></span>
-                                                        <span class="progress"></span>
-                                                        <span class="progress"></span>
+                                                         <% game.short_screenshots.forEach(() => { %>
+                                                            <span class="progress"></span>
+                                                        <% }) %>
                                                     </div>   
                                                 </div>
                                                 
