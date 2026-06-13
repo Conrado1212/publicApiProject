@@ -600,7 +600,6 @@ font-weight: 500;
     .card_wrapper{
         background: #202020;
         border-radius:.5rem;
-     
         overflow:hidden;
         box-shadow: 0 4px 0 rgba(0,0,0,0.3);
         .card_media{
@@ -864,5 +863,25 @@ background:
             justify-content: flex-end;
         }
         .screenshot-gallery{
-            display: none;
+           // display: none;
+           position: relative;
+        }
+        .screenshot-gallery_progress_wrapper{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            span{
+                height: .25rem;
+                width: 20vw;
+                max-width: 3rem;
+                background: linear-gradient(90deg,var(--white), var(--slider)); 
+                border: 1px solid #898989;
+                border-radius: 1rem;
+                display: inline-block; 
+            }
         }
