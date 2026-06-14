@@ -154,10 +154,10 @@ async function loadMore(){
        
         group.forEach(game => {
             const imgSrc = game.background_image || "images/No_Image_Available.jpg";
-            const genre = game.genres
-            .map(gen => `<span><a href="">${gen.name}</a></span>`)
-                     .join(', ') 
-                     const platform = (game.platforms ?? []).map(plat => platformMap[plat?.platform?.name]).filter(Boolean).join(" ");
+
+            const genre = game.genres.map(gen => `<span><a href="">${gen.name}</a></span>`).join(', ') 
+
+            const platform = (game.platforms ?? []).map(plat => platformMap[plat?.platform?.name]).filter(Boolean).join(" ");
             col.insertAdjacentHTML(
                 "beforeend",
                 `

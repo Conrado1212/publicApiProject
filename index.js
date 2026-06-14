@@ -274,7 +274,18 @@ app.get("/api/games", async (req, res) => {
 
 //https://api.rawg.io/api/games?key=API_KEY&dates=YYYY-MM-DD,YYYY-MM-DD&ordering=-added
 
-
+app.get("/discover/:date",async (req, res)=>{
+//get date 
+const date = new Date();
+//get day
+const day = date.getDay();
+//roznica do poniedzialku 
+const dateDiff = (day === 0 ? -6 : 1 ) - day;
+//monday 
+const monday  = new Date(date);
+monday.setDate(now.getDate() + dateDiff);
+//dates=${start},${end}`
+});
 
 
 

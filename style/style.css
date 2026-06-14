@@ -879,7 +879,7 @@ background:
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: .5rem;
             bottom: 1rem;
             left: 50%;
             transform: translateX(-50%);
