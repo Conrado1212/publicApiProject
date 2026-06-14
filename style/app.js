@@ -165,6 +165,8 @@ async function loadMore(){
                     <div class="card_wrapper" tabindex="0">
                         <div class="card_media">
                             <img src="${imgSrc}" alt="">
+                            <div class="screenshot-gallery">
+                            </div>
                         </div>
                         <div class="card_info">
                             <div class="info_platforms">
@@ -294,7 +296,7 @@ async function filterMain(){
         progress.forEach(s => s.classList.remove('active_screen'));
         //add active to one 
         progress[safeIndex].classList.add('active_screen');
-        //remove dispaly of img
+        //remove dispaly of imges
         images.forEach(img => img.style.display = 'none');
         //add block for img 
         images[safeIndex].style.display = 'block';
