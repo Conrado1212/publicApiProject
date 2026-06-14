@@ -273,11 +273,34 @@ async function filterMain(){
         card.classList.add('game-card_opened');
         card.querySelector('.card_about').style.display = "block";
         card.querySelector('.screenshot-gallery').style.display = "block";
-        const progresss = card.querySelectorAll('.screenshot-gallery_progress_wrapper span')
-        progresss.forEach((progess, index) =>{
-              progess.dataset.index = index;
-        });
-        progresss[0].classList.add('active_screen');
+        const images = card.querySelectorAll('.screenshot-gallery_wrapper img');
+        
+       
+        const wrapper = card.querySelector('.screenshot-gallery')
+        const progress = wrapper.querySelectorAll('span');
+        console.log(progress);
+        wrapper.addEventListener('mousemove', e =>{
+            //get width heaig of my wrapper
+            const rect = wrapper.getBoundingClientRect();
+            //mouse position 
+            const x = e.clientX - rect.left;
+            //divide widht for 1 segment 
+            const segmentWidth = rect.width / progress.length;
+            //index of segment
+        const index = Math.floor(x / segmentWidth);
+        //index 
+        const safeIndex = Math.max(0, Math.min(index, progress.length - 1));
+        //remove active
+        progress.forEach(s => s.classList.remove('active_screen'));
+        //add active to one 
+        progress[safeIndex].classList.add('active_screen');
+        //remove dispaly of img
+        images.forEach(img => img.style.display = 'none');
+        //add block for img 
+        images[safeIndex].style.display = 'block';
+        })
+       
+      
     });
     
     document.addEventListener('mouseout', e => {
@@ -299,11 +322,11 @@ async function filterMain(){
 
 
 const returnBtn = document.getElementById('return');
-
+if(returnBtn){
 returnBtn.addEventListener('click',(e)=>{
     window.history.back();
 })
-
+}
 
 
 
