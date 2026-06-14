@@ -272,12 +272,14 @@ async function filterMain(){
         card.style.height = `${card.offsetHeight}px`;
         card.classList.add('game-card_opened');
         card.querySelector('.card_about').style.display = "block";
+        card.querySelector('.screenshot-gallery').style.display = "block";
+
     });
     
     document.addEventListener('mouseout', e => {
         const card = e.target.closest('.game_card');
         if (!card) return;
-    
+        card.querySelector('.screenshot-gallery').style.display = "none";
         card.querySelector('.card_about').style.display = "none";
         card.style.height = '';
         card.classList.remove('game-card_opened');

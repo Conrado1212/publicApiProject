@@ -224,7 +224,7 @@ console.error(`Invalid data ${e}`);
 return null;
 }
 }
-main(1,20).then(console.log)
+//main(1,20).then(console.log)
 
  //setTimeout(() => {
   // console.log('adadad');
