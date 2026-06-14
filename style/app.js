@@ -273,7 +273,11 @@ async function filterMain(){
         card.classList.add('game-card_opened');
         card.querySelector('.card_about').style.display = "block";
         card.querySelector('.screenshot-gallery').style.display = "block";
-
+        const progresss = card.querySelectorAll('.screenshot-gallery_progress_wrapper span')
+        progresss.forEach((progess, index) =>{
+              progess.dataset.index = index;
+        });
+        progresss[0].classList.add('active_screen');
     });
     
     document.addEventListener('mouseout', e => {
