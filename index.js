@@ -289,6 +289,13 @@ function getMonday(d) {
   date.setDate(date.getDate() + diff);
   return date;
 }
+function last30days(d){
+  const date = new Date(d);
+  date.setHours(0, 0, 0, 0); 
+  date.setDate(date.getDate() - 30);
+  return date
+}
+console.log('test30',last30days(new Date()));
 
 //const monday = getMonday(new Date());
 //console.log(monday);
