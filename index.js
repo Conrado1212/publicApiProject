@@ -275,19 +275,23 @@ app.get("/api/games", async (req, res) => {
 //https://api.rawg.io/api/games?key=API_KEY&dates=YYYY-MM-DD,YYYY-MM-DD&ordering=-added
 
 app.get("/discover/:date",async (req, res)=>{
-//get date 
-const date = new Date();
-//get day
-const day = date.getDay();
-//roznica do poniedzialku 
-const dateDiff = (day === 0 ? -6 : 1 ) - day;
-//monday 
-const monday  = new Date(date);
-monday.setDate(now.getDate() + dateDiff);
-//dates=${start},${end}`
+  const dateParam = encodeURIComponent(req.params.date);
+  //
+console.log('dateParam:',dateParam);
+const monday = getMonday(new Date());
+console.log('adadas', monday.toLocaleString());
 });
 
+function getMonday(d) {
+  const date = new Date(d);
+  const day = date.getDay();
+  const diff = (day === 0 ? -6 : 1) - day;
+  date.setDate(date.getDate() + diff);
+  return date;
+}
 
+//const monday = getMonday(new Date());
+//console.log(monday);
 
 
 app.get("/games-like-:slug", async (req, res) => {
