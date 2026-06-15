@@ -83,9 +83,11 @@
                                                             <% })%>
                                                     </div>
                                                     <div class="screenshot-gallery_progress_wrapper">
+                                                        <% if (game.short_screenshots.length > 1) { %>
                                                          <% game.short_screenshots.forEach(() => { %>
                                                             <span class="progress"></span>
                                                         <% }) %>
+                                                        <% } %>
                                                     </div>   
                                                 </div>
                                                 
