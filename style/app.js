@@ -155,9 +155,12 @@ async function loadMore(){
         group.forEach(game => {
             const imgSrc = game.background_image || "images/No_Image_Available.jpg";
 
-            const genre = game.genres.map(gen => `<span><a href="">${gen.name}</a></span>`).join(', ') 
-
+            const genre = game.genres.map(gen => `<span><a href="">${gen.name}</a></span>`).join(', ') ;
+            const gallery = game.short_screenshots.map(img=> `<img src="${img.image}" alt="">`).join('');
+            console.log('gallery', gallery);
             const platform = (game.platforms ?? []).map(plat => platformMap[plat?.platform?.name]).filter(Boolean).join(" ");
+
+            const progress = game.short_screenshots.length > 1 ? game.short_screenshots.map(()=> `<span class="progress"></span>`).join('') : '';
             col.insertAdjacentHTML(
                 "beforeend",
                 `
@@ -166,6 +169,12 @@ async function loadMore(){
                         <div class="card_media">
                             <img src="${imgSrc}" alt="">
                             <div class="screenshot-gallery">
+                                 <div class="screenshot-gallery_wrapper">
+                                     ${gallery}
+                                 </div>
+                                 <div class="screenshot-gallery_progress_wrapper">
+                                    ${progress}
+                                 </div>
                             </div>
                         </div>
                         <div class="card_info">
@@ -1009,3 +1018,106 @@ function findTarget(arr, target) {
   }
  // repeatVowels("AEIOU")
  // repeatVowels("hello world")
+
+
+
+ //
+
+
+ function isValidIPv4(ipv4) {
+     const check =  ipv4.split('.')
+    if(check.length !== 4)return false;
+   return check.every(el=>{
+       if(el === '' || isNaN(el)) return false;
+
+
+    if (el.length > 1 && el.startsWith('0')) return false;
+       const num = Number(el);
+       return  num >=0 && num <=255;
+   })
+  }
+
+
+ // isValidIPv4("192.168.1.1");
+
+
+
+ function rotate(matrix) {
+    
+     const result = Array.from({length: matrix.length}, () =>Array(n).fill(0));
+     console.log('test',result);
+    
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix.length; j++) {
+      result[j][matrix.length - 1 - i] = matrix[i][j];
+    }
+  }
+   return result;
+  }
+  //rotate([[1]]);
+
+
+
+
+  function parseRomanNumeral(numeral) {
+      let sum =0;
+     
+    const keyValue ={
+        "I":1,
+        "V":5,
+        "X":10,
+        "L":50,
+        "C":100,
+        "D":500,
+        "M":1000
+    }
+    for(let i=0;i<numeral.length;i++){
+        const current  = keyValue[numeral[i]];
+        const next = keyValue[numeral[i+1]];
+        if(next && current < next){
+            sum -=current;
+        }else{
+            sum +=current
+        }
+    }
+
+    return sum;
+  }
+  //parseRomanNumeral("III");
+
+
+  function buildAcronym(str) {
+      let newT = '';
+    str.split(' ').forEach(el=>{
+        if(el !== 'a' && el !== 'for' && el !== 'an' && el !== 'and' && el !== 'by' && el !== 'of'){
+            newT += el[0].toUpperCase();
+        }
+       
+        
+    })
+    return newT;
+  }
+  //buildAcronym("National Aeronautics and Space Administration") 
+
+  //buildAcronym("Search Engine Optimization")
+
+
+  function allUnique(str) {
+    let uniq =[];
+    let dd  = [];
+    str.split('').forEach(el=>{
+        if(uniq.includes(el)){
+            dd.push(el);
+        }else{
+            uniq.push(el);
+        }
+    })
+    if(dd.length >0){
+        return false
+    }else{
+        return true;
+    }
+  
+  }
+
+  //allUnique("abc")
