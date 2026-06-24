@@ -341,6 +341,20 @@ returnBtn.addEventListener('click',(e)=>{
 
 
 
+// const current = window.location.pathname;
+
+// document.querySelectorAll("nav li a").forEach(link => {
+//   if (link.getAttribute("href") === current) {
+//     link.classList.add("active");
+//   }
+// });
+
+
+
+
+
+
+
 
 
 
