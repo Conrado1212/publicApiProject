@@ -276,14 +276,13 @@ app.get("/api/games", async (req, res) => {
 
 app.get("/discover/:date",async (req, res)=>{
   const dateParam = req.params.date;
-  //
-console.log('dateParam:',dateParam);
+  //console.log('dateParam:',dateParam);
 let game;
 if(dateParam === 'Last 30 days'){
   const today = new Date().toISOString().split("T")[0];
 const last30 = last30days(new Date());
   try{
-    game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}&dates=${last30},${today}&ordering-released`);
+    game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${last30},${today}&ordering-released`);
   }catch(e){
     if(e.response && e.response.status === 404) {
       return res.status(404).send("Game not found");
