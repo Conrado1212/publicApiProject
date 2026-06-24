@@ -275,12 +275,34 @@ app.get("/api/games", async (req, res) => {
 //https://api.rawg.io/api/games?key=API_KEY&dates=YYYY-MM-DD,YYYY-MM-DD&ordering=-added
 
 app.get("/discover/:date",async (req, res)=>{
-  const dateParam = encodeURIComponent(req.params.date);
+  const dateParam = req.params.date;
   //
 console.log('dateParam:',dateParam);
-const monday = getMonday(new Date());
-console.log('adadas', monday.toLocaleString());
+let game;
+if(dateParam === 'Last 30 days'){
+  const today = new Date().toISOString().split("T")[0];
+const last30 = last30days(new Date());
+  try{
+    game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}&dates=${last30},${today}&ordering-released`);
+  }catch(e){
+    if(e.response && e.response.status === 404) {
+      return res.status(404).send("Game not found");
+    }
+    console.error(e);
+    return res.status(500).send("Error fetching data")
+  }
+}else if(dateParam === 'This week'){
+  const monday = getMonday(new Date());
+  console.log('adadas', monday.toLocaleString());
+}
+res.render("gamesRange.ejs", {
+  data: data,
+   game: game.data
+  });
 });
+
+
+
 
 function getMonday(d) {
   const date = new Date(d);
@@ -293,9 +315,9 @@ function last30days(d){
   const date = new Date(d);
   date.setHours(0, 0, 0, 0); 
   date.setDate(date.getDate() - 30);
-  return date
+  return date.toISOString().split('T')[0];
 }
-console.log('test30',last30days(new Date()));
+//console.log('test30',last30days(new Date()));
 
 //const monday = getMonday(new Date());
 //console.log(monday);
