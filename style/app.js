@@ -289,7 +289,9 @@ async function filterMain(){
         
        
         const wrapper = card.querySelector('.screenshot-gallery')
+        //add check if exist progress 
         const progress = wrapper.querySelectorAll('span');
+        if(progress.length > 0){
        // console.log(progress);
         wrapper.addEventListener('mousemove', e =>{
             //get width heaig of my wrapper
@@ -310,7 +312,7 @@ async function filterMain(){
         images.forEach(img => img.style.display = 'none');
         //add block for img 
         images[safeIndex].style.display = 'block';
-        })
+        })}
        
       
     });
