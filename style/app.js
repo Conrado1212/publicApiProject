@@ -342,13 +342,14 @@ returnBtn.addEventListener('click',(e)=>{
 
 
 
- const current = window.location.pathname;
+ const current = decodeURIComponent(window.location.pathname);
 console.log('current',current);
-// document.querySelectorAll("nav li a").forEach(link => {
-//   if (link.getAttribute("href") === current) {
-//     link.classList.add("active");
-//   }
-// });
+ document.querySelectorAll("nav li a").forEach(link => {
+     console.log('link',link.getAttribute("href"));
+   if (link.getAttribute("href") === current) {
+     link.classList.add("active");
+   }
+ });
 
 
 

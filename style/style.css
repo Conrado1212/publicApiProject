@@ -384,7 +384,9 @@ text-shadow: 0 1px 0 #e8e0f5,
   .elements .sidebar_list  li  a:hover{
     -webkit-text-fill-color: #fafafa;
   }
-
+  .elements .sidebar_list  li .active{
+    -webkit-text-fill-color: #fafafa;
+  }
   .mode-content{
       display: flex;
       align-items: center;
