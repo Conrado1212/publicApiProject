@@ -67,8 +67,89 @@
                 </div>
                 <div class="content_main">
                     <div class="discover_columns" id="load">
-                        
+                        <% for(let i=0; i<game.length; i += 4){ %>
+                            <div class="discover_columns_column">
+                                <%  game.slice(i, i+ 4).forEach(game =>{ %>
+                                    <div class="game_card">
+                                        <div class="card_wrapper" tabindex="0">
+                                            <div class="card_media">
+                                                <img src="<%= game.background_image %>" alt="" loading="lazy">
+                                                <div class="screenshot-gallery">
+                                                    <div class="screenshot-gallery_wrapper">
+                                                        <%  game.short_screenshots.forEach(img =>{%>
+                                                            <img src="<%= img.image %>" alt="">
+                                                            <% })%>
+                                                    </div>
+                                                    <div class="screenshot-gallery_progress_wrapper">
+                                                        <% if (game.short_screenshots.length > 1) { %>
+                                                            <% game.short_screenshots.forEach(() => { %>
+                                                               <span class="progress"></span>
+                                                           <% }) %>
+                                                           <% } %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card_info">
+                                                <div class="info_platforms">
+                                                    <%
+                                                     const platformMap = {
+                                                        "PC": "<i class=\"fa-brands fa-windows\"></i>",
+                                                                    "PlayStation 5": "<i class=\"fa-brands fa-playstation\"></i>",
+                                                                         "PlayStation 4": "<i class=\"fa-brands fa-uncharted\"></i>",
+                                                                             "Xbox Series S/X": "<i class=\"fa-brands fa-xbox\"></i>",
+                                                                                 "Xbox One": '<img class="" src="./images/xboxOne.jpg">',
+                                                                                 "Nintendo Switch": "<i class=\"fa-solid fa-gamepad\"></i>",
+                                                                                     "macOS": "<i class=\"fa-brands fa-apple\"></i>",
+                                                                                        "Linux": "<i class=\"fa-brands fa-linux\"></i>"
+
+                                                                                            };
+                                                                                            %>
+                                                                                              <%       if (Array.isArray(game.platforms)) {   %>
+                                                                                                <%    game.platforms.forEach(plat =>{ %>
+                                                                                                    <%- platformMap[plat.platform.name] || plat.platform.name %>
+                                                                                                    <%   })%>
+                                                                                                <%   } %>
+                                                </div>
+                                                <div class="card_title">
+                                                    <a href="" class=""><%= game.name %></a>
+                                                </div>
+                                                <div class="card_button">
+                                                    <button>
+                                                        <i class="fa-solid fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                                <ul class="card_about">
+                                                    <li class="card_about_info">
+                                                        <div class="term">Release date:</div>
+                                                        <div class="description"><%= game.released %></div>
+                                                    </li>
+                                                    <li class="card_about_info">
+                                                        <div class="term">Genres:</div>
+                                                        <div class="description">
+                                                            <%- game.genres
+                                                                     .map(gen => `<span><a href="">${gen.name}</a></span>`)
+                                                                              .join(', ') 
+                                                                                %>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="more">
+                                                    <a href="/games-like-<%= game.slug %>" class="show_more_like">Show more like this</a>
+                                                    <div class="arrow">
+                                                        <span></span>   
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%   })            %>
+                            </div>
+                            <%  }%> 
                     </div>
+                    <div class="circle_wrapper">
+                        <div class="circle"></div>
+                    </div> 
                 </div>
             </div>
         </div>      

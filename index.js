@@ -294,7 +294,7 @@ const last30 = last30days(new Date());
   }
 }else if(dateParam === 'This week'){
   const monday = getMonday(new Date());
-  console.log('adadas', monday.toLocaleString());
+  //console.log('adadas', monday.toLocaleString());
 }
 res.render("gamesRange.ejs", {
   data: data,
