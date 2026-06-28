@@ -308,10 +308,22 @@ try{
 }else if(dateParam === 'Next week'){
   const today = getMonday(new Date());
   today.setDate(today.getDate() + 7);
+  const sundayNextWeek = new Date(today);
+  sundayNextWeek.setDate(sundayNextWeek.getDate() + 6)
   const nextMonday = today.toISOString().split('T')[0];
-  console.log(nextMonday);
+  const nextSun = sundayNextWeek.toISOString().split('T')[0];
+  try{
+    game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${nextMonday},${nextSun}&ordering-released&page_size=20&page=1`);
+    //console.log(game);
+  }catch(e){
+    if(e.response && e.response.status === 404) {
+      return res.status(404).send("Game not found");
+    }
+    console.error(e);
+    return res.status(500).send("Error fetching data")
+  }
 }
-//console.log(game);
+console.log(game);
 res.render("gamesRange.ejs", {
   data: data,
    game: game.data.results

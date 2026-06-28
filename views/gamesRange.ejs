@@ -76,7 +76,7 @@
                                                 <img src="<%= game.background_image %>" alt="" loading="lazy">
                                                 <div class="screenshot-gallery">
                                                     <div class="screenshot-gallery_wrapper">
-                                                        <%  game.short_screenshots.forEach(img =>{%>
+                                                        <%  (game?.short_screenshots || []).forEach(img =>{%>
                                                             <img src="<%= img.image %>" alt="">
                                                             <% })%>
                                                     </div>
