@@ -94,13 +94,15 @@ app.get('/', async(req,res)=>{
   const gamesData = await main(1,20,"-relevance");
    // console.log(result.data.count);  
   
-    data.gamesCount = result.data.count
+   // data.gamesCount = result.data.count
 
     data.allGames = gamesData.results
 
    
   // console.log("DATA:", data.allGames.length());
-    res.render("index.ejs",{ data: data, games: result.data.count});
+    res.render("index.ejs",{
+       data: data, 
+       games: result.data.count});
     }catch(error){
         res.render("index.ejs", { content: JSON.stringify(error.response?.data || error) });
     }
@@ -374,3 +376,18 @@ async function suggested(id) {
 
 
 
+
+
+//counter games
+
+
+async function loadGamesCounter(){
+  try{
+    const result = await axios.get(API_URL + "games?key=" + API_KEY);
+    data.gamesCount = result.data.count
+  }catch(e){
+    console.error("Error:", e.message);
+    return null;
+  }
+}
+loadGamesCounter();
