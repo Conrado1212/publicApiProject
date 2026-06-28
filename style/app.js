@@ -153,7 +153,7 @@ async function loadMore(){
                                         };
        
         group.forEach(game => {
-            const imgSrc = game.background_image || "images/No_Image_Available.jpg";
+            const imgSrc = game.background_image || "/images/No_Image_Available.jpg";
 
             const genre = game.genres.map(gen => `<span><a href="">${gen.name}</a></span>`).join(', ') ;
             const gallery = game.short_screenshots.map(img=> `<img src="${img.image}" alt="">`).join('');
