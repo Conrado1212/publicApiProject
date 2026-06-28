@@ -3,10 +3,70 @@
     <div class="container">
         <%- include("nav.ejs") %>
         <div class="content">
-            <div class="content_header flex">
+            <div class="content_header">
                 <h1 class="head1"><%-  data.title[2] %></h1>
+                <div class="games">
+                    <div class="controls">
+                        <div class="filter">
+                            <div class="select">
+                                <div class="dropdown_filter_select" data-default="<%= data.order[0] %>">
+                                    <label for="order" class="select-trigger text">
+                                        Order by: <span><%= data.order[0] %></span>
+                                    </label>  
+                                    <div class="arrow_li">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <ul class="select-options text">
+                                        <% data.order.forEach(o => { %>
+                                            <li data-value="<%= o %>" class="text"><%= o %></li>
+                                            <%  })%>
+                                    </ul>
+                                </div>
+                                <div class="dropdown_filter_select" data-default="<%= data.platforms[0] %>">
+                                    <label for="platform" class="select-trigger text">
+                                        Platforms <span><%= data.platforms[0] %></span>
+                                    </label>
+                                    <div class="arrow_li">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <ul class="select-options text">
+                                        <% (data.platforms?.parents || []).forEach(p => { %>
+                                           <li data-value="<%= p %>" class="text"><%= p %>
+                                            <% 
+                                            const key = p.toLowerCase();
+                                            const children = data.platforms[key];
+                                          %>
+                                                <% if (Array.isArray(children) && children.length > 0) { %>
+                                                    <span class="arrow_child">▶</span>
+                                                    <div class="children">
+                                                       <% children.forEach(c=>{%>
+                                                            <a href="">
+                                                                <span class="text"><%= c %></span>
+                                                            </a>
+                                                       <%  })    %>
+                                                    </div>
+                                                  <% } %>
+                                            </li>
+                                            <%  })%>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="display">
+                            <div class="display_mode_title text">
+                                Display options:
+                            </div>
+                            <div class="display_mode_select">
+                                <div id="grid" class="mode-select active" role="button"></div>
+                                <div id="column" class="mode-select" role="button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </div>      
     </div>
 </main>
 </body>

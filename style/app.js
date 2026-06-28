@@ -289,7 +289,7 @@ async function filterMain(){
        
         const wrapper = card.querySelector('.screenshot-gallery')
         const progress = wrapper.querySelectorAll('span');
-        console.log(progress);
+       // console.log(progress);
         wrapper.addEventListener('mousemove', e =>{
             //get width heaig of my wrapper
             const rect = wrapper.getBoundingClientRect();
@@ -341,8 +341,8 @@ returnBtn.addEventListener('click',(e)=>{
 
 
 
-// const current = window.location.pathname;
-
+ const current = window.location.pathname;
+console.log('current',current);
 // document.querySelectorAll("nav li a").forEach(link => {
 //   if (link.getAttribute("href") === current) {
 //     link.classList.add("active");
@@ -407,7 +407,7 @@ function countBs(abc){
     return count;
 }
 
-console.log(countBs("BOB"));
+//console.log(countBs("BOB"));
 
 function countChar(abc, char){
     let count  = 0;
@@ -419,7 +419,7 @@ function countChar(abc, char){
     }
     return count;
 }
-console.log(countChar("kakkerlak", "k"));
+//console.log(countChar("kakkerlak", "k"));
 
 
 
@@ -609,7 +609,7 @@ return true;
 
 
   function spaceJam(s) {
-    console.log(JSON.stringify(s));
+   // console.log(JSON.stringify(s));
     return  s.replace(/ /g, '').toUpperCase().split('').join('  ');
    
   }
@@ -852,7 +852,7 @@ function findTarget(arr, target) {
       let result =[]
     s.split('').forEach(l=>{
         if(l === ')'){
-            console.log(result);
+         //   console.log(result);
             let temp = []
             while(result[result.length-1] !== '('){
                     temp.push(result.pop());
