@@ -32,6 +32,20 @@
                                         <div class="card_wrapper" tabindex="0">
                                             <div class="card_media">
                                                 <img src="<%= game.background_image %>" alt="" loading="lazy">
+                                                <div class="screenshot-gallery">
+                                                    <div class="screenshot-gallery_wrapper">
+                                                        <%  game.short_screenshots.forEach(img =>{%>
+                                                            <img src="<%= img.image %>" alt="">
+                                                            <% })%>
+                                                    </div>
+                                                    <div class="screenshot-gallery_progress_wrapper">
+                                                        <% if (game.short_screenshots.length > 1) { %>
+                                                         <% game.short_screenshots.forEach(() => { %>
+                                                            <span class="progress"></span>
+                                                        <% }) %>
+                                                        <% } %>
+                                                    </div>   
+                                                </div>
                                             </div>
                                             <div class="card_info">
                                                 <div class="info_platforms">
