@@ -145,7 +145,7 @@ async function loadMore(){
                 "PlayStation 5": "<i class=\"fa-brands fa-playstation\"></i>",
                      "PlayStation 4": "<i class=\"fa-brands fa-uncharted\"></i>",
                          "Xbox Series S/X": "<i class=\"fa-brands fa-xbox\"></i>",
-                             "Xbox One": '<img class="" src="./images/xboxOne.jpg">',
+                             "Xbox One": '<img class="" src="/images/xboxOne.jpg">',
                              "Nintendo Switch": "<i class=\"fa-solid fa-gamepad\"></i>",
                                  "macOS": "<i class=\"fa-brands fa-apple\"></i>",
                                     "Linux": "<i class=\"fa-brands fa-linux\"></i>"
@@ -347,7 +347,7 @@ returnBtn.addEventListener('click',(e)=>{
  const current = decodeURIComponent(window.location.pathname);
 console.log('current',current);
  document.querySelectorAll("nav li a").forEach(link => {
-     console.log('link',link.getAttribute("href"));
+  //   console.log('link',link.getAttribute("href"));
    if (link.getAttribute("href") === current) {
      link.classList.add("active");
    }
