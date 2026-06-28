@@ -250,6 +250,7 @@ async function filterMain(){
     window.addEventListener("scroll",()=>{
         //check
        if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 ){
+           console.log(('scroll'));
           loadMore();
        }
     });
