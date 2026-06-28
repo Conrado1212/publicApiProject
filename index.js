@@ -278,7 +278,7 @@ app.get("/api/games", async (req, res) => {
 
 app.get("/discover/:date",async (req, res)=>{
   const dateParam = req.params.date;
-  //console.log('dateParam:',dateParam);
+  console.log('dateParam:',dateParam);
 let game;
 if(dateParam === 'Last 30 days'){
   const today = new Date().toISOString().split("T")[0];
@@ -293,10 +293,20 @@ const last30 = last30days(new Date());
     return res.status(500).send("Error fetching data")
   }
 }else if(dateParam === 'This week'){
-  const monday = getMonday(new Date());
-  //console.log('adadas', monday.toLocaleString());
+  const today = new Date().toISOString().split("T")[0];
+  const last30 = getMonday(new Date());
+try{
+  game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${last30},${today}&ordering-released&page_size=20&page=1`);
+  console.log(game);
+}catch(e){
+  if(e.response && e.response.status === 404) {
+    return res.status(404).send("Game not found");
+  }
+  console.error(e);
+  return res.status(500).send("Error fetching data")
 }
-///console.log('dfdffff', game.data.results.length);
+}
+console.log(game);
 res.render("gamesRange.ejs", {
   data: data,
    game: game.data.results
@@ -311,7 +321,7 @@ function getMonday(d) {
   const day = date.getDay();
   const diff = (day === 0 ? -6 : 1) - day;
   date.setDate(date.getDate() + diff);
-  return date;
+  return date.toISOString().split('T')[0];
 }
 function last30days(d){
   const date = new Date(d);
