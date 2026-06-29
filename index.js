@@ -277,6 +277,7 @@ app.get("/api/games", async (req, res) => {
 //https://api.rawg.io/api/games?key=API_KEY&dates=YYYY-MM-DD,YYYY-MM-DD&ordering=-added
 
 app.get("/discover/:date",async (req, res)=>{
+  let month = null; 
   const dateParam = req.params.date;
   console.log('dateParam:',dateParam);
 let game;
@@ -324,15 +325,34 @@ try{
     console.error(e);
     return res.status(500).send("Error fetching data")
   }
+}else if(dateParam === 'Release calendar'){
+  let month = new Date().getMonth();
+  let year = new Date().getFullYear();
+  let days  =  daysInMonth(month, year)
+  const lastDayMonth = days + '/' + String(Number(month) + 1).padStart(2, '0') + '/' + year;
+  const firstDayMonth = '01' + '/' + String(Number(month) + 1).padStart(2, '0') + '/' + year;
+  //console.log(firstDayMonth);
+  try{
+    game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${firstDayMonth},${lastDayMonth}&ordering-released&page_size=20&page=1`);
+  }catch(e){
+    if(e.response && e.response.status === 404) {
+      return res.status(404).send("Game not found");
+    }
+    console.error(e);
+    return res.status(500).send("Error fetching data")
+  }
 }
 //console.log(game);
 res.render("gamesRange.ejs", {
+  month: month || null,
   data: data,
    game: game.data.results
   });
 });
 
-
+function daysInMonth(month, year) {
+  return new Date(year, month, 0).getDate();
+}
 
 
 function getMonday(d) {
