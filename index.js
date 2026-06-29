@@ -285,7 +285,7 @@ let game;
 if(dateParam === 'Last 30 days'){
   const today = new Date().toISOString().split("T")[0];
 const last30 = last30days(new Date());
-let title = data.sidebarMenu[0].Name[0];
+ title = data.sidebarMenu[0].Name[0];
   try{
     game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${last30},${today}&ordering-released&page_size=20&page=1`);
   }catch(e){
@@ -300,7 +300,7 @@ let title = data.sidebarMenu[0].Name[0];
   const last30 = getMonday(new Date());
   const thisSun = new Date(last30); 
   thisSun.setDate(last30.getDate() + 6);
-  let title = data.sidebarMenu[0].Name[1];
+   title = data.sidebarMenu[0].Name[1];
 try{
   game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${last30.toISOString().split('T')[0]},${thisSun.toISOString().split('T')[0]}&ordering-released&page_size=20&page=1`);
   //console.log(game);
@@ -318,7 +318,7 @@ try{
   sundayNextWeek.setDate(sundayNextWeek.getDate() + 6)
   const nextMonday = today.toISOString().split('T')[0];
   const nextSun = sundayNextWeek.toISOString().split('T')[0];
-  let title = data.sidebarMenu[0].Name[2];
+   title = data.sidebarMenu[0].Name[2];
   try{
     game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${nextMonday},${nextSun}&ordering-released&page_size=20&page=1`);
     //console.log(game);
@@ -335,7 +335,7 @@ try{
   let days  =  daysInMonth(month, year)
   const lastDayMonth = days + '/' + String(Number(month) + 1).padStart(2, '0') + '/' + year;
   const firstDayMonth = '01' + '/' + String(Number(month) + 1).padStart(2, '0') + '/' + year;
-  let title = data.sidebarMenu[0].Name[3];
+   title = data.sidebarMenu[0].Name[3];
   console.log(title);
   //console.log(firstDayMonth);
   try{
