@@ -73,7 +73,8 @@
                                     <div class="game_card">
                                         <div class="card_wrapper" tabindex="0">
                                             <div class="card_media">
-                                                <img src="<%= game.background_image %>" alt="" loading="lazy">
+                                                <img src="<%= game.background_image || '/images/No_Image_Available.jpg' %>" alt="" loading="lazy">
+
                                                 <div class="screenshot-gallery">
                                                     <div class="screenshot-gallery_wrapper">
                                                         <%  (game?.short_screenshots || []).forEach(img =>{%>

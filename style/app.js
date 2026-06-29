@@ -114,8 +114,9 @@ let size = 20;
 
 let page = 2;
 let loading = false;
-const loadCircle = document.querySelector('.circle_wrapper')
+const loadCircle = document.querySelector('.circle_wrapper');
 async function loadMore(){
+
     if(loading)return;
     loading = true;
     loadCircle.style.display = 'flex';
@@ -124,7 +125,7 @@ async function loadMore(){
     const res = await fetch(`/api/games?page=${page}&ordering=-${order}`);
     const data = await res.json(); 
     console.log(page);
-    console.log("RAW data:", data, "type:", typeof data);
+   // console.log("RAW data:", data, "type:", typeof data);
    // console.log(data.next);
     if(!data?.next === null){
         console.log("No more data");
@@ -250,7 +251,8 @@ async function filterMain(){
     window.addEventListener("scroll",()=>{
         //check
        if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 ){
-           console.log(('scroll'));
+            if(document.querySelectorAll('.game_card').length < 20) return;
+          // console.log(('scroll'));
           loadMore();
        }
     });

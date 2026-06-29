@@ -325,7 +325,7 @@ try{
     return res.status(500).send("Error fetching data")
   }
 }
-console.log(game);
+//console.log(game);
 res.render("gamesRange.ejs", {
   data: data,
    game: game.data.results
