@@ -293,10 +293,12 @@ const last30 = last30days(new Date());
     return res.status(500).send("Error fetching data")
   }
 }else if(dateParam === 'This week'){
-  const today = new Date().toISOString().split("T")[0];
+  //const today = new Date().toISOString().split("T")[0];
   const last30 = getMonday(new Date());
+  const thisSun = new Date(last30); 
+  thisSun.setDate(last30.getDate() + 6);
 try{
-  game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${last30.toISOString().split('T')[0]},${today}&ordering-released&page_size=20&page=1`);
+  game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${last30.toISOString().split('T')[0]},${thisSun.toISOString().split('T')[0]}&ordering-released&page_size=20&page=1`);
   //console.log(game);
 }catch(e){
   if(e.response && e.response.status === 404) {
