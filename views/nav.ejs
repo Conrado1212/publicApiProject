@@ -2,7 +2,7 @@
     <div class="sidebar">
         <% for(let i=0;i<data.sidebar.length;i++){%>
         <div class="menu">
-            <a href=""><%-  data.sidebar[i] %></a>
+            <a href="<%=  data.sidebar[i] ==='Home' ?'/' : 'Reviews' %>"><%-  data.sidebar[i] %></a>
         </div>
         <%  }%>
         <div class="elements">
