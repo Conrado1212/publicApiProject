@@ -276,25 +276,6 @@ app.get("/api/games", async (req, res) => {
 
 //https://api.rawg.io/api/games?key=API_KEY&dates=YYYY-MM-DD,YYYY-MM-DD&ordering=-added
 //zamienic na mape i bedzie git 
-
-const discoverHandlers = {
-  "Last 30 days": (req, res) => {
-    const today = new Date().toISOString().split("T")[0];
-    const last30 = last30days(new Date());
-    const title = data.sidebarMenu[0].Name[0];
-  },
-
-  "Best of the year": (req, res) => {
-    const year = new Date().getFullYear();
-    return { title: "Best of the year", year };
-  },
-
-  "This year": () => {
-    const year = new Date().getFullYear();
-    return { title: "This year", year };
-  }
-};
-
 // const discoverHandlers = {
 //   "Last 30 days": async () => {
 //     const today = new Date().toISOString().split("T")[0];
