@@ -275,6 +275,112 @@ app.get("/api/games", async (req, res) => {
 
 
 //https://api.rawg.io/api/games?key=API_KEY&dates=YYYY-MM-DD,YYYY-MM-DD&ordering=-added
+//zamienic na mape i bedzie git 
+
+const discoverHandlers = {
+  "Last 30 days": (req, res) => {
+    const today = new Date().toISOString().split("T")[0];
+    const last30 = last30days(new Date());
+    const title = data.sidebarMenu[0].Name[0];
+  },
+
+  "Best of the year": (req, res) => {
+    const year = new Date().getFullYear();
+    return { title: "Best of the year", year };
+  },
+
+  "This year": () => {
+    const year = new Date().getFullYear();
+    return { title: "This year", year };
+  }
+};
+
+// const discoverHandlers = {
+//   "Last 30 days": async () => {
+//     const today = new Date().toISOString().split("T")[0];
+//     const last30 = last30days(new Date());
+//     const title = data.sidebarMenu[0].Name[0];
+
+//     const game = await axios.get(
+//       `${API_URL}games?key=${API_KEY}&dates=${last30},${today}&ordering=-released&page_size=20&page=1`
+//     );
+
+//     return { title, game: game.data };
+//   }
+// };
+
+// app.get("/discover/:date", async (req, res) => {
+//   const handler = discoverHandlers[req.params.date];
+
+//   if (!handler) {
+//     return res.status(400).json({ error: "Unknown discover filter" });
+//   }
+
+//   try {
+//     const result = await handler();
+//     res.json(result);
+//   } catch (e) {
+//     if (e.response?.status === 404) {
+//       return res.status(404).send("Game not found");
+//     }
+//     console.error(e);
+//     res.status(500).send("Error fetching data");
+//   }
+// });
+
+////////
+// const discoverHandlers = {
+//   "Last 30 days": async () => {
+//     const today = new Date().toISOString().split("T")[0];
+//     const last30 = last30days(new Date());
+//     const title = data.sidebarMenu[0].Name[0];
+
+//     try {
+//       const game = await axios.get(
+//         `${API_URL}games?key=${API_KEY}&dates=${last30},${today}&ordering=-released&page_size=20&page=1`
+//       );
+
+//       return {
+//         title,
+//         month: null,
+//         data,
+//         game: game.data.results
+//       };
+
+//     } catch (e) {
+//       if (e.response?.status === 404) {
+//         throw { status: 404, message: "Game not found" };
+//       }
+//       console.error(e);
+//       throw { status: 500, message: "Error fetching data" };
+//     }
+//   }
+// };
+
+// app.get("/discover/:date", async (req, res) => {
+//   const handler = discoverHandlers[req.params.date];
+
+//   if (!handler) {
+//     return res.status(400).send("Unknown discover filter");
+//   }
+
+//   try {
+//     const result = await handler();
+
+//     return res.render("gamesRange.ejs", {
+//       title: result.title,
+//       month: result.month,
+//       data: result.data,
+//       game: result.game
+//     });
+
+//   } catch (err) {
+//     return res.status(err.status || 500).send(err.message || "Unknown error");
+//   }
+// });
+
+
+
 
 app.get("/discover/:date",async (req, res)=>{
   let month = null; 
