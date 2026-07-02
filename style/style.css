@@ -646,6 +646,17 @@ font-weight: 500;
                 align-items: center;
                 font-weight: 900;
                 font-size: var(--font-h);
+                transition: background-position .75s ease;
+                background-size: 200%;
+                background-position: 0%;
+            }
+            .card_title a:hover {
+                /* background: linear-gradient(90deg, var(--black), #ffffff29),var(--slider);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-shadow: inset 5px 5px 10px var(--white); */
+                background-position: 100%;
             }
             .card_button{
                 margin-top: .5rem;
