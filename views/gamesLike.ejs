@@ -25,22 +25,27 @@
                 </div>     
                 <div class="content_main">
                     <div class="discover_columns" id="load">
-                        <% for(let i=0; i<similar.length; i += 4){ %>
+                        <% let xd = similar.length > 5 ? 5 : similar.length; %>
+                        <% const rows = Math.ceil(similar.length / xd); %>
+                        <% for(let i=0; i< xd; i += 4){ %>
                             <div class="discover_columns_column">
-                                <%   similar.slice(i, i + 4).forEach(game =>{ %>
+                                <!-- <%#   similar.slice(i, i + 4).forEach(game =>{ %> -->
+                                    <% for (let r = 0; r < rows; r++) { %>
+                                        <% const index = r * xd + i; %>
+                                        <% if(game[index]){ %>
                                     <div class="game_card">
                                         <div class="card_wrapper" tabindex="0">
                                             <div class="card_media">
-                                                <img src="<%= game.background_image %>" alt="" loading="lazy">
+                                                <img src="<%= game[index].background_image %>" alt="" loading="lazy">
                                                 <div class="screenshot-gallery">
                                                     <div class="screenshot-gallery_wrapper">
-                                                        <%  game.short_screenshots.forEach(img =>{%>
+                                                        <%  game[index].short_screenshots.forEach(img =>{%>
                                                             <img src="<%= img.image %>" alt="">
                                                             <% })%>
                                                     </div>
                                                     <div class="screenshot-gallery_progress_wrapper">
-                                                        <% if (game.short_screenshots.length > 1) { %>
-                                                         <% game.short_screenshots.forEach(() => { %>
+                                                        <% if (game[index].short_screenshots.length > 1) { %>
+                                                         <% game[index].short_screenshots.forEach(() => { %>
                                                             <span class="progress"></span>
                                                         <% }) %>
                                                         <% } %>
@@ -62,14 +67,14 @@
 
                                                                                             };
                                                                                             %>
-                                                                                              <%       if (Array.isArray(game.platforms)) {   %>
-                                                                                                <%    game.platforms.forEach(plat =>{ %>
+                                                                                              <%       if (Array.isArray(game[index].platforms)) {   %>
+                                                                                                <%    game[index].platforms.forEach(plat =>{ %>
                                                                                                     <%- platformMap[plat.platform.name] || plat.platform.name %>
                                                                                                     <%   })%>
                                                                                                 <%   } %>
                                                 </div>
                                                 <div class="card_title">
-                                                    <a href="game/<%= game.name %>" class=""><%= game.name %></a>
+                                                    <a href="game/<%= game[index].name %>" class=""><%= game[index].name %></a>
                                                 </div>
                                                 <div class="card_button">
                                                     <button>
@@ -79,12 +84,12 @@
                                                 <ul class="card_about">
                                                     <li class="card_about_info">
                                                         <div class="term">Release date:</div>
-                                                        <div class="description"><%= game.released %></div>
+                                                        <div class="description"><%= game[index].released %></div>
                                                     </li>
                                                     <li class="card_about_info">
                                                         <div class="term">Genres:</div>
                                                         <div class="description">
-                                                            <%- game.genres
+                                                            <%- game[index].genres
                                                                      .map(gen => `<span><a href="">${gen.name}</a></span>`)
                                                                               .join(', ') 
                                                                                 %>
@@ -92,7 +97,7 @@
                                                     </li>
                                                 </ul>
                                                 <div class="more">
-                                                    <a href="/games-like-<%= game.slug %>" class="show_more_like">Show more like this</a>
+                                                    <a href="/games-like-<%= game[index].slug %>" class="show_more_like">Show more like this</a>
                                                     <div class="arrow">
                                                         <span></span>   
                                                         <span></span>
@@ -101,7 +106,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                <%  })%> 
+                                    <%  }%> 
+                                <%  }%> 
+                                <%#  })%> 
                             </div>
                          <%  }%> 
                     </div>
