@@ -439,11 +439,15 @@ function last30days(d){
 app.get("/games-like-:slug", async (req, res) => {
   const slug = encodeURIComponent(req.params.slug);
 console.log('slug', slug);
-const page = Number(req.query.page);
+const page = Number(req.query.page) || 1;
 console.log('page:', page);
-const id = Number(req.query.id);
+const id = Number(req.query.id) || '';
 console.log('id', id);
+let similar;
 let game;
+if(id != ''){
+   similar = await suggested(id,page); 
+}else{
  try{
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
   console.log('game Name ', game.data.name);
@@ -455,10 +459,10 @@ let game;
   return res.status(500).send("Error fetching data")
  }
   
- const similar = await suggested(game.data.id,page); 
+  similar = await suggested(game.data.id,page); 
+}
 
-
-  console.log('similar :', similar.length);
+  console.log('similar :', similar);
   res.render("gamesLike.ejs", {
     id: game.data.id,
     name: game.data.name,
