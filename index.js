@@ -446,7 +446,7 @@ let game;
  }catch(e){
   if (e.response && e.response.status === 404) {
     return res.status(404).send("Game not found");
-  }
+  }  
   console.error(e);
   return res.status(500).send("Error fetching data")
  }
@@ -454,8 +454,9 @@ let game;
  const similar = await suggested(game.data.id);
 
 
-  console.log(similar);
+  console.log('similar :', similar.length);
   res.render("gamesLike.ejs", {
+    id: game.data.id,
     name: game.data.name,
     data: data,
      game: game.data,

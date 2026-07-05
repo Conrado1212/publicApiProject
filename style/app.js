@@ -116,13 +116,28 @@ let page = 2;
 let loading = false;
 const loadCircle = document.querySelector('.circle_wrapper');
 async function loadMore(){
+    if(loading) return;
 
-    if(loading)return;
     loading = true;
     loadCircle.style.display = 'flex';
-    const order = document.querySelector('.dropdown_filter_select span').textContent.toLowerCase();
+    //1 get order
+    const order = document.querySelector('.dropdown_filter_select span')?.textContent?.toLowerCase().trim() || '';
+
+    //2check path
+    const isGameLike = window.location.pathname.includes('games-like');
+    
+    let endpoint ='';
+    if(isGameLike){
+        let id = document.querySelector('.game_name p').getAttribute('data-id');
+        endpoint = `${window.location.pathname}?page=${page}`;
+    }else{
+        endpoint = `/api/games?page=${page}`;
+        if (order) {
+            endpoint += `&ordering=-${order}`;
+        }
+    }
     try{
-    const res = await fetch(`/api/games?page=${page}&ordering=-${order}`);
+    const res = await fetch(endpoint);
     const data = await res.json(); 
     console.log(page);
    // console.log("RAW data:", data, "type:", typeof data);
