@@ -129,7 +129,7 @@ async function loadMore(){
     let endpoint ='';
     if(isGameLike){
         let id = document.querySelector('.game_name p').getAttribute('data-id');
-        endpoint = `${window.location.pathname}?page=${page}`;
+        endpoint = `${window.location.pathname}?page=${page}?id=${id}`;
     }else{
         endpoint = `/api/games?page=${page}`;
         if (order) {
