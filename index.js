@@ -439,6 +439,10 @@ function last30days(d){
 app.get("/games-like-:slug", async (req, res) => {
   const slug = encodeURIComponent(req.params.slug);
 console.log('slug', slug);
+const page = Number(req.query.page);
+console.log('page:', page);
+const id = Number(req.query.id);
+console.log('id', id);
 let game;
  try{
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
@@ -451,7 +455,7 @@ let game;
   return res.status(500).send("Error fetching data")
  }
   
- const similar = await suggested(game.data.id);
+ const similar = await suggested(game.data.id,page); 
 
 
   console.log('similar :', similar.length);
@@ -464,7 +468,7 @@ let game;
     });
 });
 
-async function suggested(id) {
+async function suggested(id,page = 1) {
   try {
    
     const game = await axios.get(`${API_URL}games/${id}?key=${API_KEY}`);
@@ -472,7 +476,7 @@ async function suggested(id) {
     const tags = game.data.tags.map(t => t.slug).slice(0, 3); 
     //console.log('tags: ',tags);
     
-    const result = await axios.get(`${API_URL}games?key=${API_KEY}&tags=${tags.join(",")}&ordering=-rating&page_size=20`);
+    const result = await axios.get(`${API_URL}games?key=${API_KEY}&tags=${tags.join(",")}&ordering=-rating&page=${page}&page_size=20`);
 
     const filtered = result.data.results.filter(g => g.id !== id);
 
