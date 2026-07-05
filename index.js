@@ -512,3 +512,27 @@ async function loadGamesCounter(){
   }
 }
 loadGamesCounter();
+
+
+
+app.get("/game/:slug", async (req, res) => {
+  const slug = req.params.slug;
+  console.log('slug', slug);
+  let game;
+  try{
+    game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
+    console.log(game);
+  }catch(e){
+    if (e.response && e.response.status === 404) {
+      return res.status(404).send("Game not found");
+    }  
+    console.error(e);
+    return res.status(500).send("Error fetching data")
+  }
+  res.render("game.ejs", {
+    id: game.data.id,
+    name: game.data.name,
+    data: data,
+     game: game.data
+    });
+});
