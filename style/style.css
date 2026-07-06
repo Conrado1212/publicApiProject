@@ -945,6 +945,13 @@ background:
                 }
                 .game_content_columns{
                     display: flex;
+                    .game_header{
+                        display: flex;
+                        flex-direction:column;
+                        justify-content:center;
+                        position: relative;
+                        min-height: 100px;
+                    }
                     .game_name_title{
                 background: linear-gradient(90deg, var(--white), #ffffff29);
                 -webkit-background-clip: text;
