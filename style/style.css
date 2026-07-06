@@ -921,6 +921,7 @@ background:
             align-items: center;
             width: 100%;
             flex: 1 1 auto;
+            margin-top: 1rem;
             .game_content_wrap{
                 max-width: 960px;
                 .breadcrumbs{
@@ -933,7 +934,12 @@ background:
                             display: inline-block;
                             color: var(--white);
                             line-height: 1.5rem;
-                            font-size: var(--font-s);
+                            font-size: .75rem;
+                            letter-spacing: 1px;
+                            a{
+                                text-decoration: none;
+                                color: #ffffff29;
+                            }
                         }
                     }
                 }
@@ -958,6 +964,7 @@ background:
                          1px 20px 20px rgba(0, 16, 16, 0.2),
                           1px 25px 40px rgba(0, 16, 16, 0.1),
                            1px 30px 80px rgba(16, 16, 16, 0.3);
+                           overflow-wrap: break-word;
                     }
                 }
             }
