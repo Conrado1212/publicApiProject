@@ -353,8 +353,11 @@ const last30 = last30days(new Date());
 }else if(dateParam === 'This week'){
   //const today = new Date().toISOString().split("T")[0];
   const last30 = getMonday(new Date());
+  console.log(last30);
   const thisSun = new Date(last30); 
-  thisSun.setDate(last30.getDate() + 6);
+  
+  thisSun.setDate(last30.getDate() + 7);
+  console.log(thisSun);
    title = data.sidebarMenu[0].Name[1];
 try{
   game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${last30.toISOString().split('T')[0]},${thisSun.toISOString().split('T')[0]}&ordering-released&page_size=20&page=1`);

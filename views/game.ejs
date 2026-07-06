@@ -22,12 +22,13 @@
                    <div class="left">
                         <div class="game_header">
                             <div class="game_header_meta_tag">
+                                <div class="game_meta_date"><%= game.released %></div>
                                 <div class="platforms">
 
                                 </div>
                             </div>
                         </div>
-                        <h1 itemprop="name" class=""><%= name %></h1>
+                        <h1 itemprop="name" class="game_name_title"><%= name %></h1>
                         <div class="game_buttons">
                             <button class="add"></button>
                             <button class="wish"></button>
@@ -53,7 +54,7 @@
                         <div class="game_about">
                             <h2>About</h2>
                             <div class="description">
-                                <p class="desc"></p>
+                                <p class="desc"><%= game.description_raw %></p>
                             </div>
                         </div>
                         <div class="game_meta">
