@@ -951,6 +951,22 @@ background:
                         justify-content:center;
                         position: relative;
                         min-height: 100px;
+                        .game_header_meta_tag{
+                            display: flex;
+                            gap: 1rem;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            font-size: 1rem;
+                            color: var(--white);
+                            font-weight: 500;
+                            .game_meta_date{
+                                box-shadow: inset -5px -5px 10px var(--slider);
+                                border-radius: .25rem;
+                                padding: .25rem;      
+                            }
+                        }
                     }
                     .game_name_title{
                 background: linear-gradient(90deg, var(--white), #ffffff29);
