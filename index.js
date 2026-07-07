@@ -524,7 +524,7 @@ app.get("/game/:slug", async (req, res) => {
   let game;
   try{
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
-    console.log(game);
+    console.log(game.data);
   }catch(e){
     if (e.response && e.response.status === 404) {
       return res.status(404).send("Game not found");

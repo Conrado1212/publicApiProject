@@ -1006,6 +1006,11 @@ background:
                         justify-content: flex-start;
                         align-items: center;
                         margin-bottom: 2rem;
+                        button{
+                            cursor: pointer;
+                            overflow:hidden;
+                            border-radius: .5rem;
+                        }
                     }
                 }
             }
