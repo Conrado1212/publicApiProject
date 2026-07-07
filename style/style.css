@@ -966,6 +966,17 @@ background:
                                 border-radius: .25rem;
                                 padding: .25rem;      
                             }
+                            .platforms{
+                                display: flex;
+                                align-items: center;
+                                gap: .5rem;
+                                height: 100%;
+                                img{
+                                    height: auto;
+                                    object-fit: cover;
+                                    width: 1.5rem;
+                                }
+                            }
                         }
                     }
                     .game_name_title{
@@ -988,6 +999,13 @@ background:
                           1px 25px 40px rgba(0, 16, 16, 0.1),
                            1px 30px 80px rgba(16, 16, 16, 0.3);
                            overflow-wrap: break-word;
+                           margin-bottom: 2rem;
+                    }
+                    .game_buttons{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin-bottom: 2rem;
                     }
                 }
             }

@@ -84,11 +84,12 @@ document.querySelectorAll('.dropdown_filter_select').forEach(drop =>{
 
 
 [column,grid].forEach(e=>{
+    if(!e)return;
     e.addEventListener('click',()=>{
         column.classList.toggle('active');
         grid.classList.toggle('active');
     })
-})
+});
     document.querySelectorAll('.select-options li').forEach(li=>{ 
         
         li.addEventListener('mouseenter',(e)=>{
