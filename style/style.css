@@ -668,6 +668,7 @@ font-weight: 500;
              background-color: rgba(255, 255, 255, 0.1);
              color: var(--white);
              cursor: pointer;
+             font-weight: 800;
             }
             .card_button button:hover{
                
@@ -945,6 +946,14 @@ background:
                 }
                 .game_content_columns{
                     display: flex;
+                    gap: 2rem;
+                    .left{
+                        flex: 1 1 auto;
+                    }
+                    .rigth{
+                        flex: 0 0 auto;
+                        max-width: 400px;
+                    }
                     .game_header{
                         display: flex;
                         flex-direction:column;
@@ -1006,10 +1015,21 @@ background:
                         justify-content: flex-start;
                         align-items: center;
                         margin-bottom: 2rem;
-                        button{
+                        gap: 1rem;
+                        .add,.whish,.save{
                             cursor: pointer;
                             overflow:hidden;
-                            border-radius: .5rem;
+                            border-radius: .75rem; 
+                            .add_content{
+                                min-width:180px;
+                                padding: .5rem 0 .5rem 1rem;
+                                display: flex;
+                                align-items: flex-end;
+                                width: 100%;
+                               overflow: hidden;
+                                color: var(--white);
+                                background-color: rgba(255, 255, 255, 0.1);
+                                box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 10px rgba(207, 210, 218, 0.8);   }
                         }
                     }
                 }
