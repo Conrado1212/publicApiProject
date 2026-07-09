@@ -1019,6 +1019,43 @@ background:
                         .add,.whish,.save{
                             cursor: pointer;
                             border-radius: .75rem; 
+                           .whish_content{
+                            overflow: hidden;
+                                display: flex;
+                                padding: .5rem 0 .5rem 1rem;
+                                border-radius: .75rem; 
+                                align-items: flex-end;
+                                border: 1px solid var(--slider);
+                                box-shadow: 0 0 8px var(--slider),
+                                 inset 0 0 4px var(--slider); 
+                                color: var(--white);
+                                .whish_text{
+                                    flex: 1 0 auto;
+                                    .whish_subtitle{
+                                        opacity: .4;
+                                        font-size: var(--font-s)
+                                    }
+                                    .whish_title{
+                                        display: flex;
+                                        letter-spacing: 0;
+                                        font-size: var(--font-m);
+                                        align-items: baseline;
+                                        gap: .25rem;
+                                        .whish_counter{
+                                            color: var(--slider);
+                                            opacity: .4;
+                                        }
+                                    }
+                                }
+                                .whish_icon{
+                                    height: 100%;
+                                    width: 2rem;
+                                    margin-left: .25rem;
+                                    font-size: 2.75rem;
+                                    //color: var(--slider);
+                                    opacity: .5;
+                                }
+                            }
                             .add_content{
                                 border-radius: .75rem; 
                                 min-width:180px;
