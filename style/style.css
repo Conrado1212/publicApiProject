@@ -941,6 +941,13 @@ background:
                                 text-decoration: none;
                                 color: #ffffff29;
                             }
+                            a:hover{
+                                font-weight: 600;
+                                color:var(--white);
+                            }
+                            a:last-child:hover {
+                                pointer-events: none;
+                            }
                         }
                     }
                 }
@@ -1074,6 +1081,9 @@ background:
                                     //color: var(--slider);
                                     opacity: .5;
                                 }
+                            }  
+                            .save_content:hover{
+
                             }
                             .save_content{
                                 border-radius: .75rem; 
