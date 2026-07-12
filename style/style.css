@@ -1083,9 +1083,12 @@ background:
                                 }
                             }  
                             .save_content:hover{
-
+                                border: 2px solid #e8e0f5;  
+                               // background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.12));
+                               box-shadow: 0 0 16px #e8e0f5;
                             }
                             .save_content{
+                                transition: all .25s ease;
                                 border-radius: .75rem; 
                                 padding: .5rem 0 .5rem 1rem;
                                 display: flex;
