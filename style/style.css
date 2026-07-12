@@ -1083,7 +1083,7 @@ background:
                                 }
                             }  
                             .save_content:hover{
-                                border: 2px solid #e8e0f5;  
+                                border: 1px solid #e8e0f5;  
                                // background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.12));
                                box-shadow: 0 0 16px #e8e0f5;
                             }
@@ -1124,7 +1124,21 @@ background:
                             font-size: 2.75rem;
                            }
                         }
+                        .add_content:hover{
+                            background-color: rgba(255, 255, 255, 0.144);
+                            box-shadow: inset 5px 5px 10px #080808,
+                             -2px -2px 5px rgba(255, 255, 255, 0.2),
+                         
+                             inset  0 -5px 10px rgba(207, 210, 218, 0.8);   
+                             .add_counter{
+                                opacity: 1!important;
+                            }
+                            .add_icon{
+                                opacity: .4!important;
+                            }
+                        }
                             .add_content{
+                                transition: background-color .35s ease, box-shadow .35s ease;
                                 border-radius: .75rem; 
                                 min-width:180px;
                                 padding: .5rem 0 .5rem 1rem;
