@@ -536,6 +536,7 @@ app.get("/game/:slug", async (req, res) => {
     id: game.data.id,
     name: game.data.name,
     data: data,
-     game: game.data
+     game: game.data,
+     background_image: game.data.background_image
     });
 });
