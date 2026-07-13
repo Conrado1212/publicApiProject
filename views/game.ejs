@@ -123,7 +123,15 @@
                             <div class="rating-chart_chart">
                                 <div class="rating_text_wrapper" role="button" tabindex="0">
                                     <div class="rating_text"><%= game.ratings[0].title %></div>
-                                    <div class="rating_icon"><i class="fa-solid fa-thumbs-up"></i></div>
+                                    <%
+                                                     const ratingMaps = {
+                                                                "recommended": "<i class=\"fa-solid fa-thumbs-up\"></i>",
+                                                                    "exceptional": "<i class=\"fa-solid fa-bullseye\"></i>",
+                                                                         "skip": "<i class=\"fa-regular fa-rectangle-xmark\"></i>",
+                                                                             "meh": "<i class=\"fa-regular fa-face-meh\"></i>"
+                                                                                            };
+                                                                                            %>
+                                    <div class="rating_icon"> <%- ratingMaps[game.ratings[0].title] || game.ratings[0].title %></div>
                                 </div>
                             </div>
                             <p>Click to rate</p>
