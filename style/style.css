@@ -1184,6 +1184,38 @@ background:
                             }
                         }
                     }
+                    .rating-chart{
+                        display: flex;
+                        .rating-chart_chart{
+                            display: flex;
+                            flex-shrink: 0;
+                            align-items:flex-start;
+                            flex-direction:column;
+                            .rating_text_wrapper{
+                                display: inline-flex;
+                                align-items: center;
+                                position: relative;
+                                height: auto;
+                                gap: .5rem;
+                                .rating_text{
+                                    font-size: 2rem;
+                                    font-weight: 900;
+                                    background: linear-gradient(180deg, #ffffff, #d6d6d6, #8f8f8f);
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    background-clip: text;
+                                    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+                                }
+                                .rating_icon{
+                                    font-size: 2rem;
+                                    background: linear-gradient(180deg, #fff7b1 0%, #e6c200 60%, #b38a00 100%);
+                                    -webkit-background-clip: text;
+                                    color: transparent;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

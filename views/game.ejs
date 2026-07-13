@@ -122,7 +122,7 @@
                         <div class="rating-chart">
                             <div class="rating-chart_chart">
                                 <div class="rating_text_wrapper" role="button" tabindex="0">
-                                    <div class="rating_text"><%= game.ratings[0].title %></div>
+                                    <div class="rating_text"><%= game.ratings[0].title.charAt(0).toUpperCase() + game.ratings[0].title.slice(1) %></div>
                                     <%
                                                      const ratingMaps = {
                                                                 "recommended": "<i class=\"fa-solid fa-thumbs-up\"></i>",
@@ -134,7 +134,7 @@
                                     <div class="rating_icon"> <%- ratingMaps[game.ratings[0].title] || game.ratings[0].title %></div>
                                 </div>
                             </div>
-                            <p>Click to rate</p>
+                           
                             <div class="rating_dist">
                                 <div class="rating_stat">
 
@@ -146,6 +146,7 @@
                                 </div>
                             </div>
                         </div>
+                        <p>Click to rate</p>
                         <div class="game_owner">
                             <a href=""></a>
                             <a href=""></a>
