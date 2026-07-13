@@ -1186,11 +1186,28 @@ background:
                     }
                     .rating-chart{
                         display: flex;
+                        .ratting_chart_bottom{
+                            text-transform: uppercase;
+                            letter-spacing: 3px;
+                            max-width: 135px;
+                            font-size:1rem;
+                            .ratting_chart_link{
+                                opacity: .4;
+                                color: #696969;
+                                text-decoration:none;
+                                background-image: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, .24) 0, hsla(0, 0%, 100%, .24) 1px, hsla(0, 0%, 100%, 0) 0);
+                                cursor: pointer;
+                            }
+                            .ratting_chart_link:hover{
+                                opacity: 1!important;
+                            }
+                        }
                         .rating-chart_chart{
                             display: flex;
                             flex-shrink: 0;
                             align-items:flex-start;
                             flex-direction:column;
+                            gap: .5rem;
                             .rating_text_wrapper{
                                 display: inline-flex;
                                 align-items: center;
