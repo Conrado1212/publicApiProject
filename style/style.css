@@ -1256,3 +1256,10 @@ background:
                 transform: scale(1.04);
             }
         }
+        .click_to_rate{
+            opacity: .4;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--slider);
+            font-weight: 800;
+        }
