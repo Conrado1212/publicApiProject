@@ -199,7 +199,7 @@ async function loadMore(){
                                     ${platform}
                             </div>
                             <div class="card_title">
-                                <a href="" class="">${game.name}</a>
+                                <a href="game/${game.slug}" class="">${game.name}</a>
                              </div>
                              <div class="card_button">
                              <button>
