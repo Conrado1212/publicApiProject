@@ -1267,6 +1267,10 @@ background:
             border-top-left-radius: .35rem;
             border-bottom-left-radius: .35rem;
         }
+        /* .rating_distribution_stat>div:last-child{
+            border-top-right-radius: .35rem;
+            border-bottom-right-radius: .35rem;
+        } */
         .rating_distribution_stat{
             display: flex;
             width: 100%;
@@ -1276,7 +1280,9 @@ background:
             .recommended {
                 background: linear-gradient(90deg, #fffdd6 0%, #6a6cf5 50%, #37008f 100%);
             }
-            
+            .meh{
+                background: linear-gradient(90deg, #d18616 0%, #dd6809 50%, #8f2900 100%);
+            }
             
             .rating_item{
                 height: 50px;
