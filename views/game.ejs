@@ -167,11 +167,14 @@
                         <p class="click_to_rate">Click to rate</p>
                         <div class="rating_distribution_stats">
                             <div class="rating_distribution_stat">
-                                <div class="rating_item exceptional" role="button" tabindex="0">
+                                <%      game.ratings.forEach(r =>{   %>
+                                    <div class="rating_item exceptional" role="button" tabindex="0" style="width: <%= r.percent %>%;">
                                     <div class="exceptional_icon">
                                         <img src="/images/target.jpg" alt="target" class="exc">
                                     </div>
                                 </div>
+                                    <%   })                                %>
+                               
                                 <div class="rating_item recommended" role="button" tabindex="0">
                                     <div class="recommended_icon">
                                         <img src="/images/rc.png" alt="target" class="rc">

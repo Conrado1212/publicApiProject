@@ -1296,7 +1296,7 @@ background:
                 position: relative;
                 cursor:pointer;
                 overflow:hidden;
-                 flex: 1 1 auto;
+                 flex: 0 1 auto;
             }.exceptional_icon .exc {
                 filter: drop-shadow(0 0 8px #c8e65a) drop-shadow(0 0 15px #6a8f00);
             }
