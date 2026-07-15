@@ -168,29 +168,12 @@
                         <div class="rating_distribution_stats">
                             <div class="rating_distribution_stat">
                                 <%      game.ratings.forEach(r =>{   %>
-                                    <div class="rating_item exceptional" role="button" tabindex="0" style="width: <%= r.percent %>%;">
-                                    <div class="exceptional_icon">
-                                        <img src="/images/target.jpg" alt="target" class="exc">
+                                    <div class="rating_item <%= r.title %>" role="button" tabindex="0" style="width: <%= r.percent %>%;">
+                                    <div class="<%= r.title %>_icon">
+                                        <img src="/images/<%= r.title %>.png" alt="target" class="exc">
                                     </div>
                                 </div>
                                     <%   })                                %>
-                               
-                                <div class="rating_item recommended" role="button" tabindex="0">
-                                    <div class="recommended_icon">
-                                        <img src="/images/rc.png" alt="target" class="rc">
-                                    </div>
-                                </div>
-                                <div class="rating_item skip" role="button" tabindex="0">
-                                    <div class="skip_icon">
-                                        <img src="/images/skip.png" alt="target" class="sk">
-                                        </div>
-                                </div>
-                                <div class="rating_item meh" role="button" tabindex="0">
-                                    <div class="meh_icon">
-                                        <img src="/images/meh.png" alt="target" class="mh">
-                                    </div>
-                                </div>
-                                
                             </div>
                             <div class="rating_meta">
 

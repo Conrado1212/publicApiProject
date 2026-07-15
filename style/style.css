@@ -1310,8 +1310,8 @@ background:
                 bottom: -20px;
                 .exc, .rc, .mh,.sk{
                     object-fit: contain;
-                    width: 4rem;
-                    height: 4rem;
+                    width: 3.75rem;
+                    height: 3.75rem;
                    // display: block;
                   
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
