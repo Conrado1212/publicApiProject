@@ -1284,7 +1284,7 @@ background:
                 background: linear-gradient(90deg, #d18616 0%, #dd6809 50%, #8f2900 100%);
             }
             .skip{
-                background: linear-gradient(180deg, #d91c1c 0%, #c41a1a 50%, #7a0c0c 100%);
+                background: linear-gradient(90deg, #fffdd6 0%, #c41a1a 50%, #7a0c0c 100%);
             }
             
             
@@ -1294,16 +1294,24 @@ background:
                 cursor:pointer;
                 overflow:hidden;
                  flex: 1 1 auto;
+            }.exceptional_icon .exc {
+                filter: drop-shadow(0 0 8px #c8e65a) drop-shadow(0 0 15px #6a8f00);
             }
-            .exceptional_icon, .recommended_icon{
+            
+            
+            
+            .exceptional_icon, .recommended_icon, .meh_icon, .skip_icon{
+                
                 position: absolute;
                 left: -10px;
                 bottom: -20px;
-                .exc, .rc{
-                    
+                .exc, .rc, .mh,.sk{
+                    object-fit: contain;
                     width: 4rem;
                     height: 4rem;
                    // display: block;
+                  
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
                 }
             }
         }
