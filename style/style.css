@@ -1273,6 +1273,11 @@ background:
             .exceptional{
                 background: linear-gradient(180deg, #fffdd6 0%, #c8e65a 50%, #6a8f00 100%);
             }
+            .recommended {
+                background: linear-gradient(90deg, #fffdd6 0%, #6a6cf5 50%, #37008f 100%);
+            }
+            
+            
             .rating_item{
                 height: 50px;
                 position: relative;
@@ -1280,11 +1285,11 @@ background:
                 overflow:hidden;
                  flex: 1 1 auto;
             }
-            .exceptional_icon{
+            .exceptional_icon, .recommended_icon{
                 position: absolute;
                 left: -10px;
                 bottom: -20px;
-                .exc{
+                .exc, .rc{
                     
                     width: 4rem;
                     height: 4rem;
