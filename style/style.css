@@ -1262,6 +1262,9 @@ background:
             margin-bottom: 1rem;
             color: var(--slider);
             font-weight: 800;
+        }    .rating_distribution_stat .rating_item:last-of-type {
+            border-top-right-radius: .35rem;
+        border-bottom-right-radius: .35rem;
         }
         .rating_distribution_stat>div:first-child{
             border-top-left-radius: .35rem;
@@ -1286,7 +1289,7 @@ background:
             .skip{
                 background: linear-gradient(90deg, #fffdd6 0%, #c41a1a 50%, #7a0c0c 100%);
             }
-            
+        
             
             .rating_item{
                 height: 50px;
