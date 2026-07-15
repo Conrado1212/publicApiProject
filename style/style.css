@@ -1283,6 +1283,10 @@ background:
             .meh{
                 background: linear-gradient(90deg, #d18616 0%, #dd6809 50%, #8f2900 100%);
             }
+            .skip{
+                background: linear-gradient(180deg, #d91c1c 0%, #c41a1a 50%, #7a0c0c 100%);
+            }
+            
             
             .rating_item{
                 height: 50px;
