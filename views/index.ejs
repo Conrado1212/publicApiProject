@@ -117,6 +117,14 @@
                                                     <a href="game/<%= game.slug %>" class=""><%= game.name %></a>
                                                 </div>
                                                 <div class="card_button">
+                                                    <%
+                                                     const ratingMaps = {
+                                                                "recommended": "<i class=\"fa-solid fa-thumbs-up\"></i>",
+                                                                    "exceptional": "<i class=\"fa-solid fa-bullseye\"></i>",
+                                                                         "skip": "<i class=\"fa-regular fa-rectangle-xmark\"></i>",
+                                                                             "meh": "<i class=\"fa-regular fa-face-meh\"></i>"
+                                                                                            };
+                                                                                            %>
                                                     <button>
                                                         <i class="fa-solid fa-plus"></i> <%= game.added-game.added_by_status.toplay %>
                                                     </button>
