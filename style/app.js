@@ -185,6 +185,8 @@ async function loadMore(){
             const rating = ratingMaps[game.ratings?.[0]?.title] ?? game.ratings?.[0]?.title  ?? '';
             const classRating = game.ratings?.[0]?.title  ?? ''
             const progress = game.short_screenshots.length > 1 ? game.short_screenshots.map(()=> `<span class="progress"></span>`).join('') : '';
+            const number = game.added-game.added_by_status.toplay;
+            const safeNumber = Number.isNaN(number) ? 0 : number;
             col.insertAdjacentHTML(
                 "beforeend",
                 `
@@ -210,7 +212,7 @@ async function loadMore(){
                              </div>
                              <div class="card_button">
                              <button>
-                                 <i class="fa-solid fa-plus"></i>
+                                 <i class="fa-solid fa-plus"></i> ${safeNumber}
                              </button>
                              <div class="rating_icon ${classRating}">
                                 ${rating}
