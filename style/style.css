@@ -1432,4 +1432,27 @@ background:
         }
         .game_about{
             margin-top: 2rem;
+            h2{
+                font-size: 2rem;
+                font-weight: 900;
+                background: linear-gradient(180deg, #ffffff, #d6d6d6, #8f8f8f);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+                letter-spacing: 1px;
+                margin-bottom: .5rem;
+                
+            }
+            .description{
+                font-size: 1.1rem;
+                line-height: 1.5rem;
+                color: var(--white);
+                opacity: .75;
+            }
+        }
+        .game_meta{
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
         }
