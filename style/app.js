@@ -168,6 +168,12 @@ async function loadMore(){
                                     "Linux": "<i class=\"fa-brands fa-linux\"></i>"
 
                                         };
+                                        const ratingMaps = {
+                                            "recommended": "<i class=\"fa-solid fa-thumbs-up\"></i>",
+                                                "exceptional": "<i class=\"fa-solid fa-bullseye\"></i>",
+                                                     "skip": "<i class=\"fa-regular fa-rectangle-xmark\"></i>",
+                                                         "meh": "<i class=\"fa-regular fa-face-meh\"></i>"
+                                                                        };
        
         group.forEach(game => {
             const imgSrc = game.background_image || "/images/No_Image_Available.jpg";
@@ -176,7 +182,8 @@ async function loadMore(){
             const gallery = game.short_screenshots.map(img=> `<img src="${img.image}" alt="">`).join('');
             console.log('gallery', gallery);
             const platform = (game.platforms ?? []).map(plat => platformMap[plat?.platform?.name]).filter(Boolean).join(" ");
-
+            const rating = ratingMaps[game.ratings?.[0]?.title] ?? game.ratings?.[0]?.title  ?? '';
+            const classRating = game.ratings?.[0]?.title  ?? ''
             const progress = game.short_screenshots.length > 1 ? game.short_screenshots.map(()=> `<span class="progress"></span>`).join('') : '';
             col.insertAdjacentHTML(
                 "beforeend",
@@ -205,6 +212,9 @@ async function loadMore(){
                              <button>
                                  <i class="fa-solid fa-plus"></i>
                              </button>
+                             <div class="rating_icon ${classRating}">
+                                ${rating}
+                             </div>
                              <ul class="card_about">
                                                     <li class="card_about_info">
                                                         <div class="term">Release date:</div>

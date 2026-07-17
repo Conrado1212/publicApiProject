@@ -664,7 +664,7 @@ font-weight: 500;
                 gap: 1rem;
                 align-items: center;
                 .rating_icon{
-                    font-size: 1.25rem;
+                    font-size: 1.5rem;
                                     font-weight: 700;
                                     
                 }
@@ -679,7 +679,7 @@ font-weight: 500;
                 color: transparent;
                 }
                 .skip{
-                    background: linear-gradient(180deg, #fffdd6 0%, #c41a1a 50%, #7a0c0c 100%);
+                    background: linear-gradient(180deg, #fffdd6 0%, #464242 50%, #070707 100%);
                     -webkit-background-clip: text;
                 color: transparent;
                 } 
