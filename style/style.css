@@ -1377,5 +1377,11 @@ background:
                     opacity: .4;
                         color: #e8e0f5;
                 }
+                .icon{
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: crimson;
+                }
             }
         }
