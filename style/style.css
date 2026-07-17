@@ -1356,6 +1356,7 @@ background:
             display: flex;
             flex-wrap: wrap;
             .rating_distribution_label{
+                flex: 1 1 auto;
                 display: flex;
                 align-items:center;
                 height: 2rem;
@@ -1381,7 +1382,19 @@ background:
                     width: 10px;
                     height: 10px;
                     border-radius: 50%;
-                    background-color: crimson;
+                   
+                }
+                .meh{
+                    background: linear-gradient(90deg, #d18616 0%, #dd6809 50%, #8d3411 100%);
+                }
+                .skip{
+                    background: linear-gradient(180deg, #be2825 0%, #c41a1a 50%, #7a0c0c 100%);
+                }
+                .recommended{
+                    background: linear-gradient(180deg, #456ab8 0%, #6a6cf5 50%, #620ceb 100%);
+                }
+                .excpetional{
+                    background: linear-gradient(90deg, #615e23 0%, #c8e65a 50%, #8fc009 100%);
                 }
             }
         }
