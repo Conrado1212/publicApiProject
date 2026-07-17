@@ -664,14 +664,30 @@ font-weight: 500;
                 gap: 1rem;
                 align-items: center;
                 .rating_icon{
-                    font-size: 1.5rem;
-                                    background: linear-gradient(180deg, #fff7b1 0%, #e6c200 60%, #b38a00 100%);
-                                    -webkit-background-clip: text;
-                                    color: transparent;
+                    font-size: 1.25rem;
                                     font-weight: 700;
                                     
                 }
-                
+                .recommended{
+                    background: linear-gradient(180deg, #fff7b1 0%, #e6c200 60%, #b38a00 100%);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+                .exceptional{
+                    background: linear-gradient(180deg, #fffdd6 0%, #c41a1a 50%, #7a0c0c 100%);
+                    -webkit-background-clip: text;
+                color: transparent;
+                }
+                .skip{
+                    background: linear-gradient(180deg, #fffdd6 0%, #c41a1a 50%, #7a0c0c 100%);
+                    -webkit-background-clip: text;
+                color: transparent;
+                } 
+                .meh{
+                    background: linear-gradient(180deg, #d18616 0%, #dd6809 50%, #8f2900 100%);
+                    -webkit-background-clip: text;
+                color: transparent;
+                }
             }
             .card_button button{
                 box-shadow: inset -5px -5px 10px var(--slider), 0 0 10px rgba(207, 210, 218, 0.8);
