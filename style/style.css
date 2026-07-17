@@ -1455,4 +1455,8 @@ background:
             margin-top: 2rem;
             display: flex;
             flex-wrap: wrap;
+            gap: .5rem;
+            .game_meta_block{
+                width: calc(50% - .25rem);
+            }
         }
