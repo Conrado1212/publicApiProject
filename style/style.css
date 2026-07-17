@@ -1351,6 +1351,13 @@ background:
         }
         .game_owner{
             margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            a{
+                text-decoration: none;
+            }
         }
         .rating_distribution_labels{
             display: flex;
@@ -1371,7 +1378,7 @@ background:
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
                             background-clip: text;
-                            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+                            filter: brightness(1.3);
                             letter-spacing: 1px;
                 }
                 .rating-counter{

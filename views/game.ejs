@@ -177,32 +177,19 @@
                             </div>
                             <div class="rating_meta">
                                 <div class="rating_distribution_labels">
+                                    <%      game.ratings.forEach(r =>{   %>
                                     <div class="rating_distribution_label">
-                                        <div class="icon recommended"></div>
-                                        <span class="rating-text">Recommended</span>
-                                        <div class="rating-counter">35</div>
+                                        <div class="icon <%= r.title %>"></div>
+                                        <span class="rating-text"><%= r.title.charAt(0).toUpperCase() + r.title.slice(1) %></span>
+                                        <div class="rating-counter"><%= r.count %></div>
                                     </div>
-                                    <div class="rating_distribution_label">
-                                        <div class="icon excpetional"></div>
-                                        <span class="rating-text">Excpetional</span>
-                                        <div class="rating-counter">16</div>
-                                    </div>
-                                    <div class="rating_distribution_label">
-                                        <div class="icon skip"></div>
-                                        <span class="rating-text">Skip</span>
-                                        <div class="rating-counter">9</div>
-                                    </div>
-                                    <div class="rating_distribution_label">
-                                        <div class="icon meh"></div>
-                                        <span class="rating-text">Meh</span>
-                                        <div class="rating-counter">7</div>
-                                    </div>
+                                    <%   })                                %>
                                 </div>
                             </div>
                         </div>
                         <div class="game_owner">
-                            <a href=""></a>
-                            <a href=""></a>
+                            <a href="" rel="nofollow"><i class="fa-solid fa-plus"></i> Write a review</a>
+                            <a href="" rel="nofollow"><i class="fa-regular fa-message"></i> Write a comment</a>
                         </div>
                         <div class="game_about">
                             <h2>About</h2>
