@@ -1373,5 +1373,9 @@ background:
                             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
                             letter-spacing: 1px;
                 }
+                .rating-counter{
+                    opacity: .4;
+                        color: #e8e0f5;
+                }
             }
         }
