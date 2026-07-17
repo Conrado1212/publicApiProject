@@ -1364,5 +1364,14 @@ background:
                 gap:.5rem;
                 border-radius:2rem;
                 box-shadow: 0 0 0 2px hsla(0, 0%, 100%, 0);
+                .rating-text{
+                    font-weight: 900;
+                            background: linear-gradient(180deg, #ffffff, #d6d6d6, #8f8f8f);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+                            letter-spacing: 1px;
+                }
             }
         }
