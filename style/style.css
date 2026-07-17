@@ -1346,3 +1346,9 @@ background:
                 }
             }
         }
+        .rating_meta{
+            margin-top: 1rem;
+        }
+        .game_owner{
+            margin-top: 2rem;
+        }
