@@ -113,11 +113,7 @@
                                                             <%   })%>
                                                         <%   } %>
                                                 </div>
-                                                <div class="card_title">
-                                                    <a href="game/<%= game.slug %>" class=""><%= game.name %></a>
-                                                </div>
-                                                <div class="card_button">
-                                                    <%
+                                                <%
                                                      const ratingMaps = {
                                                                 "recommended": "<i class=\"fa-solid fa-thumbs-up\"></i>",
                                                                     "exceptional": "<i class=\"fa-solid fa-bullseye\"></i>",
@@ -125,9 +121,18 @@
                                                                              "meh": "<i class=\"fa-regular fa-face-meh\"></i>"
                                                                                             };
                                                                                             %>
+                                                <div class="card_title">
+                                                    <a href="game/<%= game.slug %>" class=""><%= game.name %> </a>
+                                                </div>
+                                                <div class="card_button">
+                                                    
                                                     <button>
                                                         <i class="fa-solid fa-plus"></i> <%= game.added-game.added_by_status.toplay %>
                                                     </button>
+                                                    <div class="rating_icon">
+                                                        <%- ratingMaps[game.ratings[0].title] || game.ratings[0].title %>
+                                                    </div>
+                                                    
                                                 </div>
                                                 <ul class="card_about">
                                                     <li class="card_about_info">
