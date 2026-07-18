@@ -1510,7 +1510,7 @@ background:
             margin-top: 1rem;
             .game_system_req{
                 h2{
-                font-size: 1.75rem;
+                font-size: 1.5rem;
                 font-weight: 900;
                 background: linear-gradient(180deg, #ffffff, #d6d6d6, #8f8f8f);
                 -webkit-background-clip: text;

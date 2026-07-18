@@ -208,15 +208,11 @@
                             <%- metaBlockWide('Website',  [{name: game.website }] , x => x?.name) %>  
                         </div>
                         <div class="game_req">
+                            <%      game.platforms.forEach(t =>{   %>
                             <div class="game_system_req">
-                                <h2 class="system_title">System requirements for: </h2>
+                                <h2 class="system_title">System requirements for: <%= t.platform.name %></h2>
                             </div>
-                            <div class="game_system_req">
-                                <h2 class="system_title">System requirements for: </h2>
-                            </div>
-                            <div class="game_system_req">
-                                <h2 class="system_title">System requirements for: </h2>
-                            </div>
+                            <%   })                                %>
                         </div>
                    </div>
                    <div class="right">
