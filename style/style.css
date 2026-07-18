@@ -1458,6 +1458,24 @@ background:
             gap: .5rem;
             .game_meta_block_wide{
                 width: 100%;
+                .meta_title{
+                    opacity: .3;
+                    font-weight: 500;
+                    background: linear-gradient(180deg, #ffffff, #d6d6d6, var(--slider));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    letter-spacing: 1px;
+                    margin-bottom: .5rem;
+                }
+                a{
+                    opacity: .7;
+                    color: #e8e0f5;
+                    text-decoration: none;
+                    background-image: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, .24) 0, hsla(0, 0%, 100%, .24) 1px, hsla(0, 0%, 100%, 0) 0);
+                    cursor: pointer;
+                    text-decoration:none;
+                }
             }
             .game_meta_block{
                 width: calc(50% - .25rem);

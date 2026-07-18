@@ -205,6 +205,7 @@
                             <%- metaBlock('Publisher',game.publishers , x => x?.name) %>
                             <%- metaBlock('Age rating', [{name: game.esrb_rating }] , x => x?.name) %>
                             <%- metaBlockWide('Tags',  game.tags , x => x?.name) %>  
+                            <%- metaBlockWide('Website',  [{name: game.website }] , x => x?.name) %>  
                         </div>
                         <div class="game_req">
                             <div class="game_system_req">
