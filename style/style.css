@@ -1506,3 +1506,24 @@ background:
                 }
             }
         }
+        .game_req{
+            margin-top: 1rem;
+            .game_system_req{
+                h2{
+                font-size: 1.75rem;
+                font-weight: 900;
+                background: linear-gradient(180deg, #ffffff, #d6d6d6, #8f8f8f);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+                letter-spacing: 1px;
+                }
+                
+            }
+            .game_system_req:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+            
+        }
+        
