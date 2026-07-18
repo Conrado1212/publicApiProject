@@ -566,3 +566,27 @@ return `
     </div>
 `;
 };
+
+app.locals.metaBlockWide = (title, items, getName) => {
+  if (!items || items.length === 0) {
+    return `
+        <div class="game_meta_block_wide">
+            <div class="meta_title">${title}</div>
+        </div>
+    `;
+  }
+  const links = items
+    .map(item =>{
+      const name = getName(item);
+      return name ?  `<a href="" class="game_link_filter">${name}</a>` : null;
+    })
+    .filter(Boolean)
+    .join(', ');
+
+    return `
+    <div class="game_meta_block_wide">
+      <div class="meta_title">${title}</div>
+      ${links}
+    </div>
+    `;
+}

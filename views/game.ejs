@@ -198,19 +198,13 @@
                             </div>
                         </div>
                         <div class="game_meta">
-                            <%- metaBlock('Platforms', game.platforms, p=> p.platform.name) %>
-                            <%- metaBlock('Genres', game.genres, g => g.name) %>
-                            <%- metaBlock('Relesase date',[{name: game.released }] , x => x.name) %>
-                            <%- metaBlock('Developer', game.developers , x => x.name) %>
-                            <%- metaBlock('Publisher',game.publishers , x => x.name) %>
-                            <%- metaBlock('Age rating', [{name: game.esrb_rating }] , x => x.name) %>
-                          
-                            <div class="game_meta_block_wide">
-                                
-                            </div>
-                            <div class="game_meta_block_wide">
-                                
-                            </div>
+                            <%- metaBlock('Platforms', game.platforms, p=> p.platform?.name) %>
+                            <%- metaBlock('Genres', game.genres, g => g?.name) %>
+                            <%- metaBlock('Relesase date',[{name: game.released }] , x => x?.name) %>
+                            <%- metaBlock('Developer', game.developers , x => x?.name) %>
+                            <%- metaBlock('Publisher',game.publishers , x => x?.name) %>
+                            <%- metaBlock('Age rating', [{name: game.esrb_rating }] , x => x?.name) %>
+                            <%- metaBlockWide('Tags',  game.tags , x => x?.name) %>  
                         </div>
                         <div class="game_req">
                             <div class="game_system_req">
