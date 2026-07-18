@@ -522,9 +522,12 @@ app.get("/game/:slug", async (req, res) => {
   const slug = req.params.slug;
   console.log('slug', slug);
   let game;
+  let screenshots;
   try{
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
-    console.log(game.data);
+    //console.log(game.data);
+    screenshots = await axios.get(`${API_URL}games/${slug}/screenshots?key=${API_KEY}`);
+    console.log(screenshots.data);
   }catch(e){
     if (e.response && e.response.status === 404) {
       return res.status(404).send("Game not found");
@@ -537,6 +540,7 @@ app.get("/game/:slug", async (req, res) => {
     name: game.data.name,
     data: data,
      game: game.data,
+     screenshots: screenshots.data.results, 
      background_image: game.data.background_image
     });
 });
