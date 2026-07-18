@@ -540,3 +540,29 @@ app.get("/game/:slug", async (req, res) => {
      background_image: game.data.background_image
     });
 });
+
+app.locals.metaBlock = (title, items, getName) => {
+  if (!items || items.length === 0) {
+    return `
+        <div class="game_meta_block">
+            <div class="meta_title">${title}</div>
+            <div class="meta_text">-</div>
+        </div>
+    `;
+}
+
+const links = items
+    .map(item => {
+        const name = getName(item);
+        return name ? `<a href="">${name}</a>` : null;
+    })
+    .filter(Boolean)
+    .join(', ');
+
+return `
+    <div class="game_meta_block">
+        <div class="meta_title">${title}</div>
+        <div class="meta_text">${links || 'No data'}</div>
+    </div>
+`;
+};

@@ -198,44 +198,13 @@
                             </div>
                         </div>
                         <div class="game_meta">
-                            <div class="game_meta_block">
-                                <div class="meta_title">Platforms</div>
-                                <div class="meta_text">
-                                    <%    game.platforms.forEach((p, index) =>{   %>
-                                    <a href=""><%=p.platform.name %></a><%= index < game.platforms.length - 1 ? ', ' : '' %>
-                                    <%   })                                %>
-                                </div>
-                            </div>
-                            <div class="game_meta_block">
-                                <div class="meta_title">Genre</div>
-                                <div class="meta_text">
-                                    <a href="">Action</a>
-                                </div>
-                            </div>
-                            <div class="game_meta_block">
-                                <div class="meta_title">Release date</div>
-                                <div class="meta_text">
-                                    <a href="">Action</a>
-                                </div>
-                            </div>
-                            <div class="game_meta_block">
-                                <div class="meta_title">Developer</div>
-                                <div class="meta_text">
-                                    <a href="">Action</a>
-                                </div>
-                            </div>
-                            <div class="game_meta_block">
-                                <div class="meta_title">Publisher</div>
-                                <div class="meta_text">
-                                    <a href="">Action</a>
-                                </div>
-                            </div>
-                            <div class="game_meta_block">
-                                <div class="meta_title">Age rating</div>
-                                <div class="meta_text">
-                                    <a href="">Action</a>
-                                </div>
-                            </div>
+                            <%- metaBlock('Platforms', game.platforms, p=> p.platform.name) %>
+                            <%- metaBlock('Genres', game.genres, g => g.name) %>
+                            <%- metaBlock('Relesase date',[{name: game.released }] , x => x.name) %>
+                            <%- metaBlock('Developer', game.developers , x => x.name) %>
+                            <%- metaBlock('Publisher',game.publishers , x => x.name) %>
+                            <%- metaBlock('Age rating', [{name: game.esrb_rating }] , x => x.name) %>
+                          
                             <div class="game_meta_block_wide">
                                 
                             </div>
