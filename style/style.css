@@ -1456,6 +1456,9 @@ background:
             display: flex;
             flex-wrap: wrap;
             gap: .5rem;
+            .game_meta_block_wide{
+                width: 100%;
+            }
             .game_meta_block{
                 width: calc(50% - .25rem);
                 .meta_title{
