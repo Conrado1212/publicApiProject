@@ -1474,7 +1474,8 @@ background:
                 .meta_text{
                         word-wrap:break-word;
                         line-height: 1.5;
-
+                        color: #e8e0f5;
+                        opacity: .7;
                     a{
                         opacity: .7;
                         color: #e8e0f5;

@@ -188,7 +188,7 @@
                             </div>
                         </div>
                         <div class="game_owner">
-                            <a href="" rel="nofollow"><i class="fa-solid fa-plus"></i> Write a review</a>
+                            <a href="" rel="nofollow"><i class="fa-solid fa-plus"></i> Write a review <%= game.reviews_count %></a>
                             <a href="" rel="nofollow"><i class="fa-regular fa-message"></i> Write a comment</a>
                         </div>
                         <div class="game_about">
@@ -201,7 +201,9 @@
                             <div class="game_meta_block">
                                 <div class="meta_title">Platforms</div>
                                 <div class="meta_text">
-                                    <a href="">Xbox</a>
+                                    <%    game.platforms.forEach((p, index) =>{   %>
+                                    <a href=""><%=p.platform.name %></a><%= index < game.platforms.length - 1 ? ', ' : '' %>
+                                    <%   })                                %>
                                 </div>
                             </div>
                             <div class="game_meta_block">
@@ -249,7 +251,7 @@
 
                             </div>
                             <div class="game_system_req">
-                                
+
                             </div>
                         </div>
                    </div>
