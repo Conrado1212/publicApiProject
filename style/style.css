@@ -1458,5 +1458,14 @@ background:
             gap: .5rem;
             .game_meta_block{
                 width: calc(50% - .25rem);
+                .meta_title{
+                    opacity: .3;
+                    font-weight: 500;
+                    background: linear-gradient(180deg, #ffffff, #d6d6d6, var(--slider));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    letter-spacing: 1px;
+                }
             }
         }
