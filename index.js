@@ -525,9 +525,9 @@ app.get("/game/:slug", async (req, res) => {
   let screenshots;
   try{
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
-    //console.log(game.data);
+    console.log(game.data);
     screenshots = await axios.get(`${API_URL}games/${slug}/screenshots?key=${API_KEY}`);
-    console.log(screenshots.data);
+    //console.log(screenshots.data);
   }catch(e){
     if (e.response && e.response.status === 404) {
       return res.status(404).send("Game not found");
@@ -548,10 +548,7 @@ app.get("/game/:slug", async (req, res) => {
 app.locals.metaBlock = (title, items, getName) => {
   if (!items || items.length === 0) {
     return `
-        <div class="game_meta_block">
-            <div class="meta_title">${title}</div>
-            <div class="meta_text">-</div>
-        </div>
+       
     `;
 }
 
@@ -574,9 +571,7 @@ return `
 app.locals.metaBlockWide = (title, items, getName) => {
   if (!items || items.length === 0) {
     return `
-        <div class="game_meta_block_wide">
-            <div class="meta_title">${title}</div>
-        </div>
+       
     `;
   }
   const links = items
@@ -594,3 +589,10 @@ app.locals.metaBlockWide = (title, items, getName) => {
     </div>
     `;
 }
+/* <div class="game_meta_block_wide">
+<div class="meta_title">${title}</div>
+</div> */
+/* <div class="game_meta_block">
+<div class="meta_title">${title}</div>
+<div class="meta_text">-</div>
+</div> */

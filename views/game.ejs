@@ -203,7 +203,7 @@
                             <%- metaBlock('Relesase date',[{name: game.released }] , x => x?.name) %>
                             <%- metaBlock('Developer', game.developers , x => x?.name) %>
                             <%- metaBlock('Publisher',game.publishers , x => x?.name) %>
-                            <%- metaBlock('Age rating', [{name: game.esrb_rating }] , x => x?.name) %>
+                            <%- metaBlock('Age rating',  [game.esrb_rating]  , x => x?.name) %>
                             <%- metaBlockWide('Tags',  game.tags , x => x?.name) %>  
                             <%- metaBlockWide('Website',  [{name: game.website }] , x => x?.name) %>  
                         </div>

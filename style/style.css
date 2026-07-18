@@ -1539,7 +1539,9 @@ background:
               overflow:hidden;
               height: 220px;
               display: block;
-             
+              box-shadow:  0 0 12px var(--slider),
+              0 0 6px rgba(255, 255, 255, 0.15),
+               0 0 4px rgba(0, 0, 0, 0.8);
         }
         .game_screenshot  .screenshot{
             position: absolute;
@@ -1549,11 +1551,19 @@ background:
             object-fit:cover;
             display: block;
         }
+        @media (min-width: 900px) {
+            .game_screenshot_item {
+                flex: 0 0 400px;
+            }
+        }
         .game_screenshots_list{
             display:flex;
             flex-wrap: wrap;
             gap: 1rem;
             .game_screenshot_item{
+                box-shadow:  0 0 12px rgba(255, 255, 255, 0.08),
+                  0 0 6px rgba(255, 255, 255, 0.15),
+                   0 0 4px rgba(0, 0, 0, 0.8);
                 flex: 1 1 auto;
                 position: relative;
                width: calc(50% - 1rem);
