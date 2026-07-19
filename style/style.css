@@ -286,8 +286,7 @@ text-shadow: 0 1px 0 #e8e0f5,
             }
             .subtitle{
                 font-size: var(--font-s);
-                color: var(--white);
-                
+                color: var(--white);               
             }
         } 
     }
@@ -333,8 +332,7 @@ text-shadow: 0 1px 0 #e8e0f5,
                 margin-right: .5rem;
                 box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.2),
                  2px 2px 5px rgba(0, 0, 0, 0.6),
-                  0 0 10px rgba(207, 210, 218, 0.8)
-                  ;
+                  0 0 10px rgba(207, 210, 218, 0.8)     ;
                   color: rgb(0, 0, 0);
                   position: relative;
             }
@@ -378,8 +376,7 @@ text-shadow: 0 1px 0 #e8e0f5,
      margin-right: .5rem;
      box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.2),
       2px 2px 5px rgba(0, 0, 0, 0.6),
-       0 0 10px rgba(207, 210, 218, 0.8)
-       ;
+       0 0 10px rgba(207, 210, 218, 0.8)    ;
   }
   .elements .sidebar_list  li  a:hover{
     -webkit-text-fill-color: #fafafa;
@@ -439,8 +436,6 @@ body .white header .options .mode-content .toggle-sw .moon{
        .filter{
         flex: 1 1 auto;
         .select{
-        //    position: relative;
-        //    z-index: 20; 
             display: flex;
             gap: .5rem;
             align-items: center;
@@ -651,11 +646,6 @@ font-weight: 500;
                 background-position: 0%;
             }
             .card_title a:hover {
-                /* background: linear-gradient(90deg, var(--black), #ffffff29),var(--slider);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-shadow: inset 5px 5px 10px var(--white); */
                 background-position: 100%;
             }
             .card_button{
@@ -699,8 +689,6 @@ font-weight: 500;
              font-weight: 800;
             }
             .card_button button:hover{
-               
-               
                 box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),inset 2px 2px 5px rgba(0, 0, 0, 0.6), 0 0 10px rgba(207, 210, 218, 0.8);
             }
             .card_about{
@@ -1103,7 +1091,6 @@ background:
                                     width: 2rem;
                                     margin-left: .25rem;
                                     font-size: 2.75rem;
-                                    //color: var(--slider);
                                     opacity: .5;
                                 }
                             }  
@@ -1112,7 +1099,6 @@ background:
                             }
                             .save_content:hover{
                                 border: 1px solid #e8e0f5;  
-                               // background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.12));
                                box-shadow: 0 0 16px #e8e0f5;
                             }
                             .save_content{
@@ -1298,10 +1284,6 @@ background:
             border-top-left-radius: .35rem;
             border-bottom-left-radius: .35rem;
         }
-        /* .rating_distribution_stat>div:last-child{
-            border-top-right-radius: .35rem;
-            border-bottom-right-radius: .35rem;
-        } */
         .rating_distribution_stat{
             display: flex;
             width: 100%;
@@ -1316,9 +1298,7 @@ background:
             }
             .skip{
                 background: linear-gradient(90deg, #fffdd6 0%, #c41a1a 50%, #7a0c0c 100%);
-            }
-        
-            
+            } 
             .rating_item{
                 height: 50px;
                 position: relative;
@@ -1328,9 +1308,6 @@ background:
             }.exceptional_icon .exc {
                 filter: drop-shadow(0 0 8px #c8e65a) drop-shadow(0 0 15px #6a8f00);
             }
-            
-            
-            
             .exceptional_icon, .recommended_icon, .meh_icon, .skip_icon{
                 
                 position: absolute;
@@ -1339,9 +1316,7 @@ background:
                 .exc, .rc, .mh,.sk{
                     object-fit: contain;
                     width: 3.75rem;
-                    height: 3.75rem;
-                   // display: block;
-                  
+                    height: 3.75rem;  
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
                 }
             }
