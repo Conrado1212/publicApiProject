@@ -530,11 +530,12 @@ app.get("/game/:slug", async (req, res) => {
   try{
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
     const rank = await getRank(slug, year);
+    const rankPlatformer = await getPlatformer(slug);
   //  rating = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${year}-01-01,${year}-12-31&ordering=-rating`);
   //  console.log(rating);
    //  index = rating.data.results.findIndex(g => g.slug === slug);
    //  console.log(index );
-   // console.log(game.data);
+    console.log(game.data);
     screenshots = await axios.get(`${API_URL}games/${slug}/screenshots?key=${API_KEY}`);
     //console.log(screenshots.data);
     res.render("game.ejs", {
@@ -544,7 +545,8 @@ app.get("/game/:slug", async (req, res) => {
        game: game.data,
        screenshots: screenshots.data.results, 
        background_image: game.data.background_image,
-       rank: rank
+       rank: rank,
+       Platformer: rankPlatformer,
       });
   }catch(e){
     if (e.response && e.response.status === 404) {
@@ -640,6 +642,30 @@ async function getRank(slug, year) {
 return null;
 }
 
+async function getPlatformer(slug) {
+  let page = 1;
+  let next = `${API_URL}games?key=${API_KEY}&genres=83&ordering=-rating&page=${page}`;
+
+  while (next) {
+    const res = await axios.get(next);
+    const index = res.data.results.findIndex(g => g.slug === slug);
+    if(index !== -1){
+      const pageSize = res.data.results.length;
+      return (page - 1) * pageSize + index + 1;
+    }
+    next = res.data.next;
+    page++;
+}
+return null;
+}
+
+
+//const getPlatformerRank = await getPlatformer("replaced");
+
+//console.log('rank', getPlatformerRank);
+
+
+
 const rank = await getRank("replaced", 2026);
 //console.log('rank',rank);
 
@@ -663,3 +689,7 @@ const rank = await getRank("replaced", 2026);
 
 //   return results.flatMap(r => r.data.results);
 // }
+
+
+
+//https://api.rawg.io/api/games?genres=83&ordering=-rating
