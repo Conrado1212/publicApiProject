@@ -529,8 +529,12 @@ app.get("/game/:slug", async (req, res) => {
   let index;
   try{
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
-    const rank = await getRank(slug, year);
-    const rankPlatformer = await getPlatformer(slug);
+  //  const [rank, rankPlatformer] = await Promise.all([
+ //     getRank(slug, year),
+ //     getPlatformer(slug)
+ //   ]);
+   // const rank = await getRank(slug, year);
+   // const rankPlatformer = await getPlatformer(slug);
   //  rating = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${year}-01-01,${year}-12-31&ordering=-rating`);
   //  console.log(rating);
    //  index = rating.data.results.findIndex(g => g.slug === slug);
@@ -544,9 +548,9 @@ app.get("/game/:slug", async (req, res) => {
       data: data,
        game: game.data,
        screenshots: screenshots.data.results, 
-       background_image: game.data.background_image,
-       rank: rank,
-       Platformer: rankPlatformer,
+       background_image: game.data.background_image//,
+    //   rank: rank,
+    //   Platformer: rankPlatformer,
       });
   }catch(e){
     if (e.response && e.response.status === 404) {
@@ -690,7 +694,14 @@ const rank = await getRank("replaced", 2026);
 //   return results.flatMap(r => r.data.results);
 // }
 
-//const rownolegle = await getAllGamesForYear("replaced");
+// const rownolegle = await gerRowno(2026);
+
+// console.log('rowno', rownolegle);
 
 
+// async function getRankTest(slug, year) {
+//   const games = await gerRowno(year);
+//   const index = games.findIndex(g => g.slug === slug);
+//   return index === -1 ? null : index + 1;
+// }
 //https://api.rawg.io/api/games?genres=83&ordering=-rating
