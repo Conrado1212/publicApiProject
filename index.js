@@ -670,7 +670,7 @@ const rank = await getRank("replaced", 2026);
 //console.log('rank',rank);
 
 
-// async function getAllGamesForYear(year) {
+// async function gerRowno(year) {
 //   const first = await axios.get(`${API_URL}games?key=${API_KEY}&ordering=-rating&dates=${year}-01-01,${year}-12-31&page=1`);
 
 //   const total = first.data.count;
@@ -690,6 +690,7 @@ const rank = await getRank("replaced", 2026);
 //   return results.flatMap(r => r.data.results);
 // }
 
+//const rownolegle = await getAllGamesForYear("replaced");
 
 
 //https://api.rawg.io/api/games?genres=83&ordering=-rating
