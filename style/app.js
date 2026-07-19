@@ -385,10 +385,33 @@ console.log('current',current);
 
 
 
-
-
-
-
+const rates = document.querySelectorAll('.rating_item');
+const ratesLabel = document.querySelectorAll('.rating_distribution_label');
+const shadows = {
+    recommended:  '0 0 8px #37008f, 0 0 12px rgba(255,255,255,0.8)',
+    exceptional:  '0 0 8px #6a8f00, 0 0 12px rgba(255,255,255,0.8)',
+    meh:          '0 0 8px #dd6809, 0 0 12px rgba(255,255,255,0.8)',
+    skip:         '0 0 8px #c41a1a, 0 0 12px rgba(255,255,255,0.8)'
+};
+rates.forEach((rate, index) => {
+    rate.addEventListener('mouseover', () => {
+        for (const cls in shadows) {
+            if (rate.classList.contains(cls)) {
+                rate.style.boxShadow = shadows[cls];
+                if(ratesLabel[index]){
+                    ratesLabel[index].style.boxShadow = shadows[cls];
+                }
+                break;
+            }
+        }
+    });
+        rate.addEventListener('mouseout', () => {
+            rate.style.boxShadow = '';
+            if(ratesLabel[index]){
+                ratesLabel[index].style.boxShadow = '';
+            }
+        });
+});
 
 
 
