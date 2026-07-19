@@ -523,9 +523,17 @@ app.get("/game/:slug", async (req, res) => {
   console.log('slug', slug);
   let game;
   let screenshots;
+  let rating;
+  const date  = new Date();
+  const year = date.getUTCFullYear();
+  let index;
   try{
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
-    console.log(game.data);
+    rating = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${year}-01-01,${year}-12-31&ordering=-rating`);
+    console.log(rating);
+     index = rating.data.results.findIndex(g => g.slug === slug);
+     console.log(index );
+   // console.log(game.data);
     screenshots = await axios.get(`${API_URL}games/${slug}/screenshots?key=${API_KEY}`);
     //console.log(screenshots.data);
   }catch(e){
@@ -596,3 +604,30 @@ app.locals.metaBlockWide = (title, items, getName) => {
 <div class="meta_title">${title}</div>
 <div class="meta_text">-</div>
 </div> */
+
+
+
+// async function getAllGamesForYear(year) {
+//   let page = 1;
+//   let allGames = [];
+//   let next = `${API_URL}games?key=${API_KEY}&ordering=-rating&dates=${year}-01-01,${year}-12-31&page=1`;
+
+//   while (next) {
+//       const res = await axios.get(next);
+//       allGames = allGames.concat(res.data.results);
+//       next = res.data.next;
+//   }
+
+//   return allGames;
+// }
+
+// async function getRank(slug, year) {
+//   const games = await getAllGamesForYear(year);
+
+//   const index = games.findIndex(g => g.slug === slug);
+
+//   return index === -1 ? null : index + 1;
+// }
+
+// const rank = await getRank("replaced", 2026);
+// console.log(rank);
