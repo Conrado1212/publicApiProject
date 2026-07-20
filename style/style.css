@@ -1556,4 +1556,40 @@ background:
 
                   }
             }
+            .all-screenshots{
+                background: linear-gradient(
+                    90deg,
+                    #1e1e1e 0%,
+                    #2a2a2a 25%,
+                    #3b3b3b 50%,
+                    #2a2a2a 75%,
+                    #1e1e1e 100%
+                  );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                .view{
+                    display: block;
+                    background: linear-gradient(180deg, #ffffff, #d6d6d6, var(--slider));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        opacity: .4;
+                }
+                .dots{
+                    display: flex;
+                    align-items:center;
+                    justify-content: center;
+                    gap:.5rem;
+                    .dot{
+                        width: .35rem;
+                        height: .35rem;
+                        border-radius: 50%;
+                        background: linear-gradient(90deg, var(--slider), #8f8f8f);
+                    }
+                }
+            }
         }
+       
