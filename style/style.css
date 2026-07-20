@@ -1592,4 +1592,21 @@ background:
                 }
             }
         }
-       
+       .edit_game_btn{
+           display: inline-flex;
+           width: 100%;
+           justify-content: center;
+           align-items: center;
+           color: var(--black);
+           border-radius: .4rem;
+           background-color: var(--white);
+           cursor: pointer;
+           gap: .5rem;
+           margin-top: 2rem;
+           padding: 1rem;
+           white-space: nowrap;
+           box-shadow: inset 0 0 16px #171f0a, 0 0 10px var(--slider);
+           opacity: .5;
+           font-weight: 500;
+    
+       }
