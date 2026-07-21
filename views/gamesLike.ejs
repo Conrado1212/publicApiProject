@@ -72,13 +72,24 @@
                                                                                                     <%   })%>
                                                                                                 <%   } %>
                                                 </div>
+                                                <%
+                                                const ratingMaps = {
+                                                           "recommended": "<i class=\"fa-solid fa-thumbs-up\"></i>",
+                                                               "exceptional": "<i class=\"fa-solid fa-bullseye\"></i>",
+                                                                    "skip": "<i class=\"fa-regular fa-rectangle-xmark\"></i>",
+                                                                        "meh": "<i class=\"fa-regular fa-face-meh\"></i>"
+                                                                                       };
+                                                                                       %>
                                                 <div class="card_title">
                                                     <a href="/game/<%= similar[index].slug %>" class=""><%= similar[index].name %></a>
                                                 </div>
                                                 <div class="card_button">
                                                     <button>
-                                                        <i class="fa-solid fa-plus"></i>
+                                                        <i class="fa-solid fa-plus"></i><%= (Number(similar[index]?.added) || 0) - (Number(similar[index]?.added_by_status?.toplay) || 0) %>
                                                     </button>
+                                                    <div class="rating_icon <%= similar[index]?.ratings?.[0]?.title || '' %>">
+                                                        <%- ratingMaps?.[similar[index]?.ratings?.[0]?.title] || similar[index]?.ratings?.[0]?.title || '' %>
+                                                    </div>
                                                 </div>
                                                 <ul class="card_about">
                                                     <li class="card_about_info">
