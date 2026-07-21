@@ -1651,6 +1651,7 @@ background:
                 border: 1px solid rgba(255, 255, 255, 0.12);
                 letter-spacing: 1px;
                 opacity: .5;
+                gap:.5rem;
                }
                .game_availability_item:hover{
                 text-shadow: 0 2px 2px var(--white), 0 4px 4px #e8e0f5;
