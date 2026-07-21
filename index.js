@@ -343,6 +343,7 @@ const last30 = last30days(new Date());
  title = data.sidebarMenu[0].Name[0];
   try{
     game = await axios.get(`${API_URL}games?key=${API_KEY}&dates=${last30},${today}&ordering-released&page_size=20&page=1`);
+    console.log('data',game.data);
   }catch(e){
     if(e.response && e.response.status === 404) {
       return res.status(404).send("Game not found");

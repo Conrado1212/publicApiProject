@@ -127,11 +127,11 @@
                                                 <div class="card_button">
                                                     
                                                     <button>
-                                                        <i class="fa-solid fa-plus"></i> <%= game.added-game.added_by_status.toplay %>
+                                                        <i class="fa-solid fa-plus"></i> <%= (game?.added || 0) - (game?.added_by_status?.toplay || 0) %>
                                                     </button>
                                                     
-                                                    <div class="rating_icon <%= game.ratings[0].title %>">
-                                                        <%- ratingMaps[game.ratings[0].title] || game.ratings[0].title %>
+                                                    <div class="rating_icon <%= game?.ratings?.[0]?.title || '' %>">
+                                                        <%- ratingMaps?.[game?.ratings?.[0]?.title] || game?.ratings?.[0]?.title || '' %>
                                                     </div>
                                                     
                                                 </div>
