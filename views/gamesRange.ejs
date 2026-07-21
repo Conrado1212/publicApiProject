@@ -128,10 +128,10 @@
                                                 </div>
                                                 <div class="card_button">
                                                     <button>
-                                                        <i class="fa-solid fa-plus"></i> <%= (game?.added || 0) - (game?.added_by_status?.toplay || 0) %>
+                                                        <i class="fa-solid fa-plus"></i> <%= (Number(game[index]?.added) || 0) - (Number(game[index]?.added_by_status?.toplay) || 0) %>
                                                     </button>
-                                                    <div class="rating_icon <%= game?.ratings?.[0]?.title || '' %>">
-                                                        <%- ratingMaps?.[game?.ratings?.[0]?.title] || game?.ratings?.[0]?.title || '' %>
+                                                    <div class="rating_icon <%= game[index]?.ratings?.[0]?.title || '' %>">
+                                                        <%- ratingMaps?.[game[index]?.ratings?.[0]?.title] || game[index]?.ratings?.[0]?.title || '' %>
                                                     </div>
                                                 </div>
                                                 <ul class="card_about">
