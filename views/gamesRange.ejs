@@ -115,6 +115,14 @@
                                                                                                     <%   })%>
                                                                                                 <%   } %>
                                                 </div>
+                                                <%
+                                                const ratingMaps = {
+                                                           "recommended": "<i class=\"fa-solid fa-thumbs-up\"></i>",
+                                                               "exceptional": "<i class=\"fa-solid fa-bullseye\"></i>",
+                                                                    "skip": "<i class=\"fa-regular fa-rectangle-xmark\"></i>",
+                                                                        "meh": "<i class=\"fa-regular fa-face-meh\"></i>"
+                                                                                       };
+                                                                                       %>
                                                 <div class="card_title">
                                                     <a href="/game/<%= game[index].slug %>" class=""><%= game[index].name %></a>
                                                 </div>
