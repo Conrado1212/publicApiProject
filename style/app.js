@@ -130,7 +130,10 @@ async function loadMore(){
     let endpoint ='';
     if(isGameLike){
         let id = document.querySelector('.game_name p').getAttribute('data-id');
-        endpoint = `${window.location.pathname}?page=${page}?id=${id}`;
+        const slug = window.location.pathname.replace('/games-like-', '');
+       // endpoint = `${window.location.pathname}?page=${page}&id=${id}`;
+        endpoint = `/games-like/${slug}?page=${page}&id=${id}`;
+        console.log(endpoint);
     }else{
         endpoint = `/api/games?page=${page}`;
         if (order) {
@@ -139,7 +142,9 @@ async function loadMore(){
     }
     try{
     const res = await fetch(endpoint);
+    
     const data = await res.json(); 
+    console.log(data);
     console.log(page);
    // console.log("RAW data:", data, "type:", typeof data);
    // console.log(data.next);
