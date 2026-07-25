@@ -450,24 +450,23 @@ const id = Number(req.query.id) || '';
 console.log('id', id);
 let similar;
 let game;
-if(id != ''){
-   similar = await suggested(id,page); 
-}else{
+
  try{
+  if(id !== ''){
+    similar = await suggested(id,page); 
+    return res.json(similar); 
+ }
     game = await axios.get(`${API_URL}games/${slug}?key=${API_KEY}`);
+    similar = await suggested(game.data.id,page); 
   console.log('game Name ', game.data.name);
+  console.log('similar :', similar);
  }catch(e){
   if (e.response && e.response.status === 404) {
     return res.status(404).send("Game not found");
   }  
   console.error(e);
   return res.status(500).send("Error fetching data")
- }
-  
-  similar = await suggested(game.data.id,page); 
 }
-
-  console.log('similar :', similar);
   res.render("gamesLike.ejs", {
     id: game.data.id,
     name: game.data.name,

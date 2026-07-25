@@ -132,7 +132,7 @@ async function loadMore(){
         let id = document.querySelector('.game_name p').getAttribute('data-id');
         const slug = window.location.pathname.replace('/games-like-', '');
        // endpoint = `${window.location.pathname}?page=${page}&id=${id}`;
-        endpoint = `/games-like/${slug}?page=${page}&id=${id}`;
+        endpoint = `/games-like-${slug}?page=${page}&id=${id}`;
         console.log(endpoint);
     }else{
         endpoint = `/api/games?page=${page}`;
@@ -234,14 +234,14 @@ async function loadMore(){
                                                         </div>
                                                     </li>
                             </ul>
-                            <div class="more">
-                                                    <a href="/games-like-" class="show_more_like">Show more like this</a>
+                                    <div class="more">
+                                                    <a href="/games-like-${game.slug}" class="show_more_like">Show more like this</a>
                                                     <div class="arrow">
                                                         <span></span>   
                                                         <span></span>
                                                     </div>
                                                 </div>
-                             </div>
+                                    </div>
                         </div>
                     </div>
                 </div>
@@ -253,6 +253,9 @@ async function loadMore(){
     }
 
     page++;
+}catch(err){
+console.error("Error on fetch", error);
+
 }finally{
     loadCircle.style.display ='none';
     loading = false;
