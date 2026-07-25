@@ -149,7 +149,7 @@ async function loadMore(){
     console.log(page);
    // console.log("RAW data:", data, "type:", typeof data);
    // console.log(data.next);
-    if(data?.next === null){
+    if(!results || results.length === 0){
         console.log("No more data");
         loading = false;
         return;
