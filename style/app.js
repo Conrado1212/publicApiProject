@@ -400,6 +400,18 @@ const formekWidth  = formek.getBoundingClientRect().width;
  const left = rect.left + window.scrollX;
  console.log('left px: ',left);
 
+
+ searchInput.addEventListener('input',(e)=>{
+    console.log(e.target.value);
+ });
+
+
+
+
+
+
+
+
 const rates = document.querySelectorAll('.rating_item');
 const ratesLabel = document.querySelectorAll('.rating_distribution_label');
 const shadows = {
