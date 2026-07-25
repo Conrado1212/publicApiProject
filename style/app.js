@@ -392,8 +392,10 @@ console.log('current',current);
      link.classList.add("active");
    }
  });
-
-
+const formek  = document.querySelector('form');
+ const rect = formek.getBoundingClientRect();
+ const left = rect.left + window.scrollX;
+ console.log('left px: ',left);
 
 const rates = document.querySelectorAll('.rating_item');
 const ratesLabel = document.querySelectorAll('.rating_distribution_label');

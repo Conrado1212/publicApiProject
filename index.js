@@ -185,9 +185,9 @@ async function gameSearch(search){
   }
 }
 
-//gameSearch("GTA").then(data => {
- // console.log('search ',data.results);
-//});
+gameSearch("Replaced").then(data => {
+  console.log('search ',data.count, data.results);
+});
 //search game https://api.rawg.io/api/games?search=GTA&key=API_KEY
 //search game https://api.rawg.io/api/platforms&key=API_KEY
 
