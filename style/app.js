@@ -400,10 +400,25 @@ const formekWidth  = formek.getBoundingClientRect().width;
  const left = rect.left + window.scrollX;
  console.log('left px: ',left);
 
-
+const dropdwon = document.querySelector('.dropdown_container');
  searchInput.addEventListener('input',(e)=>{
+    const formekWidth  = formek.getBoundingClientRect().width;
+    const rect = formek.getBoundingClientRect();
+    const left = rect.left + window.scrollX;
+    console.log('left px: ',left);
     console.log(e.target.value);
+    dropdwon.style.display = 'block';
+    dropdwon.style.left = `${left}px`;
+    dropdwon.style.width = `${formekWidth}px`;
+    console.log(dropdwon);
  });
+
+ document.addEventListener('click', (e) => {
+    // jeśli kliknięto poza dropdownem i poza searchInput
+    if (!dropdwon.contains(e.target) && !searchInput.contains(e.target)) {
+        dropdwon.style.display = 'none';
+    }
+});
 
 
 

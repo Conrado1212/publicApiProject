@@ -1696,7 +1696,7 @@ background:
                 background: var(--black);
                 border-radius: 1rem;
                 height: 50vh;
-                width: 1450px;
+                width: 100%;
               }
            }
        }
