@@ -392,7 +392,10 @@ console.log('current',current);
      link.classList.add("active");
    }
  });
+
+ //width calc
 const formek  = document.querySelector('form');
+const formekWidth  = formek.getBoundingClientRect().width;
  const rect = formek.getBoundingClientRect();
  const left = rect.left + window.scrollX;
  console.log('left px: ',left);
