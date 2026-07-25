@@ -148,7 +148,7 @@ async function loadMore(){
     console.log(page);
    // console.log("RAW data:", data, "type:", typeof data);
    // console.log(data.next);
-    if(!data?.next === null){
+    if(!data.results || data.results.length === 0){
         console.log("No more data");
         loading = false;
         return;
@@ -184,13 +184,14 @@ async function loadMore(){
             const imgSrc = game.background_image || "/images/No_Image_Available.jpg";
 
             const genre = game.genres.map(gen => `<span><a href="">${gen.name}</a></span>`).join(', ') ;
-            const gallery = game.short_screenshots.map(img=> `<img src="${img.image}" alt="">`).join('');
-            console.log('gallery', gallery);
+            const gallery = (game.short_screenshots ?? []).map(img=> `<img src="${img.image}" alt="">`).join('');
+           // console.log('gallery', gallery);
             const platform = (game.platforms ?? []).map(plat => platformMap[plat?.platform?.name]).filter(Boolean).join(" ");
             const rating = ratingMaps[game.ratings?.[0]?.title] ?? game.ratings?.[0]?.title  ?? '';
             const classRating = game.ratings?.[0]?.title  ?? ''
-            const progress = game.short_screenshots.length > 1 ? game.short_screenshots.map(()=> `<span class="progress"></span>`).join('') : '';
-            const number = game.added-game.added_by_status.toplay;
+            const screenshots = game.short_screenshots ?? [];
+            const progress = screenshots.length > 1 ? screenshots.map(()=> `<span class="progress"></span>`).join('') : '';
+            const number = (game.added ?? 0) - (game.added_by_status?.toplay ?? 0);
             const safeNumber = Number.isNaN(number) ? 0 : number;
             col.insertAdjacentHTML(
                 "beforeend",
@@ -254,7 +255,7 @@ async function loadMore(){
 
     page++;
 }catch(err){
-console.error("Error on fetch", error);
+console.error("Error on fetch", err);
 
 }finally{
     loadCircle.style.display ='none';
