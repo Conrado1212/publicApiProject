@@ -145,6 +145,7 @@ async function loadMore(){
     
     const data = await res.json(); 
     console.log(data);
+    const results = Array.isArray(data) ? data : data.results;
     console.log(page);
    // console.log("RAW data:", data, "type:", typeof data);
    // console.log(data.next);
@@ -156,8 +157,8 @@ async function loadMore(){
     //console.log("Next page", data.next);
     const load = document.getElementById("load");
 
-    for (let i = 0; i < data.results.length; i += 4) {
-        const group = data.results.slice(i, i + 4);
+    for (let i = 0; i < results.length; i += 4) {
+        const group = results.slice(i, i + 4);
 
         
         const col = document.createElement("div");
