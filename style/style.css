@@ -1708,3 +1708,29 @@ background:
               }
            }
        }
+       .sugestion_results{
+           padding: 0 1rem;
+           overflow: hidden;
+       }
+       .sugestion_header{
+           display: flex;
+           gap: .5rem;
+           color: var(--white);
+          margin-top: 1rem;
+          span{
+            background: linear-gradient(90deg, var(--white), #e8e0f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: inset 5px 5px 10px var(--slider);
+            font-weight: 900;
+            font-size:var(--font-s);
+            letter-spacing: 1px;
+          }
+          span:last-child{
+            background: linear-gradient(90deg, var(--white), #ffffff29);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+       }
