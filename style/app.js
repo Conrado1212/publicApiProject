@@ -431,6 +431,18 @@ dropdwon.style.width = `${rect.width}px`;
 //   renderDropdownResults(data.results);
  });
 
+
+
+ async function gameSearch(value){
+    if (loading) return;
+    loading = true;
+        const res = await fetch(`/api/search?value=${value}`);
+        const data = await res.json();
+        return data;     
+}
+
+
+
  document.addEventListener('click', (e) => {
     // jeśli kliknięto poza dropdownem i poza searchInput
     if (!dropdwon.contains(e.target) && !searchInput.contains(e.target)) {
