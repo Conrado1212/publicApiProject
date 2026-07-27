@@ -1714,9 +1714,10 @@ background:
        }
        .sugestion_header{
            display: flex;
-           gap: .5rem;
+           gap: .25rem;
            color: var(--white);
           margin-top: 1rem;
+          margin-bottom: .5rem;
           span{
             background: linear-gradient(90deg, var(--white), #e8e0f5);
             -webkit-background-clip: text;

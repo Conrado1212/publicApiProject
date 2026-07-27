@@ -401,16 +401,34 @@ const formekWidth  = formek.getBoundingClientRect().width;
  console.log('left px: ',left);
 
 const dropdwon = document.querySelector('.dropdown_container');
- searchInput.addEventListener('input',(e)=>{
-    const formekWidth  = formek.getBoundingClientRect().width;
+ searchInput.addEventListener('input',async (e)=>{
+    const value = e.target.value.trim();
+
+    if (value === "") {
+        dropdwon.style.display = 'none';
+        return;
+    }
+
+    const data = await gameSearch(value);
+
+    if (!data || !data.results || data.results.length === 0) {
+        dropdwon.style.display = 'none';
+        return;
+    }
+
+  //  const formekWidth  = formek.getBoundingClientRect().width;
     const rect = formek.getBoundingClientRect();
-    const left = rect.left + window.scrollX;
+  //  const left = rect.left + window.scrollX;
    // console.log('left px: ',left);
   //  console.log(e.target.value);
+  if (dropdwon.style.display !== 'block') {
     dropdwon.style.display = 'block';
-    dropdwon.style.left = `${left}px`;
-    dropdwon.style.width = `${formekWidth}px`;
-    console.log(dropdwon);
+}
+dropdwon.style.left = `${rect.left + window.scrollX}px`;
+dropdwon.style.width = `${rect.width}px`;
+   // console.log(dropdwon);
+
+//   renderDropdownResults(data.results);
  });
 
  document.addEventListener('click', (e) => {
@@ -420,6 +438,37 @@ const dropdwon = document.querySelector('.dropdown_container');
     }
 });
 
+// function renderDropdownResults(results) {
+//     const resultsContainer = document.querySelector('.search_results');
+//     const headerCount = document.querySelector('.header_search_results');
+
+   
+//     headerCount.textContent = results.length;
+
+//     // wyczyść poprzednie wyniki
+//     resultsContainer.innerHTML = '';
+
+//     // wygeneruj nowe
+//     results.forEach(game => {
+//         const item = document.createElement('div');
+//         item.classList.add('search_result_item');
+
+//         item.innerHTML = `
+//             <div class="game_card_result">
+//                 <div class="game_card_compact_info">
+//                     <div class="game_card_compact_meta">
+//                         <div class="platform_meta">
+//                             ${game.platforms?.map(p => `<span>${p.platform.name}</span>`).join('') || ''}
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <a href="/game/${game.slug}">${game.name}</a>
+//             </div>
+//         `;
+
+//         resultsContainer.appendChild(item);
+//     });
+// }
 
 
 
