@@ -1717,3 +1717,7 @@ background:
             background-clip: text;
           }
        }
+       .game_card_result .text{
+        text-decoration: none;
+        letter-spacing: 1px;
+       }

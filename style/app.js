@@ -476,7 +476,7 @@ dropdwon.style.width = `${rect.width}px`;
                          </div>
                      </div>
                  </div>
-                 <a href="/game/${game.slug}">${game.name}</a>
+                 <a class ="text" href="/game/${game.slug}">${game.name}</a>
              </div>
          `;
 
