@@ -1720,4 +1720,10 @@ background:
        .game_card_result .text{
         text-decoration: none;
         letter-spacing: 1px;
+        transition: text-shadow .25s ease;
        }
+       .game_card_result .text:hover{
+        -webkit-text-fill-color: #fafafa;
+        text-shadow: 0 0 8px #fff, 0 0 15px var(--slider);
+       }
+      
