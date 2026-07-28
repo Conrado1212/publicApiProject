@@ -1690,6 +1690,7 @@ background:
               display:none;
               height: auto;
               .dropdown_content{
+                  overflow: hidden;
                 display:block;
                 position: relative;
                 z-index: 1;
