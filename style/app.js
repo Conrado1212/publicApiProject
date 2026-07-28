@@ -403,7 +403,7 @@ const formekWidth  = formek.getBoundingClientRect().width;
 const dropdwon = document.querySelector('.dropdown_container');
  searchInput.addEventListener('input',async (e)=>{
     const value = e.target.value.trim();
-
+    console.log('value: ',value);
     if (value === "") {
         dropdwon.style.display = 'none';
         return;
@@ -411,10 +411,10 @@ const dropdwon = document.querySelector('.dropdown_container');
 
     const data = await gameSearch(value);
 
-    if (!data || !data.results || data.results.length === 0) {
-        dropdwon.style.display = 'none';
-        return;
-    }
+     if (!data || !data.results || data.results.length === 0) {
+         dropdwon.style.display = 'none';
+         return;
+     }
 
   //  const formekWidth  = formek.getBoundingClientRect().width;
     const rect = formek.getBoundingClientRect();
@@ -428,19 +428,22 @@ dropdwon.style.left = `${rect.left + window.scrollX}px`;
 dropdwon.style.width = `${rect.width}px`;
    // console.log(dropdwon);
 
-//   renderDropdownResults(data.results);
+   renderDropdownResults(data.results);
  });
 
 
 
  async function gameSearch(value){
-    if (loading) return;
-    loading = true;
+    // if (loading) return;
+    // loading = true;
         const res = await fetch(`/api/search?value=${value}`);
+        console.log('rest',res);
         const data = await res.json();
         return data;     
 }
-
+// gameSearch("Replaced").then(data => {
+//     console.log('search ',data.count, data.results);
+//   });
 
 
  document.addEventListener('click', (e) => {
@@ -450,37 +453,36 @@ dropdwon.style.width = `${rect.width}px`;
     }
 });
 
-// function renderDropdownResults(results) {
-//     const resultsContainer = document.querySelector('.search_results');
-//     const headerCount = document.querySelector('.header_search_results');
+ function renderDropdownResults(results) {
+     const resultsContainer = document.querySelector('.search_results');
+     const headerCount = document.querySelector('.header_search_results');
 
-   
-//     headerCount.textContent = results.length;
+        headerCount.textContent = results.length;
 
-//     // wyczyść poprzednie wyniki
-//     resultsContainer.innerHTML = '';
+     // wyczyść poprzednie wyniki
+     resultsContainer.innerHTML = '';
 
-//     // wygeneruj nowe
-//     results.forEach(game => {
-//         const item = document.createElement('div');
-//         item.classList.add('search_result_item');
+     // wygeneruj nowe
+     results.forEach(game => {
+         const item = document.createElement('div');
+        item.classList.add('search_result_item');
 
-//         item.innerHTML = `
-//             <div class="game_card_result">
-//                 <div class="game_card_compact_info">
-//                     <div class="game_card_compact_meta">
-//                         <div class="platform_meta">
-//                             ${game.platforms?.map(p => `<span>${p.platform.name}</span>`).join('') || ''}
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <a href="/game/${game.slug}">${game.name}</a>
-//             </div>
-//         `;
+         item.innerHTML = `
+             <div class="game_card_result">
+                 <div class="game_card_compact_info">
+                     <div class="game_card_compact_meta">
+                         <div class="platform_meta">
+                             ${game.platforms?.map(p => `<span>${p.platform.name}</span>`).join('') || ''}
+                         </div>
+                     </div>
+                 </div>
+                 <a href="/game/${game.slug}">${game.name}</a>
+             </div>
+         `;
 
-//         resultsContainer.appendChild(item);
-//     });
-// }
+         resultsContainer.appendChild(item);
+     });
+ }
 
 
 

@@ -271,6 +271,7 @@ app.get("/api/games", async (req, res) => {
 
 app.get("/api/search", async (req, res) => {
   const {value } = req.query;
+  console.log('search value:',value);
   try{
     const result = await gameSearch(value); 
     res.json(result);      
@@ -278,7 +279,7 @@ app.get("/api/search", async (req, res) => {
     console.error(e);
     res.status(500).json({error: `API error ${e}`});
   }
-  res.json(result);
+//  res.json(result);
 });
 
 //https://api.rawg.io/api/games?ordering=-relevance&dates=2024-01-01,2025-12-31&page_size=20
