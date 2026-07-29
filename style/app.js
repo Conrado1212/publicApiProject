@@ -470,7 +470,9 @@ dropdwon.style.width = `${rect.width}px`;
          item.innerHTML = `
              <div class="game_card_result">
                  <div class="game_card_compact_info">
-                 <a href="/game/${game.slug}"></a>
+                    <a href="/game/${game.slug}">
+                         <span></span>
+                    </a>
                      <div class="game_card_compact_meta">
                          <div class="platform_meta">
                              ${game.platforms?.map(p => `<span>${p.platform.name}</span>`).join('') || ''}
