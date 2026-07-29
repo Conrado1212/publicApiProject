@@ -463,7 +463,7 @@ dropdwon.style.width = `${rect.width}px`;
      resultsContainer.innerHTML = '';
 
      // wygeneruj nowe
-     results.forEach(game => {
+     results.slice(0, 10).forEach(game => {
          const item = document.createElement('div');
         item.classList.add('search_result_item');
 
