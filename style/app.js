@@ -428,18 +428,32 @@ dropdwon.style.left = `${rect.left + window.scrollX}px`;
 dropdwon.style.width = `${rect.width}px`;
    // console.log(dropdwon);
 
-   renderDropdownResults(data.results);
+   renderDropdownResults(data.results,data.count);
  });
 
 
 
  async function gameSearch(value){
-    // if (loading) return;
-    // loading = true;
+     if (loading) return;
+     loading = true;
+     try{
         const res = await fetch(`/api/search?value=${value}`);
         console.log('rest',res);
+        if (!res.ok) {
+            throw new Error(`Server returned ${res.status}`);
+        }
+      
         const data = await res.json();
-        return data;     
+      
+        return data;   
+        
+        }catch(err){
+console.error("Error on fetch", err);
+return null;
+    }finally{
+     //   loadCircle.style.display ='none';
+        loading = false;
+    }
 }
 // gameSearch("Replaced").then(data => {
 //     console.log('search ',data.count, data.results);
@@ -453,11 +467,11 @@ dropdwon.style.width = `${rect.width}px`;
     }
 });
 
- function renderDropdownResults(results) {
+ function renderDropdownResults(results,count) {
      const resultsContainer = document.querySelector('.search_results');
      const headerCount = document.querySelector('.header_search_results');
-
-        headerCount.textContent = results.length;
+    console.log('aaa ',results.count);
+        headerCount.textContent = count;
 
      // wyczyść poprzednie wyniki
      resultsContainer.innerHTML = '';

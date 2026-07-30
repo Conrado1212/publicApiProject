@@ -175,6 +175,7 @@ app.listen(port,()=>{
 async function gameSearch(search){
   try{
     const result = await axios.get(API_URL + `games?search=${search}&key=` + API_KEY);
+    console.log('search count ',result.data.count);
     if (result.status !== 200) {
       throw new Error(`HTTP error: ${result.status}`);
     } 
