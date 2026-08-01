@@ -475,7 +475,17 @@ return null;
 
      // wyczyść poprzednie wyniki
      resultsContainer.innerHTML = '';
+     const platformMap = {
+        "PC": "<i class=\"fa-brands fa-windows\"></i>",
+            "PlayStation 5": "<i class=\"fa-brands fa-playstation\"></i>",
+                 "PlayStation 4": "<i class=\"fa-brands fa-uncharted\"></i>",
+                     "Xbox Series S/X": "<i class=\"fa-brands fa-xbox\"></i>",
+                         "Xbox One": '<img class="" src="/images/xboxOne.jpg">',
+                         "Nintendo Switch": "<i class=\"fa-solid fa-gamepad\"></i>",
+                             "macOS": "<i class=\"fa-brands fa-apple\"></i>",
+                                "Linux": "<i class=\"fa-brands fa-linux\"></i>"
 
+                                    };
      // wygeneruj nowe
      results.slice(0, 10).forEach(game => {
          const item = document.createElement('div');
@@ -489,7 +499,7 @@ return null;
                     </a>
                      <div class="game_card_compact_meta">
                          <div class="platform_meta">
-                             ${game.platforms?.map(p => `<span>${p.platform.name}</span>`).join('') || ''}
+                             ${game.platforms?.map(p => platformMap[p?.platform?.name]).filter(Boolean).join(" ")}
                          </div>
                      </div>
                  </div>
