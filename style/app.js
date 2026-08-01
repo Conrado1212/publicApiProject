@@ -485,7 +485,7 @@ return null;
              <div class="game_card_result">
                  <div class="game_card_compact_info">
                     <a href="/game/${game.slug}">
-                         <span></span>
+                         <span class="img_game"></span>
                     </a>
                      <div class="game_card_compact_meta">
                          <div class="platform_meta">
